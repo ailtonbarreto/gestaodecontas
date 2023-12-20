@@ -92,7 +92,7 @@ df = df.sort_values(by='Ordem_Mês',ascending = True).drop(columns=['Ordem_Mês'
 #Filtros/Layout
 
 with col1:
-    st.title("Fluxo de Caixa",anchor=False)
+    st.title("Análise",anchor=False)
    
 with col5:
     filtro_ano = st.selectbox("Ano", df["Ano"].unique(),placeholder="2023")  
