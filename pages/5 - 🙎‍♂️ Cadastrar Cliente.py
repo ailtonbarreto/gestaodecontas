@@ -7,7 +7,7 @@ import openpyxl as xl
 
 st.set_page_config(layout="wide",page_title="Cadastrar Fornecedor",initial_sidebar_state='collapsed',page_icon='✅')
 
-dffornecedor = pd.read_excel("Gestão de contas.xlsx",sheet_name='Cadastro de Fornecedores')
+dfcliente = pd.read_excel("Gestão de contas.xlsx",sheet_name='Cadastro de Clientes')
 
 st.title("📝 Cadastrar Cliente",anchor=False)
 
@@ -33,7 +33,7 @@ if st.button("ADICIONAR"):
     st.success("Cliente Cadastrado com Sucesso!")
 st.divider()
 
-st.table(dffornecedor)
+st.table(dfcliente)
 #------------------------------------------------------------------------------------------
 #Esconder streamlit menus
 
