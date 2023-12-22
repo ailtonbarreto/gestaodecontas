@@ -59,7 +59,8 @@ with tab1:
 
     st.title("🟢 Adicionar Entrada",anchor=False)
 
-    entrada_cliente = st.selectbox("Cliente",dfselectbox['Cliente'].unique())
+    dfselect = pd.read_excel("Gestão de contas.xlsx",sheet_name='Cadastro de Clientes')
+    entrada_cliente = st.selectbox("Cliente",dfselect['Cliente'].unique())
 
     entrada_notafiscal = st.text_input("Nota Fiscal")
 
