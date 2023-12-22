@@ -59,7 +59,7 @@ with tab1:
 
     st.title("🟢 Adicionar Entrada",anchor=False)
 
-    entrada_fornecedor = st.selectbox("Fornecedor",dfselectbox['Fornecedor'].unique())
+    entrada_fornecedor = st.selectbox("Cliente",dfselectbox['Cliente'].unique())
 
     entrada_notafiscal = st.text_input("Nota Fiscal")
 
