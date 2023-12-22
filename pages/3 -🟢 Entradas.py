@@ -59,7 +59,7 @@ with tab1:
 
     st.title("🟢 Adicionar Entrada",anchor=False)
 
-    entrada_fornecedor = st.selectbox("Cliente",dfselectbox['Cliente'].unique())
+    entrada_cliente = st.selectbox("Cliente",dfselectbox['Cliente'].unique())
 
     entrada_notafiscal = st.text_input("Nota Fiscal")
 
@@ -77,7 +77,7 @@ with tab1:
         planilha = planilha["A Receber"]
 
     # Criar uma nova linha com os dados inseridos
-        nova_linha = [entrada_fornecedor, entrada_notafiscal, entrada_dataemissao, entrada_datavencimento, entrada_valor, entrada_status]
+        nova_linha = [entrada_cliente, entrada_notafiscal, entrada_dataemissao, entrada_datavencimento, entrada_valor, entrada_status]
     
     # Adicionar a nova linha à planilha
         planilha.append(nova_linha)
