@@ -33,7 +33,7 @@ if st.button("ADICIONAR"):
     st.success("Cliente Cadastrado com Sucesso!")
 st.divider()
 
-st.table(dfcliente)
+dfcliente
 #------------------------------------------------------------------------------------------
 #Esconder streamlit menus
 
