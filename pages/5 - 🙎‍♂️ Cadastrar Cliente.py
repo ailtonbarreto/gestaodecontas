@@ -5,7 +5,7 @@ import pandas as pd
 import openpyxl as xl
 
 
-st.set_page_config(layout="wide",page_title="Cadastrar Fornecedor",initial_sidebar_state='collapsed',page_icon='✅')
+st.set_page_config(layout="wide",page_title="Cadastrar Cliente",initial_sidebar_state='collapsed',page_icon='✅')
 
 dfcliente = pd.read_excel("Gestão de contas.xlsx",sheet_name='Cadastro de Clientes')
 
