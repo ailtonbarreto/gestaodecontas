@@ -85,6 +85,11 @@ df["Mês"] = df["Mês"].apply(determinar_mês)
 df = df.drop(columns=["Data emissão"])
 df['Ordem_Mês'] = df['Mês'].map(classificar_meses)
 df = df.sort_values(by='Ordem_Mês',ascending = True).drop(columns=['Ordem_Mês'])
+df = df.sort_values(by='Ano',ascending = True)
+#----------------------------------------------------------------------------------------
+#filtro mensal
+
+selectboxmeses = ['Jan','Fev','Mar','Abr','Mai','Jun','Jul','Ago','Set','Out','Nov','Dez']
 
 #----------------------------------------------------------------------------------------
 #Filtros/Layout
@@ -96,7 +101,7 @@ with col5:
     filtro_ano = st.selectbox("Ano", df["Ano"].unique(),placeholder="2023")  
     
 with col6:
-     filtro_mes = st.selectbox("Mês", df["Mês"].unique()) 
+     filtro_mes = st.selectbox("Mês",selectboxmeses) 
 
 #----------------------------------------------------------------------------------------
 #Dataframes filtrados
