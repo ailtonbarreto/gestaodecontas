@@ -143,7 +143,7 @@ grafico_Rosca.update_traces(showlegend=False)
 
 
 grafico_colunas = px.bar(df_filtrado3,x="Mês",y="Valor",color="Tipo",
-        barmode="group",title='Balanço Anual',category_orders={'Tipo':['ENTRADA','SAÍDA']},
+        barmode="group",title=f'Entradas e Saídas de {filtro_ano}',category_orders={'Tipo':['ENTRADA','SAÍDA']},
         color_discrete_sequence=["#06d6a0","#941b0c"])
 grafico_colunas.update_yaxes(showgrid=False)
 grafico_colunas.update_traces(showlegend=False)
