@@ -149,11 +149,11 @@ grafico_barras = px.bar(dfgrafico,x="Valor",y="CATEGORIA",orientation="h",title=
 #Layout gráficos
 
 with col2:
-    st.metric("Entradas",f'R$ {round(df_filtrado4["Valor"].sum(),2):.2f}')
+    st.metric("Entradas",f'R$ {round(df_filtrado4["Valor"].sum(),2):,.2f}')
 with col3:
-    st.metric("Saídas",f'R$ {round(df_filtrado2["Valor"].sum(),2):.2f}')
+    st.metric("Saídas",f'R$ {round(df_filtrado2["Valor"].sum(),2):,.2f}')
 with col4:
-    st.metric("Saldo do Mês",f'R$ {round(df_filtrado4["Valor"].sum()-df_filtrado2["Valor"].sum(),2):.2f}')
+    st.metric("Saldo do Mês",f'R$ {round(df_filtrado4["Valor"].sum()-df_filtrado2["Valor"].sum(),2):,.2f}')
 with col7:
     st.divider()
     st.plotly_chart(grafico_Rosca,use_container_width=True) 
