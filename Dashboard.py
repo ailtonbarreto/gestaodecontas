@@ -108,7 +108,7 @@ selectboxmeses = [
 
 with col1:
     # st.title("Gestão à Vista",anchor=False)
-    st.image('money-flow.png',use_column_width=True)
+    st.image('money-flow.png',use_column_width=False)
    
 with col5:
     filtro_ano = st.selectbox("Ano", df["Ano"].unique())  
