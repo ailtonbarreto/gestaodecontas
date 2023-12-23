@@ -154,7 +154,7 @@ grafico_barras = px.bar(dfgrafico,x="Valor",y="CATEGORIA",orientation="h",title=
 #Layout gráficos
 
 with col2:
-    st.subheader("Entradas")
+    st.subheader("Entradas",anchor=False)
     st.metric('',f'R$ {round(df_filtrado4["Valor"].sum(),2):,.2f}')
 with col3:
     st.metric("Saídas",f'R$ {round(df_filtrado2["Valor"].sum(),2):,.2f}')
