@@ -165,7 +165,7 @@ grafico_colunas = px.bar(df_filtrado3,x="Mês",y="Valor",color="Tipo",
 grafico_colunas.update_yaxes(showgrid=False)
 grafico_colunas.update_traces(showlegend=False)
 
-grafico_barras = px.bar(dfgrafico,x="Valor",y="CATEGORIA",orientation="h",
+grafico_barras = px.bar(dfgrafico,x="Valor",y="Status",orientation="h",
         title=f"Despesas de {filtro_mes} de {filtro_ano}",
         category_orders={'Status':['PAGO','A PAGAR']},
         color_discrete_sequence=["#06d6a0","#941b0c"])
