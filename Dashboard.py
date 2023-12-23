@@ -149,7 +149,7 @@ dfgrafico = dfgrafico.sort_values(by="Valor",ascending=True)
 #Gráficos
 
 grafico_Rosca = px.pie(df_filtrado1,names="Tipo",color='Tipo',category_orders={'Tipo':['ENTRADA','SAÍDA']},
-        values="Valor",color_discrete_sequence=["#06d6a0","#941b0c"],title='Entradas VS Saídas')
+        values="Valor",color_discrete_sequence=["#06d6a0","#941b0c"],title=f'Entradas VS Saídas de {filtro_mes} de {filtro_ano}')
 grafico_Rosca.update_traces(showlegend=False)
 
 
