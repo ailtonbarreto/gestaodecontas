@@ -89,7 +89,19 @@ df = df.sort_values(by='Ano',ascending = True)
 #----------------------------------------------------------------------------------------
 #filtro mensal
 
-selectboxmeses = ['Jan','Fev','Mar','Abr','Mai','Jun','Jul','Ago','Set','Out','Nov','Dez']
+selectboxmeses = [
+    'Jan',
+    'Fev',
+    'Mar',
+    'Abr',
+    'Mai','Jun',
+    'Jul',
+    'Ago',
+    'Set',
+    'Out',
+    'Nov',
+    'Dez'
+    ]
 
 #----------------------------------------------------------------------------------------
 #Filtros/Layout
