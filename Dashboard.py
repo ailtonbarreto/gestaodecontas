@@ -157,9 +157,11 @@ with col2:
     st.subheader("Entradas",anchor=False)
     st.metric('',f'R$ {round(df_filtrado4["Valor"].sum(),2):,.2f}')
 with col3:
-    st.metric("Saídas",f'R$ {round(df_filtrado2["Valor"].sum(),2):,.2f}')
+    st.subheader("Saídas",anchor=False)
+    st.metric("",f'R$ {round(df_filtrado2["Valor"].sum(),2):,.2f}')
 with col4:
-    st.metric("Saldo do Mês",f'R$ {round(df_filtrado4["Valor"].sum()-df_filtrado2["Valor"].sum(),2):,.2f}')
+    st.subheader("Saldo",anchor=False)
+    st.metric("",f'R$ {round(df_filtrado4["Valor"].sum()-df_filtrado2["Valor"].sum(),2):,.2f}')
 with col7:
     st.divider()
     st.plotly_chart(grafico_Rosca,use_container_width=True) 
