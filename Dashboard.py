@@ -193,7 +193,7 @@ with col9:
     st.plotly_chart(grafico_colunas,use_container_width=True)
     st.divider()
 
-
+st.table(dfgrafico)
 #------------------------------------------------------------------------------------------
 #Esconder streamlit menus
 
