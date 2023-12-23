@@ -149,17 +149,17 @@ dfgrafico = dfgrafico.sort_values(by="Valor",ascending=True)
 #Gráficos
 
 grafico_Rosca = px.pie(df_filtrado1,names="Tipo",color='Tipo',category_orders={'Tipo':['ENTRADA','SAÍDA']},
-        values="Valor",color_discrete_sequence=["#60B7FF","#FD8087"],title='Entradas VS Saídas')
+        values="Valor",color_discrete_sequence=["#06d6a0","#941b0c"],title='Entradas VS Saídas')
 grafico_Rosca.update_traces(showlegend=False)
 
 
 grafico_colunas = px.bar(df_filtrado3,x="Mês",y="Valor",color="Tipo",
         barmode="group",title=f'Entradas e Saídas de {filtro_ano}',category_orders={'Tipo':['ENTRADA','SAÍDA']},
-        color_discrete_sequence=["#60B7FF","#FD8087"])
+        color_discrete_sequence=["#06d6a0","#941b0c"])
 grafico_colunas.update_yaxes(showgrid=False)
 grafico_colunas.update_traces(showlegend=False)
 
-grafico_barras = px.bar(dfgrafico,x="Valor",y="CATEGORIA",orientation="h",title=f"Despesas de {filtro_mes} de {filtro_ano}",color_discrete_sequence=["#FD8087"])
+grafico_barras = px.bar(dfgrafico,x="Valor",y="CATEGORIA",orientation="h",title=f"Despesas de {filtro_mes} de {filtro_ano}",color_discrete_sequence=["#941b0c"])
 
 #----------------------------------------------------------------------------------------
 #Layout gráficos
