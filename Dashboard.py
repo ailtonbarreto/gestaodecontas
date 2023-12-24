@@ -149,7 +149,7 @@ dfgrafico = dfgrafico.sort_values(by="Valor",ascending=True)
 dfcores = pd.read_excel('Gestão de contas.xlsx',sheet_name="A Pagar")
 dfcores['Ano'] = dfcores['Data Emissão'].dt.year
 dfcores['Mês'] = dfcores['Data Emissão'].dt.month
-dfcores["Mês"].apply(determinar_mês)
+dfcores["Mês"] = dfcores["Mês"].apply(determinar_mês)
 dfcores = dfcores.groupby(["Status", "Ano","Mês"])["Valor"].sum().reset_index()
 
 
