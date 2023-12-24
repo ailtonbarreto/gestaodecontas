@@ -139,11 +139,11 @@ dfgrafico = pd.read_excel('Gestão de contas.xlsx',sheet_name="A Pagar")
 dfgrafico['Ano'] = dfgrafico['Data Emissão'].dt.year
 dfgrafico['Mês'] = dfgrafico['Data Emissão'].dt.month
 dfgrafico["Mês"] = dfgrafico["Mês"].apply(determinar_mês)
-dfgrafico = dfgrafico.groupby(["CATEGORIA", "Ano","Mês","Status"])["Valor"].sum()
+dfgrafico = dfgrafico.groupby(["CATEGORIA", "Ano","Mês","Status"])["Valor"].sum().reset_index()
 
 dfgrafico = dfgrafico.query('Ano == @filtro_ano & Mês == @filtro_mes')
 
-dfgrafico = dfgrafico.sort_values(by="Valor",ascending=True).reset_index()
+dfgrafico = dfgrafico.sort_values(by="Valor",ascending=True)
 
 #----------------------------------------------------------------------------------------
 #Gráficos
