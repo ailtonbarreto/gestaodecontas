@@ -141,10 +141,11 @@ dfgrafico['Mês'] = dfgrafico['Data Emissão'].dt.month
 dfgrafico["Mês"] = dfgrafico["Mês"].apply(determinar_mês)
 dfgrafico = dfgrafico.groupby(["CATEGORIA", "Ano","Mês"])["Valor"].sum().reset_index()
 
-dfgrafico = dfgrafico.query('Ano == @filtro_ano & Mês == @filtro_mes')
+dfgraficobarras = dfgrafico.query('Ano == @filtro_ano & Mês == @filtro_mes')
 
-dfgrafico = dfgrafico.sort_values(by="Valor",ascending=True)
+dfgraficobarras = dfgraficobarras.sort_values(by="Valor",ascending=True)
 #----------------------------------------------------------------------------------------
+
 dfcores = dfgrafico.groupby(["Status", "Ano","Mês"])["Valor"].sum().reset_index()
 
 
