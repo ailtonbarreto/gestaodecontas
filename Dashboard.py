@@ -144,6 +144,9 @@ dfgrafico = dfgrafico.groupby(["CATEGORIA", "Ano","Mês"])["Valor"].sum().reset_
 dfgrafico = dfgrafico.query('Ano == @filtro_ano & Mês == @filtro_mes')
 
 dfgrafico = dfgrafico.sort_values(by="Valor",ascending=True)
+#----------------------------------------------------------------------------------------
+dfcores = dfgrafico.groupby(["Status", "Ano","Mês"])["Valor"].sum().reset_index()
+
 
 #----------------------------------------------------------------------------------------
 #Gráficos
@@ -192,7 +195,7 @@ with col9:
     st.plotly_chart(grafico_colunas,use_container_width=True)
     st.divider()
 
-st.table(dfgrafico)
+st.table(dfcores)
 #------------------------------------------------------------------------------------------
 #Esconder streamlit menus
 
