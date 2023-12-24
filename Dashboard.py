@@ -166,8 +166,7 @@ grafico_colunas.update_yaxes(showgrid=False)
 grafico_colunas.update_traces(showlegend=False)
 
 grafico_barras = px.bar(dfgrafico,x="Valor",y="CATEGORIA",orientation="h",
-        title=f"Despesas de {filtro_mes} de {filtro_ano}",
-        color="Status")
+        title=f"Despesas de {filtro_mes} de {filtro_ano}")
 
 #----------------------------------------------------------------------------------------
 #Layout gráficos
