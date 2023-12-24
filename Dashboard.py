@@ -170,8 +170,7 @@ grafico_colunas.update_yaxes(showgrid=False)
 grafico_colunas.update_traces(showlegend=False)
 
 grafico_barras = px.bar(dfgraficobarras,x="Valor",y="CATEGORIA",orientation="h",
-        title=f"Despesas de {filtro_mes} de {filtro_ano}",
-        color_continuous_scale='#941b0c')
+        title=f"Despesas de {filtro_mes} de {filtro_ano}")
 
 #----------------------------------------------------------------------------------------
 #Layout gráficos
