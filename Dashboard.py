@@ -145,7 +145,9 @@ dfgraficobarras = dfgrafico.query('Ano == @filtro_ano & Mês == @filtro_mes')
 
 dfgraficobarras = dfgraficobarras.sort_values(by="Valor",ascending=True)
 #----------------------------------------------------------------------------------------
-
+dfcores = pd.read_excel('Gestão de contas.xlsx',sheet_name="A Pagar")
+dfcores['Ano'] = dfcores['Data Emissão'].dt.year
+dfcores['Mês'] = dfcores['Data Emissão'].dt.month
 dfcores = dfgrafico.groupby(["Status", "Ano","Mês"])["Valor"].sum().reset_index()
 
 
