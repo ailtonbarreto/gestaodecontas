@@ -143,7 +143,7 @@ dfgrafico = dfgrafico.groupby(["CATEGORIA", "Ano","Mês","Status"])["Valor"].sum
 
 dfgrafico = dfgrafico.query('Ano == @filtro_ano & Mês == @filtro_mes')
 
-dfgrafico = dfgrafico.sort_values(by="Valor",ascending=True).reset_index()
+dfgrafico = dfgrafico.sort_values(by="Valor",ascending=True)
 
 #----------------------------------------------------------------------------------------
 #Gráficos
