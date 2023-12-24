@@ -141,9 +141,9 @@ dfgrafico['Mês'] = dfgrafico['Data Emissão'].dt.month
 dfgrafico["Mês"] = dfgrafico["Mês"].apply(determinar_mês)
 dfgrafico = dfgrafico.groupby(["CATEGORIA", "Ano","Mês"])["Valor"].sum().reset_index()
 
-dfgraficobarras = dfgrafico.query('Ano == @filtro_ano & Mês == @filtro_mes')
+dfgrafico = dfgrafico.query('Ano == @filtro_ano & Mês == @filtro_mes')
 
-dfgraficobarras = dfgraficobarras.sort_values(by="Valor",ascending=True)
+dfgrafico = dfgrafico.sort_values(by="Valor",ascending=True)
 #----------------------------------------------------------------------------------------
 dfcores = pd.read_excel('Gestão de contas.xlsx',sheet_name="A Pagar")
 dfcores['Ano'] = dfcores['Data Emissão'].dt.year
@@ -171,7 +171,7 @@ grafico_colunas = px.bar(df_filtrado3,x="Mês",y="Valor",color="Tipo",
 grafico_colunas.update_yaxes(showgrid=False)
 grafico_colunas.update_traces(showlegend=False)
 
-grafico_barras = px.bar(dfgraficobarras,x="Valor",y="CATEGORIA",orientation="h",
+grafico_barras = px.bar(dfgrafico,x="Valor",y="CATEGORIA",orientation="h",
         title=f"Despesas de {filtro_mes} de {filtro_ano}")
 
 #----------------------------------------------------------------------------------------
