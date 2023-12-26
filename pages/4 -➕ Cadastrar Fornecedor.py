@@ -7,7 +7,7 @@ from gspread import Worksheet
 
 
 
-st.set_page_config(layout="wide",page_title="Cadastrar Fornecedor",initial_sidebar_state='collapsed',page_icon='✅')
+st.set_page_config(layout="wide",page_title="Cadastrar Fornecedor",initial_sidebar_state='collapsed',page_icon='📊')
 
 #----------------------------------------------------------------------------------------------------------------------------
 #Tratamento e carregamento
