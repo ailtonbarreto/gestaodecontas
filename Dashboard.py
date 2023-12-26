@@ -134,7 +134,7 @@ df_filtrado3 = df_filtrado3.groupby(["Tipo","Mês"])["Valor"].sum().reset_index(
 df_filtrado3['Ordem_Mês'] = df_filtrado3['Mês'].map(classificar_meses)
 df_filtrado3 = df_filtrado3.sort_values(by='Ordem_Mês',ascending = True).drop(columns=['Ordem_Mês'])
 
-df_filtrado4 = df.query('Ano == @filtro_ano & Tipo == "ENTRADA" & Mês == @filtro_mes')
+df_filtrado4 = df.query('Ano == @filtro_ano & Mês == @filtro_mes & Tipo == "ENTRADA"')
 
 #----------------------------------------------------------------------------------------
 #Gráficos
@@ -195,10 +195,10 @@ with col9:
     st.divider()
 with col11:
     st.write("Entradas")
-    st.table(dfentrada)
+    st.table(df_filtrado4)
 with col12:
     st.write("Saídas")
-    st.table(dfsaida)
+    st.table(df_filtrado2)
 #------------------------------------------------------------------------------------------
 
 # dfgrafico["Valor"] = dfgrafico["Valor"].apply(lambda x: f'R$ {x:,.2f}') 
