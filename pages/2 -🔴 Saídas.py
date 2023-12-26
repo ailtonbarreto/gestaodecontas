@@ -8,7 +8,7 @@ from gspread import Worksheet
 #----------------------------------------------------------------------------------------
 #exibição de dados
 
-st.set_page_config(layout="wide",page_title="Adicionar Saída",initial_sidebar_state='collapsed',page_icon='✅')
+st.set_page_config(layout="wide",page_title="Adicionar Saída",initial_sidebar_state='collapsed',page_icon='📊')
 
 
 tab1, tab2, tab3 = st.tabs(["Adicionar Saída","Excluir Saída","Editar Status de Saída"])
