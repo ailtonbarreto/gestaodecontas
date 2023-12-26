@@ -10,7 +10,7 @@ from gspread import Worksheet
 #----------------------------------------------------------------------------------------
 #exibição de dados
 
-st.set_page_config(layout="wide",page_title="Adicionar Entrada",initial_sidebar_state='collapsed',page_icon='✅')
+st.set_page_config(layout="wide",page_title="Adicionar Entrada",initial_sidebar_state='collapsed',page_icon='📊')
 
 
 tab1, tab2, tab3 = st.tabs(['Adicionar Entrada','Excluir Entrada','Editar uma Entrada'])
