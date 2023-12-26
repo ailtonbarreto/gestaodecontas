@@ -121,6 +121,13 @@ with col6:
      filtro_mes = st.selectbox("Mês", df["Mês"].unique()) 
 
 #----------------------------------------------------------------------------------------
+#Tabelas
+tabelaen= df.query('Ano == @filtro_ano & Mês == @filtro_mes & Tipo == ENTRADA')
+tabelasa= df.query('Ano == @filtro_ano & Mês == @filtro_mes & Tipo == SAÍDA')
+
+
+
+#----------------------------------------------------------------------------------------
 #Dataframes filtrados
 
 df_filtrado1 = df.loc[(df["Ano"] == filtro_ano) & (df["Mês"] == filtro_mes)]
@@ -195,10 +202,10 @@ with col9:
     st.divider()
 with col11:
     st.write("Entradas")
-    st.table(df_filtrado4)
+    st.table(tabelaen)
 with col12:
     st.write("Saídas")
-    st.table(df_filtrado2)
+    st.table(tabelasa)
 #------------------------------------------------------------------------------------------
 
 # dfgrafico["Valor"] = dfgrafico["Valor"].apply(lambda x: f'R$ {x:,.2f}') 
