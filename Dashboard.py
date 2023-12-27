@@ -125,99 +125,99 @@ with col6:
 tabelaen= df.query('Ano == @filtro_ano & Mês == @filtro_mes & Tipo == ENTRADA')
 tabelasa= df.query('Ano == @filtro_ano & Mês == @filtro_mes & Tipo == SAÍDA')
 
+st.table(tabelaen)
+
+# #----------------------------------------------------------------------------------------
+# #Dataframes filtrados
+
+# df_filtrado1 = df.loc[(df["Ano"] == filtro_ano) & (df["Mês"] == filtro_mes)]
+
+# df_filtrado2 = df.loc[(df["Ano"] == filtro_ano) & (df["Tipo"] == "SAÍDA") & (df["Mês"] == filtro_mes)]
+# df_filtrado2 = df_filtrado2.groupby(['Tipo','Mês'])['Valor'].sum().reset_index()
+# df_filtrado2 = df_filtrado2.sort_values('Valor')
+
+# df_filtrado3 = df.loc[(df["Ano"] == filtro_ano)]
+# df_filtrado3 = df_filtrado3.groupby(["Tipo","Mês"])["Valor"].sum().reset_index()
+# df_filtrado3['Ordem_Mês'] = df_filtrado3['Mês'].map(classificar_meses)
+# df_filtrado3 = df_filtrado3.sort_values(by='Ordem_Mês',ascending = True).drop(columns=['Ordem_Mês'])
+
+# df_filtrado4 = df.query('Ano == @filtro_ano & Mês == @filtro_mes & Tipo == "ENTRADA"')
+
+# #----------------------------------------------------------------------------------------
+# #Gráficos
+
+# grafico_Rosca = px.pie(df_filtrado1,names="Tipo",color='Tipo',category_orders={'Tipo':['SAÍDA','ENTRADA']},
+#         values="Valor",color_discrete_sequence=["#941b0c","#06d6a0"],title='Entradas VS Saídas')
+# grafico_Rosca.update_traces(showlegend=False)
 
 
-#----------------------------------------------------------------------------------------
-#Dataframes filtrados
+# grafico_colunas = px.bar(df_filtrado3,x="Mês",y="Valor",color="Tipo",
+#         barmode="group",title=f'Entradas e Saídas de {filtro_ano}',category_orders={'Tipo':['SAÍDA','ENTRADA']},
+#         color_discrete_sequence=["#941b0c","#06d6a0"])
+# grafico_colunas.update_yaxes(showgrid=False)
+# grafico_colunas.update_traces(showlegend=False)
+# #----------------------------------------------------------------------------------------
 
-df_filtrado1 = df.loc[(df["Ano"] == filtro_ano) & (df["Mês"] == filtro_mes)]
+# gc = sg.service_account("gestao.json")
+# url = 'https://docs.google.com/spreadsheets/d/1HcISrCFCKWOtF6O_RonxH_RVdg2jFBly2KQryc_cZcY/edit?usp=sharing'
+# sheet = gc.open_by_url(url)
+# dfgrafico = sh.get_worksheet(1)
+# dfgrafico = ws.get_all_values()
+# dfgrafico = pd.DataFrame(planilha[1:], columns=planilha[0])
 
-df_filtrado2 = df.loc[(df["Ano"] == filtro_ano) & (df["Tipo"] == "SAÍDA") & (df["Mês"] == filtro_mes)]
-df_filtrado2 = df_filtrado2.groupby(['Tipo','Mês'])['Valor'].sum().reset_index()
-df_filtrado2 = df_filtrado2.sort_values('Valor')
+# dfgrafico['Data'] = pd.to_datetime(dfgrafico["Data Emissão"])
+# dfgrafico['Ano'] = dfgrafico['Data'].dt.year
+# dfgrafico['Mês'] = dfgrafico['Data'].dt.month
+# dfgrafico["Mês"] = dfgrafico["Mês"].apply(determinar_mês)
+# dfgrafico = dfgrafico.drop(columns=["Data Emissão","Data"])
+# dfgrafico['Valor'] = dfgrafico['Valor'].astype(str)
+# dfgrafico['Valor'] = dfgrafico['Valor'].str.replace('.', '').str.replace(',', '.').astype(float)
+# dfgrafico = dfgrafico.groupby(["CATEGORIA", "Ano","Mês"])["Valor"].sum().reset_index()
+# dfgrafico = dfgrafico.query('Ano == @filtro_ano & Mês == @filtro_mes')
+# dfgrafico = dfgrafico.sort_values(by="Valor",ascending=True)
 
-df_filtrado3 = df.loc[(df["Ano"] == filtro_ano)]
-df_filtrado3 = df_filtrado3.groupby(["Tipo","Mês"])["Valor"].sum().reset_index()
-df_filtrado3['Ordem_Mês'] = df_filtrado3['Mês'].map(classificar_meses)
-df_filtrado3 = df_filtrado3.sort_values(by='Ordem_Mês',ascending = True).drop(columns=['Ordem_Mês'])
+# grafico_barras = px.bar(dfgrafico,x="Valor",y="CATEGORIA",
+#         orientation="h",
+#         title=f"Despesas de {filtro_mes} de {filtro_ano}",
+#         color_discrete_sequence=["#0081a7"])
 
-df_filtrado4 = df.query('Ano == @filtro_ano & Mês == @filtro_mes & Tipo == "ENTRADA"')
+# #----------------------------------------------------------------------------------------
+# #Layout gráficos
 
-#----------------------------------------------------------------------------------------
-#Gráficos
+# with col2:
+#     st.metric("Entradas",f'R$ {round(df_filtrado4["Valor"].sum(),2):,.2f}')
+# with col3:
+#     st.metric("Saídas",f'R$ {round(df_filtrado2["Valor"].sum(),2):,.2f}')
+# with col4:
+#     st.metric("Saldo do Mês",f'R$ {round(df_filtrado4["Valor"].sum()-df_filtrado2["Valor"].sum(),2):,.2f}')
+# with col7:
+#     st.divider()
+#     st.plotly_chart(grafico_Rosca,use_container_width=True) 
+# with col8:
+#     st.divider()
+#     st.plotly_chart(grafico_barras,use_container_width=True)
+# with col9:
+#     st.divider()
+#     st.plotly_chart(grafico_colunas,use_container_width=True)
+#     st.divider()
+# with col11:
+#     st.write("Entradas")
+#     st.table(tabelaen)
+# with col12:
+#     st.write("Saídas")
+#     st.table(tabelasa)
+# #------------------------------------------------------------------------------------------
 
-grafico_Rosca = px.pie(df_filtrado1,names="Tipo",color='Tipo',category_orders={'Tipo':['SAÍDA','ENTRADA']},
-        values="Valor",color_discrete_sequence=["#941b0c","#06d6a0"],title='Entradas VS Saídas')
-grafico_Rosca.update_traces(showlegend=False)
+# # dfgrafico["Valor"] = dfgrafico["Valor"].apply(lambda x: f'R$ {x:,.2f}') 
 
+# #------------------------------------------------------------------------------------------
+# #Esconder streamlit menus
 
-grafico_colunas = px.bar(df_filtrado3,x="Mês",y="Valor",color="Tipo",
-        barmode="group",title=f'Entradas e Saídas de {filtro_ano}',category_orders={'Tipo':['SAÍDA','ENTRADA']},
-        color_discrete_sequence=["#941b0c","#06d6a0"])
-grafico_colunas.update_yaxes(showgrid=False)
-grafico_colunas.update_traces(showlegend=False)
-#----------------------------------------------------------------------------------------
-
-gc = sg.service_account("gestao.json")
-url = 'https://docs.google.com/spreadsheets/d/1HcISrCFCKWOtF6O_RonxH_RVdg2jFBly2KQryc_cZcY/edit?usp=sharing'
-sheet = gc.open_by_url(url)
-dfgrafico = sh.get_worksheet(1)
-dfgrafico = ws.get_all_values()
-dfgrafico = pd.DataFrame(planilha[1:], columns=planilha[0])
-
-dfgrafico['Data'] = pd.to_datetime(dfgrafico["Data Emissão"])
-dfgrafico['Ano'] = dfgrafico['Data'].dt.year
-dfgrafico['Mês'] = dfgrafico['Data'].dt.month
-dfgrafico["Mês"] = dfgrafico["Mês"].apply(determinar_mês)
-dfgrafico = dfgrafico.drop(columns=["Data Emissão","Data"])
-dfgrafico['Valor'] = dfgrafico['Valor'].astype(str)
-dfgrafico['Valor'] = dfgrafico['Valor'].str.replace('.', '').str.replace(',', '.').astype(float)
-dfgrafico = dfgrafico.groupby(["CATEGORIA", "Ano","Mês"])["Valor"].sum().reset_index()
-dfgrafico = dfgrafico.query('Ano == @filtro_ano & Mês == @filtro_mes')
-dfgrafico = dfgrafico.sort_values(by="Valor",ascending=True)
-
-grafico_barras = px.bar(dfgrafico,x="Valor",y="CATEGORIA",
-        orientation="h",
-        title=f"Despesas de {filtro_mes} de {filtro_ano}",
-        color_discrete_sequence=["#0081a7"])
-
-#----------------------------------------------------------------------------------------
-#Layout gráficos
-
-with col2:
-    st.metric("Entradas",f'R$ {round(df_filtrado4["Valor"].sum(),2):,.2f}')
-with col3:
-    st.metric("Saídas",f'R$ {round(df_filtrado2["Valor"].sum(),2):,.2f}')
-with col4:
-    st.metric("Saldo do Mês",f'R$ {round(df_filtrado4["Valor"].sum()-df_filtrado2["Valor"].sum(),2):,.2f}')
-with col7:
-    st.divider()
-    st.plotly_chart(grafico_Rosca,use_container_width=True) 
-with col8:
-    st.divider()
-    st.plotly_chart(grafico_barras,use_container_width=True)
-with col9:
-    st.divider()
-    st.plotly_chart(grafico_colunas,use_container_width=True)
-    st.divider()
-with col11:
-    st.write("Entradas")
-    st.table(tabelaen)
-with col12:
-    st.write("Saídas")
-    st.table(tabelasa)
-#------------------------------------------------------------------------------------------
-
-# dfgrafico["Valor"] = dfgrafico["Valor"].apply(lambda x: f'R$ {x:,.2f}') 
-
-#------------------------------------------------------------------------------------------
-#Esconder streamlit menus
-
-hide_st_style = """
-            <style>
-            #MainMenu {visibility: hidden;}
-            footer {visibility: hidden;}
-            header {visibility: hidden;}
-            </style>
-            """
-st.markdown(hide_st_style, unsafe_allow_html=True)
+# hide_st_style = """
+#             <style>
+#             #MainMenu {visibility: hidden;}
+#             footer {visibility: hidden;}
+#             header {visibility: hidden;}
+#             </style>
+#             """
+# st.markdown(hide_st_style, unsafe_allow_html=True)
