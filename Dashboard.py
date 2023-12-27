@@ -7,7 +7,6 @@ import plotly.express as px
 import gspread as sg
 
 
-
 #----------------------------------------------------------------------------------------
 #exibição de dados
 
