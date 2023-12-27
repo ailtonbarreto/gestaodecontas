@@ -168,9 +168,9 @@ dfgrafico = dfgrafico.query('Ano == @filtro_ano & Mês == @filtro_mes')
 dfgrafico = dfgrafico.sort_values(by="Valor",ascending=True)
 
 grafico_barras = px.bar(dfgrafico,x="Valor",y="CATEGORIA",
-        orientation="h",
+        orientation="h",category_orders={'Status':['PAGO','A PAGAR']},
         title=f"Despesas de {filtro_mes} de {filtro_ano}",color="Status",barmode="stack",
-        color_discrete_sequence=["#0081a7"])
+        color_discrete_sequence=["#0081a7","#ee9b00"])
 
 #----------------------------------------------------------------------------------------
 #Layout gráficos
