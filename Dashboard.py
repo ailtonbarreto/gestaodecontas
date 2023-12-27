@@ -194,7 +194,7 @@ with col9:
 #------------------------------------------------------------------------------------------
 dftabela = df[df["Tipo"] == "ENTRADA"]
 dftabela = dftabela.query('Mês == @filtro_mes & Ano == @filtro_ano')
-dftabela = dftabela.sort_values(by="Tipo")
+dftabela = dftabela.sort_values(by="Status")
 st.table(dftabela)
 # dfgrafico["Valor"] = dfgrafico["Valor"].apply(lambda x: f'R$ {x:,.2f}') 
 
