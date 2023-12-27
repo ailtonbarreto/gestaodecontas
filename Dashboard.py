@@ -193,7 +193,7 @@ with col9:
     st.divider()
 #------------------------------------------------------------------------------------------
 dftabela = df[df["Tipo"] == "ENTRADA"]
-
+dftabela = dftabela.query('Mês == @filtro_mes & Ano == @filtro_ano')
 st.table(dftabela)
 # dfgrafico["Valor"] = dfgrafico["Valor"].apply(lambda x: f'R$ {x:,.2f}') 
 
