@@ -77,9 +77,9 @@ def determinar_mês(valor):
         7: "Jul",
         8: "Ago",
         9: "Set",
-        10: "Out",
-        11: "Nov",
-        12: "Dez"
+        10:"Out",
+        11:"Nov",
+        12:"Dez"
     }
     return meses.get(valor)
 
@@ -163,7 +163,7 @@ dfgrafico["Mês"] = dfgrafico["Mês"].apply(determinar_mês)
 dfgrafico = dfgrafico.drop(columns=["Data Emissão","Data"])
 dfgrafico['Valor'] = dfgrafico['Valor'].astype(str)
 dfgrafico['Valor'] = dfgrafico['Valor'].str.replace('.', '').str.replace(',', '.').astype(float)
-dfgrafico = dfgrafico.groupby(["CATEGORIA", "Ano","Mês"])["Valor"].sum().reset_index()
+dfgrafico = dfgrafico.groupby(["CATEGORIA", "Ano","Mês","Status"])["Valor"].sum().reset_index()
 dfgrafico = dfgrafico.query('Ano == @filtro_ano & Mês == @filtro_mes')
 dfgrafico = dfgrafico.sort_values(by="Valor",ascending=True)
 
