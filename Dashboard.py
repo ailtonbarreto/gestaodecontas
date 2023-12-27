@@ -17,7 +17,6 @@ st.set_page_config(layout="wide",initial_sidebar_state='collapsed',page_icon='�
 col1,col2,col3,col4,col5,col6 = st.columns([3,2,2,2,1,1])
 col7,col8 = st.columns(2)
 col9,col10 = st.columns([100,1])
-col11,col12 = st.columns(2)
 
 #----------------------------------------------------------------------------------------
 #Dados saidas
@@ -121,11 +120,6 @@ with col6:
      filtro_mes = st.selectbox("Mês", df["Mês"].unique()) 
 
 #----------------------------------------------------------------------------------------
-#Tabelas
-tabelaen= df.query('Ano == @filtro_ano & Mês == @filtro_mes & Tipo == "ENTRADA"')
-tabelasa= df.query('Ano == @filtro_ano & Mês == @filtro_mes & Tipo == "SAÍDA"')
-
-#----------------------------------------------------------------------------------------
 #Dataframes filtrados
 
 df_filtrado1 = df.loc[(df["Ano"] == filtro_ano) & (df["Mês"] == filtro_mes)]
@@ -198,12 +192,6 @@ with col9:
     st.divider()
     st.plotly_chart(grafico_colunas,use_container_width=True)
     st.divider()
-with col11:
-    st.write("Entradas")
-    st.table(tabelaen)
-with col12:
-    st.write("Saídas")
-    st.table(tabelasa)
 #------------------------------------------------------------------------------------------
 
 # dfgrafico["Valor"] = dfgrafico["Valor"].apply(lambda x: f'R$ {x:,.2f}') 
