@@ -122,10 +122,10 @@ with col6:
 
 #----------------------------------------------------------------------------------------
 #Tabelas
-tabelaen= df.query('Ano == @filtro_ano & Mês == @filtro_mes & Tipo == ENTRADA')
-tabelasa= df.query('Ano == @filtro_ano & Mês == @filtro_mes & Tipo == SAÍDA')
+# tabelaen= df.query('Ano == @filtro_ano & Mês == @filtro_mes & Tipo == ENTRADA')
+# tabelasa= df.query('Ano == @filtro_ano & Mês == @filtro_mes & Tipo == SAÍDA')
 
-st.table(tabelaen)
+st.table(df)
 
 # #----------------------------------------------------------------------------------------
 # #Dataframes filtrados
