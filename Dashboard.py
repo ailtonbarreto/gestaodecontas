@@ -169,7 +169,7 @@ dfgrafico = dfgrafico.sort_values(by="Valor",ascending=True)
 
 grafico_barras = px.bar(dfgrafico,x="Valor",y="CATEGORIA",
         orientation="h",
-        title=f"Despesas de {filtro_mes} de {filtro_ano}",barmode="group",
+        title=f"Despesas de {filtro_mes} de {filtro_ano}",barmode="stack",
         color_discrete_sequence=["#0081a7"])
 
 #----------------------------------------------------------------------------------------
