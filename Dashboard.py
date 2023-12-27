@@ -192,7 +192,8 @@ with col9:
     st.plotly_chart(grafico_colunas,use_container_width=True)
     st.divider()
 #------------------------------------------------------------------------------------------
-dftabela = df[df["Tipo"=="ENTRADA"]]
+dftabela = df[df["Tipo"] == "ENTRADA"]
+
 st.table(dftabela)
 # dfgrafico["Valor"] = dfgrafico["Valor"].apply(lambda x: f'R$ {x:,.2f}') 
 
