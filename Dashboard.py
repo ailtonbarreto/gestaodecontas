@@ -106,7 +106,7 @@ classificar_meses ={
 df["Mês"] = df["Mês"].apply(determinar_mês)
 df = df.drop(columns=["Data Emissão"])
 df['Ordem_Mês'] = df['Mês'].map(classificar_meses)
-df = df.sort_values(by='Ordem_Mês',ascending = True).drop(columns=['Ordem_Mês'])
+df = df.sort_values(by='Ordem_Mês',ascending = True).drop(columns=['Ordem_Mês',"Data"])
 
 #----------------------------------------------------------------------------------------
 #Filtros/Layout
