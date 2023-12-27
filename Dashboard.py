@@ -34,7 +34,7 @@ dfsaida.sort_values("Data", inplace=True)
 dfsaida["Ano"] = dfsaida["Ano"].astype(int)
 dfsaida["Mês"] = dfsaida["Mês"].astype(int)
 dfsaida['Valor'] = dfsaida['Valor'].str.replace('.', '').str.replace(',', '.').astype(float)
-dfsaida = pd.DataFrame(dfsaida).drop(columns=["Fornecedor","CATEGORIA","Status"])
+dfsaida = pd.DataFrame(dfsaida).drop(columns=["Fornecedor","CATEGORIA"])
 
 
 #----------------------------------------------------------------------------------------
@@ -44,7 +44,7 @@ ws1 = sh.get_worksheet(0)
 planilha1 = ws1.get_all_values()
 dfentrada = pd.DataFrame(planilha1[1:], columns=planilha1[0])
 dfentrada['Data'] = pd.to_datetime(dfentrada["Data Vencimento"])
-dfentrada = pd.DataFrame(dfentrada).drop(columns=["Cliente","Nota Fiscal","Data Vencimento","Status"])
+dfentrada = pd.DataFrame(dfentrada).drop(columns=["Cliente","Nota Fiscal","Data Vencimento"])
 dfentrada["Ano"] = dfentrada["Data"].dt.year
 dfentrada["Mês"] = dfentrada["Data"].dt.month
 dfentrada.sort_values("Data", inplace=True)
