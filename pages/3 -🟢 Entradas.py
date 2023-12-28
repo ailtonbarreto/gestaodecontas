@@ -62,6 +62,7 @@ df = df.drop(columns=["Data Emissão"])
 with tab1:
 
     st.title("🟢 Adicionar Entrada",anchor=False)
+    sh = gc.open_by_url(url)
     dfselect = sh.get_worksheet(3)
     dfselect = ws.get_all_values()
     dfselect = pd.DataFrame(dfselect[1:], columns=dfselect[0])
