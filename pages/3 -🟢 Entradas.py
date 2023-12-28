@@ -154,7 +154,7 @@ with tab3:
 with tab4:
     filtro_entrada = st.selectbox("Escolha um mês",df["Mês"].unique())
     entrada_ano = st.selectbox('Escolha um ano',df["Ano"].unique())
-    aberto = df.query('Mês == @filtro_entrada & Ano == @entrada_ano')
+    aberto = df.query('Mês == @filtro_entrada & Ano == @entrada_ano & Status == "A RECEBER"')
     st.table(aberto)
 
 #------------------------------------------------------------------------------------------
