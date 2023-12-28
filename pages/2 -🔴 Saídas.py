@@ -11,7 +11,7 @@ from gspread import Worksheet
 st.set_page_config(layout="wide",page_title="Adicionar Saída",initial_sidebar_state='collapsed',page_icon='📊')
 
 
-tab1, tab2, tab3 = st.tabs(["Adicionar Saída","Excluir Saída","Editar Status de Saída"])
+tab1, tab2, tab3, tab4 = st.tabs(["Adicionar Saída","Excluir Saída","Editar Status de Saída","Títulos em aberto"])
 
 
 # ----------------------------------------------------------------------------------------
@@ -173,6 +173,15 @@ with tab3:
 
     df["Valor"] = df["Valor"].apply(lambda x: f'R$ {x:.2f}')
     st.table(dfeditar)
+#------------------------------------------------------------------------------------------
+#Saídas em aberto
+ 
+with tab4:
+    filtro_entrada = st.selectbox("Escolha um mês",df["Mês"].unique())
+    entrada_ano = st.selectbox('Escolha um ano',df["Ano"].unique())
+    aberto = df.query('Mês == @filtro_entrada & Ano == @entrada_ano & Status == "A PAGAR"')
+    aberto = aberto.drop(columns=["Data","Ano","Mês","Tipo"])
+    st.table(aberto)
 
 #------------------------------------------------------------------------------------------
 #Esconder streamlit menus

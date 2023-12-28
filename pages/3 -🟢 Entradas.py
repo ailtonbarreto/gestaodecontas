@@ -150,7 +150,7 @@ with tab3:
     st.table(dfeditarentrada)
     
 #------------------------------------------------------------------------------------------   
-    
+#Entradas em aberto
 with tab4:
     filtro_entrada = st.selectbox("Escolha um mês",df["Mês"].unique())
     entrada_ano = st.selectbox('Escolha um ano',df["Ano"].unique())
