@@ -79,7 +79,6 @@ with tab1:
     entrada_status = st.selectbox("Status",["A RECEBER","RECEBIDO"])
 
     if st.button("ADICIONAR"):
-    # Abrir o arquivo do Excel
         ws: Worksheet = sh.get_worksheet(0)
         entrada_dataemissao = entrada_dataemissao.strftime("%Y-%m-%d")
         entrada_datavencimento = entrada_datavencimento.strftime("%Y-%m-%d")
