@@ -11,7 +11,7 @@ from gspread import Worksheet
 st.set_page_config(layout="wide",page_title="Adicionar Saída",initial_sidebar_state='collapsed',page_icon='📊')
 
 
-tab1, tab2, tab3, tab4 = st.tabs(["Adicionar Saída","Excluir Saída","Editar Status de Saída","Pagamentos em aberto"])
+tab1, tab2, tab3, tab4 = st.tabs(["Adicionar Saída","Excluir Saída","Editar Status de Saída","Pagamentos em Aberto"])
 
 
 # ----------------------------------------------------------------------------------------
