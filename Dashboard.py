@@ -191,14 +191,6 @@ with col9:
     st.divider()
     st.plotly_chart(grafico_colunas,use_container_width=True)
     st.divider()
-#------------------------------------------------------------------------------------------
-dftabela = df[df["Tipo"] == "ENTRADA"]
-dftabela = dftabela.query('Mês == @filtro_mes & Ano == @filtro_ano')
-dftabela = dftabela.sort_values(by="Status")
-dftabela["Valor"] = dftabela["Valor"].apply(lambda x: f'R$ {x:,.2f}')
-st.write(f"Entrada de {filtro_mes} de {filtro_ano}")
-st.table(dftabela)
- 
 
 #------------------------------------------------------------------------------------------
 #Esconder streamlit menus
