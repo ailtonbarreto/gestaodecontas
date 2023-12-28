@@ -177,7 +177,7 @@ with tab3:
 #Saídas em aberto
  
 with tab4:
-    st.title("🔴 Pagamentos em aberto",anchor=False)
+    st.title("🔴 Pagamentos em Aberto",anchor=False)
     filtro_entrada = st.selectbox("Escolha um mês",df["Mês"].unique())
     entrada_ano = st.selectbox('Escolha um ano',df["Ano"].unique())
     aberto = df.query('Mês == @filtro_entrada & Ano == @entrada_ano & Status == "A PAGAR"')
