@@ -90,7 +90,7 @@ with tab1:
         ws.append_row(nova_linha)
            
         st.success("Movimentação salva!")
-    st.table(dfselect)
+    
 
 #----------------------------------------------------------------------------------------
 # Excluir Entrada
