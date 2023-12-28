@@ -151,7 +151,8 @@ with tab3:
 with tab4:
     filtro_entrada = st.selectbox("Escolha um mês",dfeditarentrada["Mês"].unique())
     entrada_ano = st.selectbox('Escolha um ano',dfeditarentrada["Ano"].unique())
-    dfeditarentrada.query('Mês == @filtro_entrada')
+    dfeditarentrada = dfeditarentrada.query('Mês == @filtro_entrada & Ano == @entrada_ano')
+    st.table(dfeditarentrada)
 
 #------------------------------------------------------------------------------------------
 #Esconder streamlit menus
