@@ -11,7 +11,7 @@ from gspread import Worksheet
 st.set_page_config(layout="wide",page_title="Adicionar Saída",initial_sidebar_state='collapsed',page_icon='📊')
 
 
-tab1, tab2, tab3, tab4 = st.tabs(["Adicionar Saída","Excluir Saída","Editar Status de Saída","Títulos em aberto"])
+tab1, tab2, tab3, tab4 = st.tabs(["Adicionar Saída","Excluir Saída","Editar Status de Saída","Pagamentos em aberto"])
 
 
 # ----------------------------------------------------------------------------------------
@@ -177,6 +177,7 @@ with tab3:
 #Saídas em aberto
  
 with tab4:
+    st.title("🔴 Pagamentos em aberto",anchor=False)
     filtro_entrada = st.selectbox("Escolha um mês",df["Mês"].unique())
     entrada_ano = st.selectbox('Escolha um ano',df["Ano"].unique())
     aberto = df.query('Mês == @filtro_entrada & Ano == @entrada_ano & Status == "A PAGAR"')
