@@ -127,7 +127,7 @@ with tab3:
     filtro_m = st.selectbox('Mês da Movimentação',dfeditarentrada["Mês"].unique())
     filtro_c = st.selectbox('Buscar Cliente',dfeditarentrada["Cliente"].unique())
     filtro_index = st.number_input("Linha a Editar",format="%.0f")
-    editar_status = st.selectbox('Novo Status',["A RECEBER","RECIBIDO"])
+    editar_status = st.selectbox('Novo Status',["A RECEBER","RECEBIDO"])
     
     dfeditarentrada = df.query('Ano == @filtro_y & Mês == @filtro_m & Cliente == @filtro_c')
 
