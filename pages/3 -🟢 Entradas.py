@@ -64,7 +64,7 @@ with tab1:
     st.title("🟢 Adicionar Entrada",anchor=False)
     planilhaclientes = gc.open_by_url(url)
     dfselect = planilhaclientes.get_worksheet(3)
-    dfselect = ws.get_all_values()
+    dfselect = dfselect.get_all_values()
     dfselect = pd.DataFrame(dfselect[1:], columns=dfselect[0])
     
     entrada_cliente = st.selectbox("Clientes",dfselect['Cliente'].unique())
