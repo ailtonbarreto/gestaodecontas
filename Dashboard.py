@@ -14,13 +14,6 @@ st.set_page_config(layout="wide",initial_sidebar_state='collapsed',page_icon='ðŸ
 
 
 #----------------------------------------------------------------------------------------
-#botÃ£o na barra lateral
-if st.sidebar.button("Ver Planilha"):
-    st.sidebar.markdown("(https://docs.google.com/spreadsheets/d/1HcISrCFCKWOtF6O_RonxH_RVdg2jFBly2KQryc_cZcY/edit?usp=sharing)")
-
-
-
-#----------------------------------------------------------------------------------------
 #Layout em duas colunas
 col1,col2,col3,col4,col5,col6 = st.columns([3,2,2,2,1,1])
 col7,col8 = st.columns(2)
