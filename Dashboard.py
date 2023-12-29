@@ -36,7 +36,6 @@ dfsaida["Mês"] = dfsaida["Mês"].astype(int)
 dfsaida['Valor'] = dfsaida['Valor'].str.replace('.', '').str.replace(',', '.').astype(float)
 dfsaida = pd.DataFrame(dfsaida).drop(columns=["Fornecedor","CATEGORIA"])
 
-
 #----------------------------------------------------------------------------------------
 #Dados entradas
 
@@ -53,15 +52,12 @@ dfentrada["Mês"] = dfentrada["Mês"].astype(int)
 dfentrada['Valor'] = dfentrada['Valor'].astype(str)
 dfentrada['Valor'] = dfentrada['Valor'].str.replace('.', '').str.replace(',', '.').astype(float)
 
-
 #----------------------------------------------------------------------------------------
 #dataframes concatenados para analise de entradas e saídas
 
 df = pd.concat([dfsaida,dfentrada]).reset_index(drop=True)
-
 df["Ano"] = pd.to_datetime(df['Data']).dt.year
 df["Mês"] = pd.to_datetime(df['Data']).dt.month
-
 
 #----------------------------------------------------------------------------------------
 #funcão para classificar meses
