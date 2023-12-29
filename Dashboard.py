@@ -11,7 +11,15 @@ import gspread as sg
 #exibição de dados
 
 st.set_page_config(layout="wide",initial_sidebar_state='collapsed',page_icon='📊')
-st.sidebar.button("Ver Planilha","https://docs.google.com/spreadsheets/d/1HcISrCFCKWOtF6O_RonxH_RVdg2jFBly2KQryc_cZcY/edit?usp=sharing")
+
+
+#----------------------------------------------------------------------------------------
+#botão na barra lateral
+if st.sidebar.button("Ver Planilha"):
+    st.sidebar.markdown("[Link para a Planilha](https://docs.google.com/spreadsheets/d/1HcISrCFCKWOtF6O_RonxH_RVdg2jFBly2KQryc_cZcY/edit?usp=sharing)")
+
+
+
 #----------------------------------------------------------------------------------------
 #Layout em duas colunas
 col1,col2,col3,col4,col5,col6 = st.columns([3,2,2,2,1,1])
