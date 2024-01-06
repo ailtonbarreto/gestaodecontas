@@ -11,7 +11,7 @@ import gspread as sg
 #exibição de dados
 
 st.set_page_config(layout="wide",initial_sidebar_state='collapsed',page_icon='📊')
-
+st.sidebar.link_button("Ver Planilha","https://docs.google.com/spreadsheets/d/1HcISrCFCKWOtF6O_RonxH_RVdg2jFBly2KQryc_cZcY/edit?usp=sharing")
 
 #----------------------------------------------------------------------------------------
 #Layout em duas colunas
