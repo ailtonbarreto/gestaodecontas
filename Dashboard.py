@@ -103,6 +103,7 @@ df["Mês"] = df["Mês"].apply(determinar_mês)
 df = df.drop(columns=["Data Emissão"])
 df['Ordem_Mês'] = df['Mês'].map(classificar_meses)
 df = df.sort_values(by='Ordem_Mês',ascending = True).drop(columns=['Ordem_Mês',"Data"])
+df = df.sort_values("Ano",ascending=True)
 
 #----------------------------------------------------------------------------------------
 #Filtros/Layout
@@ -111,7 +112,7 @@ with col1:
     st.title("Gestão à Vista",anchor=False)
    
 with col5:
-    df.sort_values("Ano",ascending=True)
+    
     filtro_ano = st.selectbox("Ano", df["Ano"].unique())  
     
 with col6:
