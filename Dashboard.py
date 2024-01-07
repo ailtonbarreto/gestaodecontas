@@ -80,6 +80,11 @@ def determinar_mês(valor):
         12:"Dez"
     }
     return meses.get(valor)
+#----------------------------------------------------------------------------------------
+#Meses
+
+meses = ['Jan','Fev','Mar','Abr','Mai','Jun','Jul','Ago','Set','Out','Nov','Dez']
+
 
 #----------------------------------------------------------------------------------------
 #dicionário para classificar meses
@@ -116,7 +121,7 @@ with col5:
     filtro_ano = st.selectbox("Ano", df["Ano"].unique())  
     
 with col6:
-     filtro_mes = st.selectbox("Mês", df["Mês"].unique()) 
+     filtro_mes = st.selectbox("Mês", meses) 
 
 #----------------------------------------------------------------------------------------
 #Dataframes filtrados
