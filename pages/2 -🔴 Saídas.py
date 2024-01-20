@@ -162,7 +162,7 @@ dfeditar = df.query('Ano == @filtro_y & Mês == @filtro_m & Fornecedor == @filtr
 #----------------------------------------------------------------------------------------
 #Editar
 
-linha3 = dfeditar.index.max() + 2
+linha3 = filtro_index.index.max() + 2
 
 coluna = 5
 with tab3:
