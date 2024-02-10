@@ -15,9 +15,13 @@ st.sidebar.link_button("Ver Planilha","https://docs.google.com/spreadsheets/d/1H
 
 #----------------------------------------------------------------------------------------
 #Layout em duas colunas
+container = st.container()
 col1,col2,col3,col4,col5,col6 = st.columns([3,2,2,2,1,1])
 col7,col8 = st.columns(2)
 col9,col10 = st.columns([100,1])
+
+with container:
+    st.image("cabeçalho.png",use_column_width=True)    
 
 #----------------------------------------------------------------------------------------
 #Dados saidas
