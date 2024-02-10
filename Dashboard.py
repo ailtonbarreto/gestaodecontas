@@ -21,7 +21,8 @@ col7,col8 = st.columns(2)
 col9,col10 = st.columns([100,1])
 
 with container:
-    st.image("cabeçalho.png",use_column_width=True)    
+    st.image("cabeçalho.png",use_column_width=True)
+    st.divider()  
 
 #----------------------------------------------------------------------------------------
 #Dados saidas
