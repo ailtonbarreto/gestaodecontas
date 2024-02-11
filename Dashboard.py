@@ -119,7 +119,7 @@ with col1:
     st.title("Gestão à Vista",anchor=False)
    
 with col5:
-    filtro_ano = st.selectbox("Ano", df["Ano"].unique(),placeholder=2023)  
+    filtro_ano = st.selectbox("Ano", df["Ano"].unique(),placeholder="2023")  
     
 with col6:
      filtro_mes = st.selectbox("Mês", meses) 
