@@ -140,7 +140,7 @@ with tab3:
     if st.button("SALVAR EDIÇÃO"):
         ws2: Worksheet = sh.get_worksheet(0)
         
-        ws2.update_cell(linhaeditada, coluna, editar_status)
+        ws2.update_cell(int(linhaeditada), coluna, editar_status)
        
     
         st.success("Edição salva!")
