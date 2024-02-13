@@ -159,16 +159,13 @@ with tab3:
 
 dfeditar = df.query('Ano == @filtro_y & Mês == @filtro_m & Fornecedor == @filtro_f')
 
-#----------------------------------------------------------------------------------------
-#Editar
-
 linha3 = filtro_index+2
 
 coluna = 5
 with tab3:
     if st.button("SALVAR EDIÇÃO"):
         ws1: Worksheet = sh.get_worksheet(1)
-        ws1.update_cell(linha3, coluna, editar_status)
+        ws1.update_cell(int(linha3), coluna, editar_status)
         st.success("Edição salva!")
 
     df["Valor"] = df["Valor"].apply(lambda x: f'R$ {x:.2f}')
