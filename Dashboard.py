@@ -131,7 +131,7 @@ with col6:
 #Dataframes filtrados
 
 df_filtrado1 = df.loc[(df["Ano"] == filtro_ano) & (df["Mês"] == filtro_mes)]
-df_filtrado1 = df_filtrado1.drop(["Ano","Mês"])
+df_filtrado1 = df_filtrado1.drop(columns=["Ano","Mês"])
 
 
 df_filtrado2 = df.loc[(df["Ano"] == filtro_ano) & (df["Tipo"] == "SAÍDA") & (df["Mês"] == filtro_mes)]
