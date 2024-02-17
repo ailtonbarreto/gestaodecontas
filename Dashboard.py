@@ -181,6 +181,7 @@ grafico_barras = px.bar(dfgrafico,x="Valor",y="CATEGORIA",
         title=f"Despesas de {filtro_mes} de {filtro_ano}",color="Status",barmode="stack",
         color_discrete_sequence=["#0aefff","#ee9b00"])
 grafico_barras.update_yaxes(showgrid=False,visible=True,title="")
+grafico_barras.update_xaxes(showgrid=False,visible=True,title="")
 #----------------------------------------------------------------------------------------
 #Layout gráficos
 
