@@ -47,9 +47,18 @@ st.table(dffornecedor)
 #Esconder streamlit menus
 
 
+hide_st_style = """
+            <style>
+            #MainMenu {visibility: hidden;}
+            footer {visibility: hidden;}
+            header {visibility: hidden;}
+            </style>
+            """
+st.markdown(hide_st_style, unsafe_allow_html=True)
+
 framegraficos = """
     <style>
-    [class="styles_stateContainer__CelYF""]
+    [data-testid="column"]
     {
     border-radius: 15px;
     background-color: #2F3035;
@@ -71,12 +80,3 @@ desativartelacheia = """
     </style>
 """
 st.markdown(desativartelacheia,unsafe_allow_html=True)
-
-hide_st_style = """
-            <style>
-            #MainMenu {visibility: hidden;}
-            footer {visibility: hidden;}
-            header {visibility: hidden;}
-            </style>
-            """
-st.markdown(hide_st_style, unsafe_allow_html=True)
