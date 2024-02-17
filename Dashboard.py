@@ -205,7 +205,7 @@ with col2:
 with col3:
     st.metric("Saídas",f'🔴 R$ {round(df_filtrado2["Valor"].sum(),2):,.2f}')
 with col4:
-    st.metric("Saldo do Mês",f'💰 R$ {round(df_filtrado4["Valor"].sum()-df_filtrado2["Valor"].sum(),2):,.2f}',delta_color=cor_saldo)
+    st.metric("Saldo do Mês",f'💰 R$ {round(df_filtrado4["Valor"].sum()-df_filtrado2["Valor"].sum(),2):,.2f}')
 with col7:
     st.plotly_chart(grafico_Rosca,use_container_width=True) 
 with col8:
