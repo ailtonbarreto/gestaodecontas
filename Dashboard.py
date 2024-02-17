@@ -207,7 +207,7 @@ framegraficos = """
     background-color: #2F3035;
     padding: 20px;
     opacity: 80%;
-    color: black;
+    color: white;
     
     }
     </style>
