@@ -202,7 +202,7 @@ with col9:
 
 borda_graficos = """
     <style>
-    [data-testid="stMarkdownContainer"]
+    [class="stPlotlyChart js-plotly-plot"]
     {
     color: white;
     border-radius: 20px;
