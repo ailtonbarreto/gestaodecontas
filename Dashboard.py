@@ -134,7 +134,7 @@ with col6:
 
 df_filtrado1 = df.loc[(df["Ano"] == filtro_ano) & (df["Mês"] == filtro_mes)]
 df_filtrado1 = df_filtrado1.drop(columns=["Ano","Mês"])
-df_filtrado1 = df_filtrado1.sort_values("Data",ascending=False)
+df_filtrado1 = df_filtrado1.sort_values("Data",ascending=True)
 
 df_filtrado2 = df.loc[(df["Ano"] == filtro_ano) & (df["Tipo"] == "SAÍDA") & (df["Mês"] == filtro_mes)]
 df_filtrado2 = df_filtrado2.groupby(['Tipo','Mês'])['Valor'].sum().reset_index()
