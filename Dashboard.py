@@ -205,6 +205,7 @@ borda_graficos = """
     [data-testid="element-container"]
     {
     background-color: white;
+    border-radius: 20px;
     }
     </style>
 """
