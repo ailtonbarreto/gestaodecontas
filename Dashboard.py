@@ -215,7 +215,10 @@ framegraficos = """
     <style>
     [data-testid="column"]
     {
-    background-color: black;
+    border-radius: 15px;
+    background-color: white;
+    border-color: white;
+    padding: 20px;
     
     }
     </style>
