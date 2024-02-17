@@ -213,7 +213,7 @@ st.markdown(borda_graficos,unsafe_allow_html=True)
 
 framegraficos = """
     <style>
-    [data-testid="stVerticalBlockBorderWrapper"]
+    [data-testid="column"]
     {
     background-color: black;
     
