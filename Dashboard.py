@@ -200,13 +200,13 @@ with col9:
     st.plotly_chart(grafico_colunas,use_container_width=True)   
 #------------------------------------------------------------------------------------------
 #Estilizacao
-
+# 2F3035
 framegraficos = """
     <style>
     [data-testid="column"]
     {
     border-radius: 15px;
-    background-color: #2F3035;
+    background-color: #white;
     padding: 20px;
     opacity: 80%;
     color: white;
