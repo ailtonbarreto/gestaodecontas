@@ -204,7 +204,7 @@ framegraficos = """
     [data-testid="column"]
     {
     border-radius: 15px;
-    background-color: black;
+    background-color: white;
     padding: 20px;
     opacity: 80%;
     
