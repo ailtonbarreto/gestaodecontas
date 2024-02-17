@@ -235,7 +235,6 @@ desativartelacheia = """
 st.markdown(desativartelacheia,unsafe_allow_html=True)
 
 
-
 detalhes = """
     <style>
     [class="modebar-container"]

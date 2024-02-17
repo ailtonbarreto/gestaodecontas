@@ -11,6 +11,9 @@ from gspread import Worksheet
 st.set_page_config(layout="wide",page_title="Adicionar Saída",initial_sidebar_state='collapsed',page_icon='📊')
 st.sidebar.link_button("Ver Planilha","https://docs.google.com/spreadsheets/d/1HcISrCFCKWOtF6O_RonxH_RVdg2jFBly2KQryc_cZcY/edit?usp=sharing")
 
+with open("style.css") as f:
+    st.markdown(f"<style>{f.read()}</style>",unsafe_allow_html = True)
+
 tab1, tab2, tab3, tab4 = st.tabs(["Adicionar Saída","Excluir Saída","Editar Status de Saída","Pagamentos em Aberto"])
 
 
