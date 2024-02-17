@@ -119,7 +119,7 @@ df = df.sort_values("Ano",ascending=False)
 #Filtros/Layout
 
 with col1:
-    st.title("Gestão à Vista",anchor=False)
+    st.title("📊 Gestão à Vista",anchor=False)
    
 with col5:
     filtro_ano = st.selectbox("Ano", df["Ano"].unique())  
