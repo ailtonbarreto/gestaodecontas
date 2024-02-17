@@ -191,9 +191,9 @@ grafico_barras.update_xaxes(showgrid=False,visible=True,title="")
 
  
 if df_filtrado4["Valor"].sum()-df_filtrado2["Valor"].sum() >= 0:
-        cor_saldo = "🟩"
+        cor_saldo = "🔼"
 else:
-    cor_saldo = "🟥"
+    cor_saldo = "🔽"
 
 icon = cor_saldo
 
