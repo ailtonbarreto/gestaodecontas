@@ -13,6 +13,9 @@ import gspread as sg
 st.set_page_config(layout="wide",initial_sidebar_state='collapsed',page_icon='📊')
 st.sidebar.link_button("Ver Planilha","https://docs.google.com/spreadsheets/d/1HcISrCFCKWOtF6O_RonxH_RVdg2jFBly2KQryc_cZcY/edit?usp=sharing")
 
+with open("style.css") as f:
+    st.markdown(f"<style>{f.read()}</style>",unsafe_allow_html = True)
+
 #----------------------------------------------------------------------------------------
 #Layout em duas colunas
 
@@ -195,13 +198,17 @@ with col9:
     st.plotly_chart(grafico_colunas,use_container_width=True)
     
 #------------------------------------------------------------------------------------------
-#Esconder streamlit menus
+#Estilizacao
 
-hide_st_style = """
-            <style>
-            #MainMenu {visibility: hidden;}
-            footer {visibility: hidden;}
-            header {visibility: hidden;}
-            </style>
-            """
-st.markdown(hide_st_style, unsafe_allow_html=True)
+borda_graficos = """
+    <style>
+    [data-testid="element-container"]
+    {
+    border-radius: 15px;
+    background-color: white;
+    
+    }
+    </style>
+"""
+st.markdown(borda_graficos,unsafe_allow_html=True)
+
