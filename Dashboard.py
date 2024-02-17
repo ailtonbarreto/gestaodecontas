@@ -188,16 +188,12 @@ with col3:
 with col4:
     st.metric("Saldo do Mês",f'R$ {round(df_filtrado4["Valor"].sum()-df_filtrado2["Valor"].sum(),2):,.2f}')
 with col7:
-    st.divider()
     st.plotly_chart(grafico_Rosca,use_container_width=True) 
 with col8:
-    st.divider()
     st.plotly_chart(grafico_barras,use_container_width=True)
 with col9:
-    st.divider()
     st.plotly_chart(grafico_colunas,use_container_width=True)
-    st.divider()
-
+    
 #------------------------------------------------------------------------------------------
 #Esconder streamlit menus
 
