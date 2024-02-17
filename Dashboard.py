@@ -224,3 +224,13 @@ framegraficos = """
     </style>
 """
 st.markdown(framegraficos,unsafe_allow_html=True)
+
+divesconder = """
+    <style>
+    [class="st-emotion-cache-acqtcz e1f1d6gn3"]
+    {
+    visibility: hidden;
+    }
+    </style>
+"""
+st.markdown(divesconder,unsafe_allow_html=True)
