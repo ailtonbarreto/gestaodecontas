@@ -4,7 +4,7 @@ header{
 
 section{
     background-image: url('https://upload.wikimedia.org/wikipedia/commons/8/80/Backgorund.gif');
-    background-size: cover;
+    background-size: contain;
 }
 
 /* https://wallpaper-house.com/data/out/8/wallpaper2you_271608.jpg */
