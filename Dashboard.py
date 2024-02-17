@@ -204,9 +204,8 @@ borda_graficos = """
     <style>
     [data-testid="element-container"]
     {
-    border-radius: 15px;
     background-color: white;
-    
+    padding: 20px;
     }
     </style>
 """
@@ -218,7 +217,7 @@ framegraficos = """
     [data-testid="stFullScreenFrame"]
     {
     background-color: black;
-    padding: 20px;
+    
     }
     </style>
 """
