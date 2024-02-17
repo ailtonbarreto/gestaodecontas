@@ -200,7 +200,7 @@ with col9:
     st.plotly_chart(grafico_colunas,use_container_width=True)   
 #------------------------------------------------------------------------------------------
 #Estilizacao
-
+st.dataframe(df_filtrado2)
 framegraficos = """
     <style>
     [data-testid="column"]
