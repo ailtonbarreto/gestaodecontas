@@ -201,7 +201,7 @@ with col8:
     st.plotly_chart(grafico_barras,use_container_width=True)
 with col9:
     # st.plotly_chart(grafico_colunas,use_container_width=True)
-    st.title(f"Movimentações de {filtro_mes} de {filtro_ano}",anchor=False) 
+    st.subheader(f"Movimentações de {filtro_mes} de {filtro_ano}",anchor=False) 
     st.dataframe(df_filtrado1,use_container_width=True) 
 #------------------------------------------------------------------------------------------
 #Estilizacao
