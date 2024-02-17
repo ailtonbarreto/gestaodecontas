@@ -199,18 +199,6 @@ with col9:
 #------------------------------------------------------------------------------------------
 #Estilizacao
 
-# borda_graficos = """
-#     <style>
-#     [class="user-select-none svg-container"]
-#     {
-#     background-color: white;
-#     border-radius: 20px;
-#     }
-#     </style>
-# """
-# st.markdown(borda_graficos,unsafe_allow_html=True)
-
-
 framegraficos = """
     <style>
     [data-testid="column"]
