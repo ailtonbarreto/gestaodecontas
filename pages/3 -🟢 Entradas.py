@@ -13,6 +13,9 @@ from gspread import Worksheet
 st.set_page_config(layout="wide",page_title="Adicionar Entrada",initial_sidebar_state='collapsed',page_icon='📊')
 st.sidebar.link_button("Ver Planilha","https://docs.google.com/spreadsheets/d/1HcISrCFCKWOtF6O_RonxH_RVdg2jFBly2KQryc_cZcY/edit?usp=sharing")
 
+with open("style.css") as f:
+    st.markdown(f"<style>{f.read()}</style>",unsafe_allow_html = True)
+
 tab1, tab2, tab3, tab4 = st.tabs(['Adicionar Entrada','Excluir Entrada','Editar uma Entrada','Recebimentos em Aberto'])
 
 #----------------------------------------------------------------------------------------
@@ -162,12 +165,17 @@ with tab4:
 #------------------------------------------------------------------------------------------
 #Esconder streamlit menus
 
-hide_st_style = """
-            <style>
-            #MainMenu {visibility: hidden;}
-            footer {visibility: hidden;}
-            header {visibility: hidden;}
-            </style>
-            """
-st.markdown(hide_st_style, unsafe_allow_html=True)
-
+framegraficos = """
+    <style>
+    [data-testid="column"]
+    {
+    border-radius: 15px;
+    background-color: #2F3035;
+    padding: 20px;
+    opacity: 80%;
+    color: white;
+    
+    }
+    </style>
+"""
+st.markdown(framegraficos,unsafe_allow_html=True)
