@@ -268,7 +268,7 @@ st.markdown(detalhes,unsafe_allow_html=True)
 
 alinhartitulo = """
     <style>
-    [id="9a4ff9f3"]
+    [id="a7776087"]
     {
     text-align: center;
     }
