@@ -202,7 +202,7 @@ with col9:
 
 borda_graficos = """
     <style>
-    [class="stPlotlyChart js-plotly-plot"]
+    [class="user-select-none svg-container"]
     {
     color: white;
     border-radius: 20px;
