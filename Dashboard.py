@@ -244,3 +244,15 @@ desativartelacheia = """
     </style>
 """
 st.markdown(desativartelacheia,unsafe_allow_html=True)
+
+
+
+detalhes = """
+    <style>
+    [id="modebar-507362"]
+    {
+    visibility: hidden;
+    }
+    </style>
+"""
+st.markdown(detalhes,unsafe_allow_html=True)
