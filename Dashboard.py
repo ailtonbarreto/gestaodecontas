@@ -202,9 +202,9 @@ with col9:
 
 borda_graficos = """
     <style>
-    [class="user-select-none svg-container"]
+    [data-testid="stVerticalBlockBorderWrapper""]
     {
-    background-color: white;
+    color: white;
     border-radius: 20px;
     }
     </style>
