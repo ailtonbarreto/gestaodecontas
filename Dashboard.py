@@ -212,3 +212,14 @@ borda_graficos = """
 """
 st.markdown(borda_graficos,unsafe_allow_html=True)
 
+
+framegraficos = """
+    <style>
+    [data-testid="stFullScreenFrame"]
+    {
+    background-color: black;
+    padding: 20px;
+    }
+    </style>
+"""
+st.markdown(framegraficos,unsafe_allow_html=True)
