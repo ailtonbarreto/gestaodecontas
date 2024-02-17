@@ -65,6 +65,7 @@ dfentrada['Valor'] = dfentrada['Valor'].str.replace('.', '').str.replace(',', '.
 df = pd.concat([dfsaida,dfentrada]).reset_index(drop=True)
 df["Ano"] = pd.to_datetime(df['Data']).dt.year
 df["Mês"] = pd.to_datetime(df['Data']).dt.month
+df["Data"] = df["Data"].dt.strftime('%d/%m/%Y')
 
 #----------------------------------------------------------------------------------------
 #funcão para classificar meses
