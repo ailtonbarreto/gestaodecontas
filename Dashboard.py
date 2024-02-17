@@ -205,7 +205,6 @@ borda_graficos = """
     [data-testid="element-container"]
     {
     background-color: white;
-    padding: 20px;
     }
     </style>
 """
@@ -214,7 +213,7 @@ st.markdown(borda_graficos,unsafe_allow_html=True)
 
 framegraficos = """
     <style>
-    [data-testid="stFullScreenFrame"]
+    [data-testid="stVerticalBlockBorderWrapper"]
     {
     background-color: black;
     
