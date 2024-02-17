@@ -184,11 +184,17 @@ with tab4:
 #------------------------------------------------------------------------------------------
 #Esconder streamlit menus
 
-hide_st_style = """
+framegraficos = """
     <style>
-    #MainMenu {visibility: hidden;}
-    footer {visibility: hidden;}
-    header {visibility: hidden;}
+    [data-testid="column"]
+    {
+    border-radius: 15px;
+    background-color: #2F3035;
+    padding: 20px;
+    opacity: 80%;
+    color: white;
+    
+    }
     </style>
-    """
-st.markdown(hide_st_style, unsafe_allow_html=True)
+"""
+st.markdown(framegraficos,unsafe_allow_html=True)
