@@ -202,7 +202,7 @@ with col9:
 
 borda_graficos = """
     <style>
-    [data-testid="element-container"]
+    [class="user-select-none svg-container"]
     {
     background-color: white;
     border-radius: 20px;
