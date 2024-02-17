@@ -254,7 +254,6 @@ alinhartitulo = """
     [id="9a4ff9f3"]
     {
     text-align: center;
-    color: red;
     }
     </style>
 """
