@@ -245,7 +245,20 @@ detalhes = """
     }
     </style>
 """
+
+
 st.markdown(detalhes,unsafe_allow_html=True)
+
+alinhartitulo = """
+    <style>
+    [id="9a4ff9f3"]
+    {
+    visibility: hidden;
+    }
+    </style>
+"""
+st.markdown(alinhartitulo,unsafe_allow_html=True)
+
 
 hide_st_style = """
             <style>
