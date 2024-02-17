@@ -187,7 +187,7 @@ grafico_barras.update_xaxes(showgrid=False,visible=True,title="")
 #Layout gráficos
 
 with col2:
-    st.metric("Entrada",f'R$ {round(df_filtrado4["Valor"].sum(),2):,.2f}🟢')
+    st.metric("Entrada",f'R$ {round(df_filtrado4["Valor"].sum(),2):,.2f}↙')
 with col3:
     st.metric("Saídas",f'R$ {round(df_filtrado2["Valor"].sum(),2):,.2f}')
 with col4:
