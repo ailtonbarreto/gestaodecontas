@@ -204,7 +204,7 @@ borda_graficos = """
     <style>
     [class="user-select-none svg-container"]
     {
-    color: white;
+    visibility: hidden;
     border-radius: 20px;
     }
     </style>
