@@ -253,7 +253,7 @@ alinhartitulo = """
     <style>
     [id="9a4ff9f3"]
     {
-    visibility: hidden;
+    text-align: center;
     }
     </style>
 """
