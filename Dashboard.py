@@ -191,11 +191,11 @@ grafico_barras.update_xaxes(showgrid=False,visible=True,title="")
 
  
 if df_filtrado4["Valor"].sum()-df_filtrado2["Valor"].sum() >= 0:
-        cor_saldo = "Green"
+        cor_saldo = "🟩"
 else:
-    cor_saldo = "red"
+    cor_saldo = "🟥"
 
-
+icon = cor_saldo
 
 #----------------------------------------------------------------------------------------
 #Layout gráficos
@@ -205,7 +205,7 @@ with col2:
 with col3:
     st.metric("Saídas",f'🔴 R$ {round(df_filtrado2["Valor"].sum(),2):,.2f}')
 with col4:
-    st.metric("Saldo do Mês",f'💰 R$ {round(df_filtrado4["Valor"].sum()-df_filtrado2["Valor"].sum(),2):,.2f}')
+    st.metric("Saldo do Mês",f'{icon} R$ {round(df_filtrado4["Valor"].sum()-df_filtrado2["Valor"].sum(),2):,.2f}')
 with col7:
     st.plotly_chart(grafico_Rosca,use_container_width=True) 
 with col8:
