@@ -50,6 +50,7 @@ ws1 = sh.get_worksheet(0)
 planilha1 = ws1.get_all_values()
 dfentrada = pd.DataFrame(planilha1[1:], columns=planilha1[0])
 dfentrada['Data'] = pd.to_datetime(dfentrada["Data Vencimento"])
+dfentrada['Fornecedor'] = dfentrada["Cliente"]
 dfentrada = pd.DataFrame(dfentrada).drop(columns=["Cliente","Nota Fiscal","Data Vencimento"])
 dfentrada["Ano"] = dfentrada["Data"].dt.year
 dfentrada["Mês"] = dfentrada["Data"].dt.month
@@ -188,7 +189,8 @@ grafico_barras.update_yaxes(showgrid=False,visible=True,title="")
 grafico_barras.update_xaxes(showgrid=False,visible=True,title="")
 
 
-
+#----------------------------------------------------------------------------------------
+#definir icone
  
 if df_filtrado4["Valor"].sum()-df_filtrado2["Valor"].sum() >= 0:
         icon = "🔼"
