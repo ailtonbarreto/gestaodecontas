@@ -209,7 +209,7 @@ else:
 #----------------------------------------------------------------------------------------
 #formatar moeda
       
-df_filtrado1["Valor"] = df_filtrado1["Valor"].apply(lambda x: f'R$ {x:.2f}')
+df_filtrado1["Valor"] = df_filtrado1["Valor"].apply(lambda x: f'R$ {x:,.2f}')
 
 #----------------------------------------------------------------------------------------
 #Layout gráficos
