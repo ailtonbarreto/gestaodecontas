@@ -296,7 +296,7 @@ st.markdown(hide_st_style, unsafe_allow_html=True)
 corsaldo = """
             <style>
             section [data-testid="stMetricValue"] {
-                color: {cortext};
+                color: {cortexto};
             }
             </style>
             """
