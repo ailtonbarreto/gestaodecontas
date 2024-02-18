@@ -298,7 +298,7 @@ corsaldo = """
     <style>
     [class="st-emotion-cache-1xarl3l e1i5pmia1"]
     {
-    color: cortexto;
+    color: {cortexto};
     }
     </style>
 """
