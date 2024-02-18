@@ -22,6 +22,7 @@ with open("style.css") as f:
 col1,col2,col3,col4,col5,col6 = st.columns([3,2,2,2,1,1])
 col7,col8 = st.columns(2)
 col9, = st.columns(1)
+col10, = st.columns(1)
 
 
 #----------------------------------------------------------------------------------------
@@ -217,7 +218,9 @@ with col8:
 with col9:
     # st.plotly_chart(grafico_colunas,use_container_width=True)
     st.subheader(f"Movimentações de {filtro_mes} de {filtro_ano}",anchor=False) 
-    st.dataframe(df_filtrado1,use_container_width=True) 
+    st.dataframe(df_filtrado1,use_container_width=True)
+with col10:
+    st.plotly_chart(grafico_colunas,use_container_width=True)
 #------------------------------------------------------------------------------------------
 #Estilizacao
 
