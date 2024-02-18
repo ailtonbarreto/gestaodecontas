@@ -189,7 +189,8 @@ grafico_barras = px.bar(dfgrafico,x="Valor",y="CATEGORIA",
         color_discrete_sequence=["#0aefff","#ee9b00"])
 grafico_barras.update_yaxes(showgrid=False,visible=True,title="")
 grafico_barras.update_xaxes(showgrid=False,visible=True,title="")
-
+grafico_barras.layout.xaxis.fixedrange = True
+grafico_barras.layout.yaxis.fixedrange = True
 
 #----------------------------------------------------------------------------------------
 #definir icone
