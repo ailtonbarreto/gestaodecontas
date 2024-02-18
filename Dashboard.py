@@ -143,7 +143,7 @@ df_filtrado2 = df.loc[(df["Ano"] == filtro_ano) & (df["Tipo"] == "SAÍDA") & (df
 df_filtrado2 = df_filtrado2.groupby(['Tipo','Mês'])['Valor'].sum().reset_index()
 df_filtrado2 = df_filtrado2.sort_values('Valor')
 
-df_filtrado3 = df.loc[(df["Ano"] == filtro_ano)]
+df_filtrado3 = df.loc[(df["Ano"] == filtro_ano_movi)]
 df_filtrado3 = df_filtrado3.groupby(["Tipo","Mês"])["Valor"].sum().reset_index()
 df_filtrado3['Ordem_Mês'] = df_filtrado3['Mês'].map(classificar_meses)
 df_filtrado3 = df_filtrado3.sort_values(by='Ordem_Mês',ascending = True).drop(columns=['Ordem_Mês'])
