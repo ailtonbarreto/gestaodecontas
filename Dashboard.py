@@ -139,7 +139,7 @@ with col10:
 df_filtrado1 = df.loc[(df["Ano"] == filtro_ano) & (df["Mês"] == filtro_mes)]
 df_filtrado1 = df_filtrado1.drop(columns=["Ano","Mês"])
 df_filtrado1 = df_filtrado1.sort_values("Data",ascending=True)
-df_filtrado1["Valor"] = df_filtrado1["Valor"].apply(lambda x: f'R$ {x:.2f}')
+
 
 
 df_filtrado2 = df.loc[(df["Ano"] == filtro_ano) & (df["Tipo"] == "SAÍDA") & (df["Mês"] == filtro_mes)]
@@ -205,7 +205,11 @@ if df_filtrado4["Valor"].sum()-df_filtrado2["Valor"].sum() >= 0:
         icon = "🔼"
 else:
     icon = "🔽"
-
+    
+#----------------------------------------------------------------------------------------
+#formatar moeda
+      
+df_filtrado1["Valor"] = df_filtrado1["Valor"].apply(lambda x: f'R$ {x:.2f}')
 
 #----------------------------------------------------------------------------------------
 #Layout gráficos
