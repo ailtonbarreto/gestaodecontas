@@ -117,7 +117,7 @@ df = df.drop(columns=["Data Emissão"])
 df['Ordem_Mês'] = df['Mês'].map(classificar_meses)
 df = df.sort_values(by='Ordem_Mês',ascending = True).drop(columns=['Ordem_Mês'])
 df = df.sort_values("Ano",ascending=False)
-
+df["Valor"] = df["Valor"].apply(lambda x: f'R$ {x:.2f}')
 #----------------------------------------------------------------------------------------
 #Filtros/Layout
 
