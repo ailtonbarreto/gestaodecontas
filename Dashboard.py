@@ -293,12 +293,13 @@ hide_st_style = """
             """
 st.markdown(hide_st_style, unsafe_allow_html=True)
 
-
 corsaldo = """
             <style>
-            [data-testid="stMetricValue"]
-            color: {cortext}
+            body [data-testid="stMetricValue"] {
+                color: {cortext};
+            }
             </style>
             """
+
 
 st.markdown(corsaldo,unsafe_allow_html=True)
