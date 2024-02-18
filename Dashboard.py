@@ -296,10 +296,8 @@ st.markdown(hide_st_style, unsafe_allow_html=True)
 
 corsaldo = """
     <style>
-    #class="st-emotion-cache-1wivap2 e1i5pmia3
-    {
+    #stMetricValue
     color {cortexto};
-    }
     </style>
 """
 st.markdown(corsaldo,unsafe_allow_html=True)
