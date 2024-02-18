@@ -166,7 +166,7 @@ grafico_colunas.update_yaxes(showgrid=False)
 grafico_colunas.update_traces(showlegend=False)
 grafico_colunas.update_yaxes(showgrid=False,visible=True,title="")
 grafico_colunas.layout.xaxis.fixedrange = True
-grafico_colunas.layout.yaxis.fixedrange = True
+grafico_colunas.layout.yaxis.fixedrange = False
 #----------------------------------------------------------------------------------------
 
 gc = sg.service_account("gestao.json")
