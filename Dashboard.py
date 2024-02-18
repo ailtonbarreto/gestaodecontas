@@ -161,6 +161,8 @@ grafico_colunas = px.bar(df_filtrado3,x="Mês",y="Valor",color="Tipo",
 grafico_colunas.update_yaxes(showgrid=False)
 grafico_colunas.update_traces(showlegend=False)
 grafico_colunas.update_yaxes(showgrid=False,visible=True,title="")
+grafico_colunas.layout.xaxis.fixedrange = True
+grafico_colunas.layout.yaxis.fixedrange = True
 #----------------------------------------------------------------------------------------
 
 gc = sg.service_account("gestao.json")
