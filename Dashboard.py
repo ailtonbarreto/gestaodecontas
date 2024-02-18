@@ -117,7 +117,7 @@ df = df.drop(columns=["Data Emissão"])
 df['Ordem_Mês'] = df['Mês'].map(classificar_meses)
 df = df.sort_values(by='Ordem_Mês',ascending = True).drop(columns=['Ordem_Mês'])
 df = df.sort_values("Ano",ascending=False)
-df["Valor"] = df["Valor"].apply(lambda x: f'R$ {x:.2f}')
+
 #----------------------------------------------------------------------------------------
 #Filtros/Layout
 
@@ -139,6 +139,8 @@ with col10:
 df_filtrado1 = df.loc[(df["Ano"] == filtro_ano) & (df["Mês"] == filtro_mes)]
 df_filtrado1 = df_filtrado1.drop(columns=["Ano","Mês"])
 df_filtrado1 = df_filtrado1.sort_values("Data",ascending=True)
+df_filtrado1["Valor"] = df_filtrado1["Valor"].apply(lambda x: f'R$ {x:.2f}')
+
 
 df_filtrado2 = df.loc[(df["Ano"] == filtro_ano) & (df["Tipo"] == "SAÍDA") & (df["Mês"] == filtro_mes)]
 df_filtrado2 = df_filtrado2.groupby(['Tipo','Mês'])['Valor'].sum().reset_index()
@@ -219,7 +221,6 @@ with col7:
 with col8:
     st.plotly_chart(grafico_barras,use_container_width=True)
 with col9:
-    # st.plotly_chart(grafico_colunas,use_container_width=True)
     st.subheader(f"Movimentações de {filtro_mes} de {filtro_ano}",anchor=False) 
     st.dataframe(df_filtrado1,use_container_width=True)
 with col10:
