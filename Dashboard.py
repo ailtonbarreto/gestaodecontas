@@ -21,7 +21,7 @@ with open("style.css") as f:
 
 col1,col2,col3,col4,col5,col6 = st.columns([3,2,2,2,1,1])
 col7,col8 = st.columns(2)
-col9,col10 = st.columns([100,1])
+col9, = st.columns(1)
 
 
 #----------------------------------------------------------------------------------------
