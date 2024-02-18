@@ -302,4 +302,4 @@ corsaldo = """
             """
 
 
-st.markdown(corsaldo,unsafe_allow_html=True)
+st.markdown(corsaldo.format(cortexto), unsafe_allow_html=True)
