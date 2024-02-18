@@ -303,4 +303,4 @@ corsaldo = """
     }
     </style>
 """
-st.markdown(alinhartitulo,unsafe_allow_html=True)
+st.markdown(corsaldo,unsafe_allow_html=True)
