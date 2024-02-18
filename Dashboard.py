@@ -200,10 +200,6 @@ if df_filtrado4["Valor"].sum()-df_filtrado2["Valor"].sum() >= 0:
 else:
     icon = "🔽"
 
-if df_filtrado4["Valor"].sum()-df_filtrado2["Valor"].sum() >= 0:
-        cortexto = "green"
-else:
-    cortexto = "red"
 
 #----------------------------------------------------------------------------------------
 #Layout gráficos
@@ -293,13 +289,3 @@ hide_st_style = """
             """
 st.markdown(hide_st_style, unsafe_allow_html=True)
 
-corsaldo = """
-            <style>
-            section [data-testid="stMetricValue"] {
-                color: {cortexto};
-            }
-            </style>
-            """
-
-
-st.markdown(corsaldo.format(cortexto), unsafe_allow_html=True)
