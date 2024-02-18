@@ -298,7 +298,7 @@ corsaldo = """
     <style>
     [data-testid="stMetricValue"]
     {
-    color: {cortexto};
+    color {cortexto};
     }
     </style>
 """
