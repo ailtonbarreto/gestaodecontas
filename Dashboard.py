@@ -201,9 +201,9 @@ else:
     icon = "🔽"
 
 if df_filtrado4["Valor"].sum()-df_filtrado2["Valor"].sum() >= 0:
-        cortexto = "#000000"
+        cortexto = "green"
 else:
-    cortexto = "#000000"
+    cortexto = "red"
 
 #----------------------------------------------------------------------------------------
 #Layout gráficos
