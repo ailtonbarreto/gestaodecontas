@@ -201,9 +201,9 @@ else:
     icon = "🔽"
 
 if df_filtrado4["Valor"].sum()-df_filtrado2["Valor"].sum() >= 0:
-        cortexto = "blue"
+        cortexto = "#000000"
 else:
-    cortexto = "red"
+    cortexto = "#000000"
 
 #----------------------------------------------------------------------------------------
 #Layout gráficos
@@ -292,7 +292,6 @@ hide_st_style = """
             </style>
             """
 st.markdown(hide_st_style, unsafe_allow_html=True)
-
 
 
 corsaldo = """
