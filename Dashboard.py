@@ -129,7 +129,8 @@ with col5:
     
 with col6:
      filtro_mes = st.selectbox("Mês", meses) 
-
+with col10:
+    filtro_ano_movi = st.selectbox("Selecione um Ano", df["Ano"].unique())  
 #----------------------------------------------------------------------------------------
 #Dataframes filtrados
 
