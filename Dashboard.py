@@ -296,7 +296,7 @@ st.markdown(hide_st_style, unsafe_allow_html=True)
 
 corsaldo = """
     <style>
-    [class="st-emotion-cache-1xarl3l e1i5pmia1"]
+    [data-testid="stMetricValue" class="st-emotion-cache-1xarl3l e1i5pmia1"]
     {
     color: cortexto;
     }
