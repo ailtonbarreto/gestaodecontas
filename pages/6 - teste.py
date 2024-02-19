@@ -1,5 +1,6 @@
 import streamlit as st
 import pandas as pd
+import qgrid
 
 # Criar um DataFrame de exemplo
 data = {'Nome': ['João', 'Maria', 'Pedro'],
@@ -8,9 +9,8 @@ data = {'Nome': ['João', 'Maria', 'Pedro'],
 
 df = pd.DataFrame(data)
 
-# Exibir o DataFrame com uma coluna de checkboxes editável
-for i, row in df.iterrows():
-    checkbox_state = st.checkbox(label='', value=row['Checkbox'], key=i)
-    df.at[i, 'Checkbox'] = checkbox_state
+# Criar um widget QGrid com o DataFrame
+qgrid_widget = qgrid.show_grid(df, show_toolbar=False)
 
-st.dataframe(df)
+# Exibir o widget QGrid no Streamlit
+st.write(qgrid_widget)
