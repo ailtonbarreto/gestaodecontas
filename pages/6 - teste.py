@@ -1,6 +1,6 @@
 import streamlit as st
 import pandas as pd
-import qgrid
+from qgrid import qgrid
 
 # Criar um DataFrame de exemplo
 data = {'Nome': ['João', 'Maria', 'Pedro'],
