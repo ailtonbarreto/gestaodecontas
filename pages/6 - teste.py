@@ -1,17 +1,23 @@
 import streamlit as st
 import pandas as pd
-import qgrid
 
-# Criar um DataFrame de exemplo
-data = {'Nome': ['João', 'Maria', 'Pedro'],
-        'Idade': [25, 30, 35],
-        'Checkbox': [False, True, False]}
+def obter_indices_selecionados(df):
+    indices_selecionados = []
+    for index, row in df.iterrows():
+        if st.checkbox('', key=index):
+            indices_selecionados.append(index)
+    return indices_selecionados
 
-df = pd.DataFrame(data)
+# Dados para o DataFrame
+dados = {
+    'Item': ['Item 1', 'Item 2', 'Item 3', 'Item 4']
+}
 
-# Criar um widget QGrid com o DataFrame
-qgrid_widget = qgrid.show_grid(df, show_toolbar=False)
+# Criar o DataFrame
+df = pd.DataFrame(dados)
 
-# Exibir o widget QGrid no Streamlit
-st.write(qgrid_widget)
-# asdf
+# Mostrar o DataFrame com checkboxes e obter os índices selecionados
+indices_selecionados = obter_indices_selecionados(df)
+
+# Mostrar os índices selecionados
+st.write("Índices selecionados:", indices_selecionados)
