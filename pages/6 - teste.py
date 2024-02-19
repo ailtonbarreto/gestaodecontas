@@ -14,3 +14,4 @@ qgrid_widget = qgrid.show_grid(df, show_toolbar=False)
 
 # Exibir o widget QGrid no Streamlit
 st.write(qgrid_widget)
+# asdf
