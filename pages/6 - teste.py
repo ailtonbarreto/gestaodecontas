@@ -4,7 +4,7 @@ import pandas as pd
 # Criar um DataFrame de exemplo
 data = {'Nome': ['João', 'Maria', 'Pedro'],
         'Idade': [25, 30, 35],
-        'Checkbox': [False, True, False]}
+        'Checkbox': [False]}
 
 df = pd.DataFrame(data)
 
