@@ -8,8 +8,9 @@ data = {'Nome': ['João', 'Maria', 'Pedro'],
 
 df = pd.DataFrame(data)
 
-# Exibir o DataFrame com uma coluna de checkboxes
-selected_indices = st.multiselect('Selecione linhas:', df.index.tolist())
-selected_df = df.iloc[selected_indices]
+# Exibir o DataFrame com uma coluna de checkboxes editável
+for i, row in df.iterrows():
+    checkbox_state = st.checkbox(label='', value=row['Checkbox'], key=i)
+    df.at[i, 'Checkbox'] = checkbox_state
 
-st.dataframe(selected_df)
+st.dataframe(df)
