@@ -160,7 +160,24 @@ with tab3:
      editar_status = st.selectbox('Novo Status',["A PAGAR","PAGO"])
     
 
+
 dfeditar = df.query('Ano == @filtro_y & Mês == @filtro_m & Fornecedor == @filtro_f')
+
+
+def obter_indices_selecionados(dfeditar):
+    indices_selecionados = []
+    for index, row in dfeditar.iterrows():
+        if st.checkbox('', key=index):
+            indices_selecionados.append(index)
+    return indices_selecionados
+
+
+
+# Mostrar o DataFrame com checkboxes e obter os índices selecionados
+indices_selecionados = obter_indices_selecionados(dfeditar)
+
+
+
 
 linha3 = filtro_index+2
 
