@@ -167,7 +167,7 @@ with tab3:
     def obter_indices_selecionados(dfeditar):
         indices_selecionados = []
         for index, row in dfeditar.iterrows():
-            
+
             if st.checkbox('Selecionar', True, key=index):
                 indices_selecionados.append(index)
         return indices_selecionados
@@ -180,6 +180,18 @@ with tab3:
 
     filtro_index = dfeditar.index[0]
 
+    def criar_dataframe_em_branco(colunas):
+        return pd.DataFrame(columns=colunas)
+
+    try:
+        # Tente acessar o primeiro índice do DataFrame
+        filtro_index = dfeditar.index[0]
+    except IndexError:
+        # Se ocorrer um erro IndexError, retorne um DataFrame em branco
+        colunas = ['Coluna1', 'Coluna2', 'Coluna3']  # Especifique as colunas conforme necessário
+        dfeditar = criar_dataframe_em_branco(colunas)
+    
+    
     linha3 = filtro_index+2
 
     coluna = 5
