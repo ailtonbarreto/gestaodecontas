@@ -175,13 +175,6 @@ with tab3:
     indices_selecionados = obter_indices_selecionados(dfeditar)
 
     dfeditar = dfeditar.query('index ==@indices_selecionados ')
-    
-    try:
-        # Código que pode gerar um erro
-        primeiro_indice = dfeditar.index[0]
-    except Exception as e:
-        # Lidar com o erro
-        st.error(f"Ocorreu um erro: {e}")
 
     filtro_index = dfeditar.index[0]
 
