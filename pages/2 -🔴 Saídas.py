@@ -177,8 +177,19 @@ with tab3:
 
     dfeditar = dfeditar.query('index ==@indices_selecionados ')
     
+    def criar_dataframe_em_branco(colunas):
+        return pd.DataFrame(columns=colunas)
 
-    filtro_index = dfeditar.index[0]
+    # Verificar se o DataFrame está vazio
+    if len(dfeditar) == 0:
+        # Se estiver vazio, criar um DataFrame em branco
+        colunas = ['Coluna1', 'Coluna2', 'Coluna3']  # Especifique as colunas conforme necessário
+        dfeditar = criar_dataframe_em_branco(colunas)
+    else:
+        # Se não estiver vazio, tentar acessar o primeiro índice
+        filtro_index = dfeditar.index[0]
+
+        # filtro_index = dfeditar.index[0]
     
     linha3 = filtro_index+2
 
