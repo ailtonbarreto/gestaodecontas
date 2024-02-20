@@ -156,7 +156,6 @@ with tab3:
      filtro_y = st.selectbox('Ano da Movimentação',dfeditar["Ano"].unique())
      filtro_m = st.selectbox('Mês da Movimentação',dfeditar["Mês"].unique())
      filtro_f = st.selectbox('Buscar Fornecedor',dfeditar["Fornecedor"].unique())
-     filtro_index = st.number_input("Linha a Editar",format="%.0f")
      editar_status = st.selectbox('Novo Status',["A PAGAR","PAGO"])
     
 
@@ -176,7 +175,7 @@ def obter_indices_selecionados(dfeditar):
 # Mostrar o DataFrame com checkboxes e obter os índices selecionados
 indices_selecionados = obter_indices_selecionados(dfeditar)
 
-dfeditar = int(dfeditar.query('index ==@indices_selecionados '))
+dfeditar = dfeditar.query('index ==@indices_selecionados ')
 
 
 linha3 = dfeditar+2
