@@ -179,7 +179,7 @@ indices_selecionados = obter_indices_selecionados(dfeditar)
 dfeditar = dfeditar.query('index ==@indices_selecionados ')
 
 
-linha3 = filtro_index+2
+linha3 = dfeditar+2
 
 coluna = 5
 with tab3:
