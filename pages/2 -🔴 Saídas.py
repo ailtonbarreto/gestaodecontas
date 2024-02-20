@@ -170,13 +170,13 @@ with tab3:
         
         with col1:
             for index, row in dfeditar.iterrows():
-                if st.checkbox(f'{index}', False, key=index):
+                if st.checkbox(f'{index}', [False,True], key=index):
                     indices_selecionados.append(index)
             return indices_selecionados
     
        
     indices_selecionados = obter_indices_selecionados(dfeditar)
-    dftab = dfeditar.reset_index()
+    dftab = dfeditar
     dfeditar = dfeditar.query('index ==@indices_selecionados ')
 
     filtro_index = dfeditar.index[0]
