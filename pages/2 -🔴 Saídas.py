@@ -167,7 +167,7 @@ dfeditar = df.query('Ano == @filtro_y & Mês == @filtro_m & Fornecedor == @filtr
 def obter_indices_selecionados(dfeditar):
     indices_selecionados = []
     for index, row in dfeditar.iterrows():
-        if st.checkbox('', key=index):
+        if st.checkbox('Editar', key=index):
             indices_selecionados.append(index)
     return indices_selecionados
 
