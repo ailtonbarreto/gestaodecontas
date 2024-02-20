@@ -179,7 +179,7 @@ with tab3:
 
     try:
          primeiro_indice = dfeditar.index[0]
-    except ValueError:
+    except st.error:
         # Lidar com o caso em que ocorre um erro ao acessar o índice 0
          dfeditar = pd.DataFrame({'Coluna': [1, 2, 3]})
     else:
