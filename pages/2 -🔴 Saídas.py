@@ -178,7 +178,9 @@ indices_selecionados = obter_indices_selecionados(dfeditar)
 dfeditar = dfeditar.query('index ==@indices_selecionados ')
 
 
-linha3 = dfeditar+2
+linha3 = dfeditar.iloc[0] + 2
+linha3 = dfeditar.iloc[0] + pd.Series([2] * len(dfeditar.columns), index=dfeditar.columns)
+
 
 coluna = 5
 with tab3:
