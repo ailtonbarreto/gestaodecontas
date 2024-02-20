@@ -147,51 +147,52 @@ with tab2:
 #------------------------------------------------------------------------------------------ 
 # Editar uma saída  
 
-with tab3:
-     st.title("🔴 Editar Status",anchor=False)
+    with tab3:
+        st.title("🔴 Editar Status",anchor=False)
 
-     dfeditar = df
-    
-     #Dados da linha editada
-     filtro_y = st.selectbox('Ano da Movimentação',dfeditar["Ano"].unique())
-     filtro_m = st.selectbox('Mês da Movimentação',dfeditar["Mês"].unique())
-     filtro_f = st.selectbox('Buscar Fornecedor',dfeditar["Fornecedor"].unique())
-     
-     editar_status = st.selectbox('Novo Status',["A PAGAR","PAGO"])
-    
-
-
-dfeditar = df.query('Ano == @filtro_y & Mês == @filtro_m & Fornecedor == @filtro_f')
+        dfeditar = df
+        
+        #Dados da linha editada
+        filtro_y = st.selectbox('Ano da Movimentação',dfeditar["Ano"].unique())
+        filtro_m = st.selectbox('Mês da Movimentação',dfeditar["Mês"].unique())
+        filtro_f = st.selectbox('Buscar Fornecedor',dfeditar["Fornecedor"].unique())
+        
+        editar_status = st.selectbox('Novo Status',["A PAGAR","PAGO"])
+        
 
 
-def obter_indices_selecionados(dfeditar):
-    indices_selecionados = []
-    for index, row in dfeditar.iterrows():
-        if st.checkbox('', key=index):
-            indices_selecionados.append(index)
-    return indices_selecionados
+    dfeditar = df.query('Ano == @filtro_y & Mês == @filtro_m & Fornecedor == @filtro_f')
+
+
+    def obter_indices_selecionados(dfeditar):
+        indices_selecionados = []
+        for index, row in dfeditar.iterrows():
+
+            if st.checkbox('', key=index):
+                indices_selecionados.append(index)
+        return indices_selecionados
 
 
 
-# Mostrar o DataFrame com checkboxes e obter os índices selecionados
-indices_selecionados = obter_indices_selecionados(dfeditar)
+    # Mostrar o DataFrame com checkboxes e obter os índices selecionados
+    indices_selecionados = obter_indices_selecionados(dfeditar)
 
-dfeditar = dfeditar.query('index ==@indices_selecionados ')
+    dfeditar = dfeditar.query('index ==@indices_selecionados ')
 
-filtro_index = dfeditar.index[0]
+    filtro_index = dfeditar.index[0]
 
-linha3 = filtro_index+2
+    linha3 = filtro_index+2
 
 
-coluna = 5
-with tab3:
-    if st.button("SALVAR EDIÇÃO"):
-        ws1: Worksheet = sh.get_worksheet(1)
-        ws1.update_cell(int(linha3), coluna, editar_status)
-        st.success("Edição salva!")
+    coluna = 5
+    with tab3:
+        if st.button("SALVAR EDIÇÃO"):
+            ws1: Worksheet = sh.get_worksheet(1)
+            ws1.update_cell(int(linha3), coluna, editar_status)
+            st.success("Edição salva!")
 
-    df["Valor"] = df["Valor"].apply(lambda x: f'R$ {x:.2f}')
-    st.table(dfeditar)
+        df["Valor"] = df["Valor"].apply(lambda x: f'R$ {x:.2f}')
+        st.table(dfeditar)
 #------------------------------------------------------------------------------------------
 #Saídas em aberto
  
