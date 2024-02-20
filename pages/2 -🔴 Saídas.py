@@ -167,14 +167,12 @@ with tab3:
     def obter_indices_selecionados(dfeditar):
         indices_selecionados = []
         for index, row in dfeditar.iterrows():
-
+            
             if st.checkbox('Selecionar', True, key=index):
                 indices_selecionados.append(index)
         return indices_selecionados
 
 
-
-        # Mostrar o DataFrame com checkboxes e obter os índices selecionados
     indices_selecionados = obter_indices_selecionados(dfeditar)
 
     dfeditar = dfeditar.query('index ==@indices_selecionados ')
