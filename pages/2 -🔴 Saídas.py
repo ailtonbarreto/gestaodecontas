@@ -156,7 +156,7 @@ with tab3:
      filtro_y = st.selectbox('Ano da Movimentação',dfeditar["Ano"].unique())
      filtro_m = st.selectbox('Mês da Movimentação',dfeditar["Mês"].unique())
      filtro_f = st.selectbox('Buscar Fornecedor',dfeditar["Fornecedor"].unique())
-     filtro_index = dfeditar.index[0]
+     
      editar_status = st.selectbox('Novo Status',["A PAGAR","PAGO"])
     
 
@@ -178,7 +178,7 @@ indices_selecionados = obter_indices_selecionados(dfeditar)
 
 dfeditar = dfeditar.query('index ==@indices_selecionados ')
 
-
+filtro_index = dfeditar.index[0]
 
 linha3 = filtro_index+2
 
