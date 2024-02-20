@@ -170,7 +170,7 @@ with tab3:
         
         with col1:
             for index, row in dfeditar.iterrows():
-                if st.checkbox(f'{index}', dfeditar:False,True, key=index):
+                if st.checkbox(f'{index}', dfeditar[True,False], key=index):
                     indices_selecionados.append(index)
             return indices_selecionados
     
