@@ -122,48 +122,48 @@ with tab1:
 # #------------------------------------------------------------------------------------------
 #Remover linha
     
-        with tab2:
+with tab2:
 
-            st.title("🔴 Excluir Saída",anchor=False)
-        #Indice da linha a ser removida
-            dfdelete = df
-            filtro_ano = st.selectbox("Ano",dfdelete["Ano"].unique())
-            filtro_mes = st.selectbox("Mês",dfdelete["Mês"].unique())
-            filtro_fornecedor = st.selectbox('Fornecedor',dfdelete["Fornecedor"].unique())
-            linha1 = st.number_input("Excluir Linha",format="%.0f")
+    st.title("🔴 Excluir Saída",anchor=False)
+#Indice da linha a ser removida
+    dfdelete = df
+    filtro_ano = st.selectbox("Ano",dfdelete["Ano"].unique())
+    filtro_mes = st.selectbox("Mês",dfdelete["Mês"].unique())
+    filtro_fornecedor = st.selectbox('Fornecedor',dfdelete["Fornecedor"].unique())
+    linha1 = st.number_input("Excluir Linha",format="%.0f")
 
-            dfdelete = dfdelete.query('Ano == @filtro_ano & Mês == @filtro_mes & Fornecedor == @filtro_fornecedor')
+    dfdelete = dfdelete.query('Ano == @filtro_ano & Mês == @filtro_mes & Fornecedor == @filtro_fornecedor')
 
-            if st.button("EXCLUIR SAÍDA"):
-                
-                wsremover: Worksheet = sh.get_worksheet(1)
-            
-                wsremover.delete_rows(int(linha1) + 2)
-            
-                st.success("Saída Excluída Com Sucesso!")
+    if st.button("EXCLUIR SAÍDA"):
+        
+        wsremover: Worksheet = sh.get_worksheet(1)
+    
+        wsremover.delete_rows(int(linha1) + 2)
+    
+        st.success("Saída Excluída Com Sucesso!")
 
-            st.table(dfdelete)
+    st.table(dfdelete)
     
 #------------------------------------------------------------------------------------------ 
 # Editar uma saída  
 
-    with tab3:
-        st.title("🔴 Editar Status",anchor=False)
+with tab3:
+     st.title("🔴 Editar Status",anchor=False)
 
-        dfeditar = df
-        
-        #Dados da linha editada
-        filtro_y = st.selectbox('Ano da Movimentação',dfeditar["Ano"].unique())
-        filtro_m = st.selectbox('Mês da Movimentação',dfeditar["Mês"].unique())
-        filtro_f = st.selectbox('Buscar Fornecedor',dfeditar["Fornecedor"].unique())
-        
-        editar_status = st.selectbox('Novo Status',["A PAGAR","PAGO"])
-        
-
-
-    dfeditar = df.query('Ano == @filtro_y & Mês == @filtro_m & Fornecedor == @filtro_f')
+     dfeditar = df
+    
+     #Dados da linha editada
+     filtro_y = st.selectbox('Ano da Movimentação',dfeditar["Ano"].unique())
+     filtro_m = st.selectbox('Mês da Movimentação',dfeditar["Mês"].unique())
+     filtro_f = st.selectbox('Buscar Fornecedor',dfeditar["Fornecedor"].unique())
+     
+     editar_status = st.selectbox('Novo Status',["A PAGAR","PAGO"])
+    
 
 
+     dfeditar = df.query('Ano == @filtro_y & Mês == @filtro_m & Fornecedor == @filtro_f')
+
+with tab3:
     def obter_indices_selecionados(dfeditar):
         indices_selecionados = []
         for index, row in dfeditar.iterrows():
@@ -174,7 +174,7 @@ with tab1:
 
 
 
-    # Mostrar o DataFrame com checkboxes e obter os índices selecionados
+        # Mostrar o DataFrame com checkboxes e obter os índices selecionados
     indices_selecionados = obter_indices_selecionados(dfeditar)
 
     dfeditar = dfeditar.query('index ==@indices_selecionados ')
