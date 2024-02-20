@@ -177,7 +177,7 @@ with tab3:
     dfeditar = dfeditar.query('index ==@indices_selecionados ')
     
 
-    if dfeditar.index[0] == None:
+    if dfeditar == None:
         dfeditar["Fornecedor"] = dfeditar["Sem"]
     else:
         dfeditar.index[0]
