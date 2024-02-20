@@ -178,7 +178,7 @@ indices_selecionados = obter_indices_selecionados(dfeditar)
 
 dfeditar = dfeditar.query('index ==@indices_selecionados ')
 
-filtro_index=dfeditar.[0]
+filtro_index = dfeditar.index
 
 linha3 = filtro_index+2
 
