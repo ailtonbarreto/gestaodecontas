@@ -164,16 +164,17 @@ with tab3:
      dfeditar = df.query('Ano == @filtro_y & Mês == @filtro_m & Fornecedor == @filtro_f')
 
 with tab3:
+    col1, col2 = st.columns(2)
     def obter_indices_selecionados(dfeditar):
         indices_selecionados = []
-        col1, col2 = st.columns(2)
+        
         with col1:
             for index, row in dfeditar.iterrows():
                 if st.checkbox(f'Selecionar linha {index}', True, key=index):
                     indices_selecionados.append(index)
             return indices_selecionados
     
-        # Mostrar o DataFrame com checkboxes e obter os índices selecionados
+       
     indices_selecionados = obter_indices_selecionados(dfeditar)
 
     dfeditar = dfeditar.query('index ==@indices_selecionados ')
@@ -190,9 +191,9 @@ with tab3:
             ws1.update_cell(int(linha3), coluna, editar_status)
             st.success("Edição salva!")
 
-        df["Valor"] = df["Valor"].apply(lambda x: f'R$ {x:,.2f}')
-        with col2:
-         st.table(dfeditar)
+    df["Valor"] = df["Valor"].apply(lambda x: f'R$ {x:.2f}')
+    with col2:
+        st.table(dfeditar)
 #------------------------------------------------------------------------------------------
 #Saídas em aberto
  
