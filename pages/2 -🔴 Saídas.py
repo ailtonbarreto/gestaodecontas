@@ -176,7 +176,7 @@ with tab3:
     
        
     indices_selecionados = obter_indices_selecionados(dfeditar)
-
+    dftab = dfeditar
     dfeditar = dfeditar.query('index ==@indices_selecionados ')
 
     filtro_index = dfeditar.index[0]
@@ -193,7 +193,7 @@ with tab3:
 
     df["Valor"] = df["Valor"].apply(lambda x: f'R$ {x:.2f}')
     with col2:
-        st.table(dfeditar)
+        st.table(dftab)
 #------------------------------------------------------------------------------------------
 #Saídas em aberto
  
