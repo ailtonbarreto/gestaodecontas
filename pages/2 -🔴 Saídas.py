@@ -178,11 +178,15 @@ with tab3:
     indices_selecionados = obter_indices_selecionados(dfeditar)
 
     dfeditar = dfeditar.query('index ==@indices_selecionados ')
+    
 
     filtro_index = dfeditar.index[0]
 
     linha3 = filtro_index+2
 
+
+    if st.error:
+        df
 
     coluna = 5
     with tab3:
