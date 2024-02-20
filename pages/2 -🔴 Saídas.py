@@ -181,7 +181,7 @@ with tab3:
         return pd.DataFrame(columns=colunas)
 
     # Verificar se o DataFrame está vazio
-    if len(dfeditar) == 0:
+    if len(dfeditar) == None:
         # Se estiver vazio, criar um DataFrame em branco
         colunas = ['Coluna1', 'Coluna2', 'Coluna3']  # Especifique as colunas conforme necessário
         dfeditar = criar_dataframe_em_branco(colunas)
