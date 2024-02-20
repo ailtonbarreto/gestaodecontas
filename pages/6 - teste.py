@@ -19,5 +19,4 @@ df = pd.DataFrame(dados)
 # Mostrar o DataFrame com checkboxes e obter os índices selecionados
 indices_selecionados = obter_indices_selecionados(df)
 
-# Mostrar os índices selecionados
-st.write("Índices selecionados:", indices_selecionados)
+
