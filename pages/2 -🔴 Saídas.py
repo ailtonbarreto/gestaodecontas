@@ -178,8 +178,9 @@ indices_selecionados = obter_indices_selecionados(dfeditar)
 
 dfeditar = dfeditar.query('index ==@indices_selecionados ')
 
+primeira_linha = dfeditar.iloc[0]
 
-linha3 = indices_selecionados+2
+linha3 = primeira_linha+2
 
 coluna = 5
 with tab3:
