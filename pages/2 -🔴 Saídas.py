@@ -167,7 +167,7 @@ with tab3:
     def obter_indices_selecionados(dfeditar):
         indices_selecionados = []
         for index, row in dfeditar.iterrows():
-
+            
             if st.checkbox('', key=index):
                 indices_selecionados.append(index)
         return indices_selecionados
@@ -184,11 +184,8 @@ with tab3:
 
     linha3 = filtro_index+2
 
-
-    if st.error:
-        df
-
     coluna = 5
+    
     with tab3:
         if st.button("SALVAR EDIÇÃO"):
             ws1: Worksheet = sh.get_worksheet(1)
