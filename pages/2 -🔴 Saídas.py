@@ -178,7 +178,7 @@ with tab3:
     
 
     try:
-            primeiro_indice = dfeditar.index[0]
+            primeiro_indice = None:
     except ValueError:
         # Lidar com o caso em que ocorre um erro ao acessar o índice 0
          dfeditar["Fornecedor"] = dfeditar["Sem"]
