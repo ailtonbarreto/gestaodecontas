@@ -176,14 +176,13 @@ with tab3:
 
     dfeditar = dfeditar.query('index ==@indices_selecionados ')
     
-
     try:
-         primeiro_indice = dfeditar.index[0]
-    except st.error:
-        # Lidar com o caso em que ocorre um erro ao acessar o índice 0
-         dfeditar = pd.DataFrame({'Coluna': [1, 2, 3]})
-    else:
-        dfeditar.index[0]
+        # Código que pode gerar um erro
+        primeiro_indice = dfeditar.index[0]
+    except Exception as e:
+        # Lidar com o erro
+        dfeditar["Fornecedor"] = dfeditar["Sem"]
+        st.error(f"Ocorreu um erro: {e}")
 
     filtro_index = dfeditar.index[0]
 
