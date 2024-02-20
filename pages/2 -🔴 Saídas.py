@@ -164,18 +164,20 @@ with tab3:
      dfeditar = df.query('Ano == @filtro_y & Mês == @filtro_m & Fornecedor == @filtro_f')
 
 with tab3:
-    col1, col2 = st.columns([1,10])
+    col1, col2 = st.columns([1, 10])
+
     def obter_indices_selecionados(dfeditar):
         indices_selecionados = []
         
         with col1:
             for index, row in dfeditar.iterrows():
-                if st.checkbox(f'{index}', dfeditar[True,False], key=index):
+                if st.checkbox(f'{index}', value=False, key=index):
                     indices_selecionados.append(index)
-            return indices_selecionados
+        
+        return indices_selecionados
     
-       
     indices_selecionados = obter_indices_selecionados(dfeditar)
+    
     dftab = dfeditar
     dfeditar = dfeditar.query('index ==@indices_selecionados ')
 
