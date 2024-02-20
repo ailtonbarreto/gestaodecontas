@@ -164,7 +164,7 @@ with tab3:
      dfeditar = df.query('Ano == @filtro_y & Mês == @filtro_m & Fornecedor == @filtro_f')
 
 with tab3:
-    col1, col2 = st.columns(2)
+    col1, col2 = st.columns([1,10])
     def obter_indices_selecionados(dfeditar):
         indices_selecionados = []
         
