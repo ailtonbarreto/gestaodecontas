@@ -173,7 +173,7 @@ with tab3:
                     return index  # Retorna o primeiro índice marcado
         return None  # Retorna None se nenhum checkbox estiver marcado
 
-    primeiro_indice_selecionado = obter_primeiro_indice_selecionado(dfeditar)
+    ndices_selecionados = obter_primeiro_indice_selecionado(dfeditar)
     
     dftab = dfeditar
     dfeditar = dfeditar.query('index ==@indices_selecionados ')
