@@ -177,7 +177,7 @@ with tab3:
         # Mostrar o DataFrame com checkboxes e obter os índices selecionados
     indices_selecionados = obter_indices_selecionados(dfeditar)
 
-    dfeditar = dfeditar.query('index ==@indices_selecionados ')
+    dfeditar = dfeditar.query('"Fornecedor" ==@indices_selecionados ')
 
     filtro_index = dfeditar.index[0]
 
