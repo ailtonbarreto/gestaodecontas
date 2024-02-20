@@ -174,12 +174,12 @@ def obter_indices_selecionados(dfeditar):
 
 
 # Mostrar o DataFrame com checkboxes e obter os índices selecionados
-indices_selecionados = obter_indices_selecionados(dfeditar)
+dfeditar = indices_selecionados = obter_indices_selecionados(dfeditar)
 
 
 
 
-linha3 = indices_selecionados+2
+linha3 = filtro_index+2
 
 coluna = 5
 with tab3:
