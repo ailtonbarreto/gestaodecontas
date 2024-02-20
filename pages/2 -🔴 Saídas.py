@@ -177,10 +177,14 @@ with tab3:
     dfeditar = dfeditar.query('index ==@indices_selecionados ')
     
 
-    if dfeditar == ValueError:
-        dfeditar["Fornecedor"] = dfeditar["Sem"]
+    try:
+            primeiro_indice = dfeditar.index[0]
+    except ValueError:
+        # Lidar com o caso em que ocorre um erro ao acessar o índice 0
+         dfeditar["Fornecedor"] = dfeditar["Sem"]
     else:
-        dfeditar.index[0]
+        # Caso não ocorra erro, faça algo com o primeiro índice
+         print("O primeiro índice é:", primeiro_indice)
 
     filtro_index = dfeditar.index[0]
 
