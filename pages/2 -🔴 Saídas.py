@@ -168,29 +168,20 @@ with tab3:
         indices_selecionados = []
         for index, row in dfeditar.iterrows():
 
-            if st.checkbox('Selecionar', True, key=index):
+            if st.checkbox('Selecionar', key=index):
                 indices_selecionados.append(index)
         return indices_selecionados
 
 
+
+        # Mostrar o DataFrame com checkboxes e obter os índices selecionados
     indices_selecionados = obter_indices_selecionados(dfeditar)
 
     dfeditar = dfeditar.query('index ==@indices_selecionados ')
     
-    def criar_dataframe_em_branco(colunas):
-        return pd.DataFrame(columns=colunas)
 
-    # Verificar se o DataFrame está vazio
-    if len(dfeditar) == None:
-        # Se estiver vazio, criar um DataFrame em branco
-        colunas = ['Coluna1', 'Coluna2', 'Coluna3']  # Especifique as colunas conforme necessário
-        dfeditar = criar_dataframe_em_branco(colunas)
-    else:
-        # Se não estiver vazio, tentar acessar o primeiro índice
-        filtro_index = dfeditar.index[0]
+    filtro_index = dfeditar.index[0]
 
-        # filtro_index = dfeditar.index[0]
-    
     linha3 = filtro_index+2
 
     coluna = 5
