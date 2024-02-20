@@ -181,7 +181,6 @@ with tab3:
         primeiro_indice = dfeditar.index[0]
     except Exception as e:
         # Lidar com o erro
-        dfeditar["Fornecedor"] = dfeditar["Sem"]
         st.error(f"Ocorreu um erro: {e}")
 
     filtro_index = dfeditar.index[0]
