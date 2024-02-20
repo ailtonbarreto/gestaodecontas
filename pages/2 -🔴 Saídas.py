@@ -168,7 +168,7 @@ with tab3:
         indices_selecionados = []
         for index, row in dfeditar.iterrows():
 
-            if st.checkbox('Selecionar', key=index):
+            if st.checkbox('Selecionar', True, key=index):
                 indices_selecionados.append(index)
         return indices_selecionados
 
