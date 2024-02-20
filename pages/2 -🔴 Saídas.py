@@ -178,7 +178,7 @@ with tab3:
     dfeditar = dfeditar.query('index ==@indices_selecionados ')
     
 
-    filtro_index = dfeditar.index[0]
+    # filtro_index = dfeditar.index[0]
 
     def criar_dataframe_em_branco(colunas):
         return pd.DataFrame(columns=colunas)
