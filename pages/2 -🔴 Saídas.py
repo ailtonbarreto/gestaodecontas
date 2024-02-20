@@ -166,14 +166,17 @@ with tab3:
 with tab3:
     col1, col2 = st.columns([1, 10])
 
-    def obter_primeiro_indice_selecionado(dfeditar):
+    def obter_indices_selecionados(dfeditar):
+        indices_selecionados = []
+        
         with col1:
             for index, row in dfeditar.iterrows():
                 if st.checkbox(f'{index}', value=False, key=index):
-                    return index  # Retorna o primeiro índice marcado
-        return None  # Retorna None se nenhum checkbox estiver marcado
-
-    ndices_selecionados = obter_primeiro_indice_selecionado(dfeditar)
+                    indices_selecionados.append(index)
+        
+        return indices_selecionados
+    
+    indices_selecionados = obter_indices_selecionados(dfeditar)
     
     dftab = dfeditar
     dfeditar = dfeditar.query('index ==@indices_selecionados ')
