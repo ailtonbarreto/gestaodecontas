@@ -170,16 +170,7 @@ with tab3:
             if st.checkbox(f'Selecionar linha {index}', True, key=index):
                 indices_selecionados.append(index)
         return indices_selecionados
-
-
-# Obter os índices selecionados
-    indices_selecionados = obter_indices_selecionados(dfeditar)
-
-# Exibir os índices selecionados
-    st.write(f'Índices selecionados: {indices_selecionados}')
-
-
-
+    
         # Mostrar o DataFrame com checkboxes e obter os índices selecionados
     indices_selecionados = obter_indices_selecionados(dfeditar)
 
