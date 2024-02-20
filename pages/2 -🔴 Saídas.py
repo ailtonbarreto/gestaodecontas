@@ -182,60 +182,60 @@ filtro_index = dfeditar.index[0]
 
 linha3 = filtro_index+2
 
-st.write(filtro_index)
-# coluna = 5
-# with tab3:
-#     if st.button("SALVAR EDIÇÃO"):
-#         ws1: Worksheet = sh.get_worksheet(1)
-#         ws1.update_cell(int(linha3), coluna, editar_status)
-#         st.success("Edição salva!")
 
-#     df["Valor"] = df["Valor"].apply(lambda x: f'R$ {x:.2f}')
-#     st.table(dfeditar)
-# #------------------------------------------------------------------------------------------
-# #Saídas em aberto
+coluna = 5
+with tab3:
+    if st.button("SALVAR EDIÇÃO"):
+        ws1: Worksheet = sh.get_worksheet(1)
+        ws1.update_cell(int(linha3), coluna, editar_status)
+        st.success("Edição salva!")
+
+    df["Valor"] = df["Valor"].apply(lambda x: f'R$ {x:.2f}')
+    st.table(dfeditar)
+#------------------------------------------------------------------------------------------
+#Saídas em aberto
  
-# with tab4:
-#     st.title("🔴 Pagamentos em Aberto",anchor=False)
-#     entrada_ano = st.selectbox('Escolha um ano',df["Ano"].unique())
-#     filtro_entrada = st.selectbox("Escolha um mês",df["Mês"].unique())
-#     aberto = df.query('Mês == @filtro_entrada & Ano == @entrada_ano & Status == "A PAGAR"')
-#     aberto = aberto.drop(columns=["Data","Ano","Mês","Tipo"])
-#     st.table(aberto)
+with tab4:
+    st.title("🔴 Pagamentos em Aberto",anchor=False)
+    entrada_ano = st.selectbox('Escolha um ano',df["Ano"].unique())
+    filtro_entrada = st.selectbox("Escolha um mês",df["Mês"].unique())
+    aberto = df.query('Mês == @filtro_entrada & Ano == @entrada_ano & Status == "A PAGAR"')
+    aberto = aberto.drop(columns=["Data","Ano","Mês","Tipo"])
+    st.table(aberto)
 
-# #------------------------------------------------------------------------------------------
-# #Esconder streamlit menus
+#------------------------------------------------------------------------------------------
+#Esconder streamlit menus
 
-# framegraficos = """
-#     <style>
-#     [data-testid="column"]
-#     {
-#     border-radius: 15px;
-#     background-color: #2F3035;
-#     padding: 20px;
-#     opacity: 80%;
-#     color: white;
+framegraficos = """
+    <style>
+    [data-testid="column"]
+    {
+    border-radius: 15px;
+    background-color: #2F3035;
+    padding: 20px;
+    opacity: 80%;
+    color: white;
     
-#     }
-#     </style>
-# """
-# st.markdown(framegraficos,unsafe_allow_html=True)
+    }
+    </style>
+"""
+st.markdown(framegraficos,unsafe_allow_html=True)
 
-# desativartelacheia = """
-#     <style>
-#     [data-testid="StyledFullScreenButton"]
-#     {
-#     visibility: hidden;
-#     }
-#     </style>
-# """
-# st.markdown(desativartelacheia,unsafe_allow_html=True)
+desativartelacheia = """
+    <style>
+    [data-testid="StyledFullScreenButton"]
+    {
+    visibility: hidden;
+    }
+    </style>
+"""
+st.markdown(desativartelacheia,unsafe_allow_html=True)
 
-# hide_st_style = """
-#             <style>
-#             #MainMenu {visibility: hidden;}
-#             footer {visibility: hidden;}
-#             header {visibility: hidden;}
-#             </style>
-#             """
-# st.markdown(hide_st_style, unsafe_allow_html=True)
+hide_st_style = """
+            <style>
+            #MainMenu {visibility: hidden;}
+            footer {visibility: hidden;}
+            header {visibility: hidden;}
+            </style>
+            """
+st.markdown(hide_st_style, unsafe_allow_html=True)
