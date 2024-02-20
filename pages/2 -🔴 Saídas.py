@@ -168,8 +168,8 @@ with tab3:
         indices_selecionados = []
         for index, row in dfeditar.iterrows():
 
-            if st.checkbox('', key="Fornecedor"):
-                indices_selecionados.append("Fornecedor")
+            if st.checkbox('', key=index):
+                indices_selecionados.append(index)
         return indices_selecionados
 
 
@@ -177,7 +177,7 @@ with tab3:
         # Mostrar o DataFrame com checkboxes e obter os índices selecionados
     indices_selecionados = obter_indices_selecionados(dfeditar)
 
-    dfeditar = dfeditar.query('"Fornecedor" ==@indices_selecionados ')
+    dfeditar = dfeditar.query('index ==@indices_selecionados ')
 
     filtro_index = dfeditar.index[0]
 
