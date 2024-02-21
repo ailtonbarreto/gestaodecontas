@@ -194,7 +194,7 @@ with tab3:
 
     dftab["Valor"] = dftab["Valor"].apply(lambda x: f'R$ {x:,.2f}')
     with col2:
-        st.table(dftab)
+        st.table(dfeditar)
 #------------------------------------------------------------------------------------------
 #Saídas em aberto
  
