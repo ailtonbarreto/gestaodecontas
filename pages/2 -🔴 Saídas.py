@@ -167,7 +167,7 @@ with tab3:
     col1, col2 = st.columns([1, 10])
 
     def obter_indices_selecionados(dfeditar):
-        indices_selecionados = []
+        indices_selecionados = [0]
         
         with col1:
             for index, row in dfeditar.iterrows():
