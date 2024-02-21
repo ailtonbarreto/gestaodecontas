@@ -147,7 +147,7 @@ with tab2:
     
         st.success("Saída Excluída Com Sucesso!")
 
-    st.table(opcoesdelete)
+    st.table(dfdellinha)
     
 #------------------------------------------------------------------------------------------ 
 # Editar uma saída  
