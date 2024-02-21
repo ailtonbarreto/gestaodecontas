@@ -42,7 +42,7 @@ dfcadastro = sh.get_worksheet(2)
 dfcadastro = dfcadastro.get_all_values()
 planilhacadastro = pd.DataFrame(dfcadastro[1:], columns=dfcadastro[0])
 
-
+meses = ['Jan','Fev','Mar','Abr','Mai','Jun','Jul','Ago','Set','Out','Nov','Dez']
 #----------------------------------------------------------------------------------------
 #Função definir meses
 
@@ -128,7 +128,7 @@ with tab2:
 #Indice da linha a ser removida
     dfdelete = df
     filtro_ano = st.selectbox("Ano",dfdelete["Ano"].unique())
-    filtro_mes = st.selectbox("Mês",dfdelete["Mês"].unique())
+    filtro_mes = st.selectbox("Mês",meses)
     filtro_fornecedor = st.selectbox('Fornecedor',dfdelete["Fornecedor"].unique())
     linha1 = st.number_input("Excluir Linha",format="%.0f")
 
@@ -154,7 +154,7 @@ with tab3:
 
      #Dados da linha editada
      filtro_y = st.selectbox('Ano da Movimentação',dfeditar["Ano"].unique())
-     filtro_m = st.selectbox('Mês da Movimentação',dfeditar["Mês"].unique())
+     filtro_m = st.selectbox('Mês da Movimentação',meses)
      filtro_f = st.selectbox('Buscar Fornecedor',dfeditar["Fornecedor"].unique())
      
      editar_status = st.selectbox('Novo Status',["A PAGAR","PAGO"])
