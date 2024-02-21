@@ -193,10 +193,11 @@ with tab3:
     coluna = 5
     
     with tab3:
-        if st.button("SALVAR EDIÇÃO"):
-            ws1: Worksheet = sh.get_worksheet(1)
-            ws1.update_cell(int(linha3), coluna, editar_status)
-            st.success("Edição salva!")
+        with col2:
+            if st.button("SALVAR EDIÇÃO"):
+                ws1: Worksheet = sh.get_worksheet(1)
+                ws1.update_cell(int(linha3), coluna, editar_status)
+                st.success("Edição salva!")
 
     dfeditar["Valor"] = dfeditar["Valor"].apply(lambda x: f'R$ {x:,.2f}')
     with col2:
