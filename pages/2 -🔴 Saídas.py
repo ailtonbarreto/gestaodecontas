@@ -161,7 +161,7 @@ with tab3:
     
 
      
-     dfeditar = df.query('Ano == @filtro_y & Mês == @filtro_m & Fornecedor == @filtro_f')
+     dfeditar = dfeditar.query('Ano == @filtro_y & Mês == @filtro_m & Fornecedor == @filtro_f')
      
      
 with tab3:
