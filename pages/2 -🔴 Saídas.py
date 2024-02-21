@@ -168,16 +168,12 @@ with tab3:
      
      
 with tab3:
-    col1, col2 = st.columns([1, 10])
-
     def obter_indices_selecionados(dfeditar):
         indices_selecionados = []
-        
-        with col1:
-            opcoes = dfeditar.index.tolist()  # Lista de índices do DataFrame
-            selected_index = st.selectbox("Selecionar", opcoes)
-            if selected_index is not None:
-                indices_selecionados.append(selected_index)
+        opcoes = dfeditar.index.tolist()  # Lista de índices do DataFrame
+        selected_index = st.selectbox("Selecionar", opcoes)
+        if selected_index is not None:
+            indices_selecionados.append(selected_index)
         
         return indices_selecionados
 
@@ -199,8 +195,8 @@ with tab3:
             st.success("Edição salva!")
 
     dfeditar["Valor"] = dfeditar["Valor"].apply(lambda x: f'R$ {x:,.2f}')
-    with col2:
-        st.table(dfeditar)
+    
+    st.table(dfeditar)
        
 #------------------------------------------------------------------------------------------
 #Saídas em aberto
