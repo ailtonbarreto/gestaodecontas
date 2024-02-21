@@ -178,7 +178,7 @@ with tab3:
     
     indices_selecionados = obter_indices_selecionados(dfeditar)
     
-    dftab = dfeditar.reset_index(drop=True)
+    dftab = dfeditar.reset_index(drop=False)
     
     dfeditar = dfeditar.query('index ==@indices_selecionados ')
 
