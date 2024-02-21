@@ -172,13 +172,12 @@ with tab3:
         
         with col1:
             opcoes = dfeditar.index.tolist()  # Lista de índices do DataFrame
-            for index in opcoes:
-                if st.selectbox("Selecionar linha", opcoes.index(index)):
-                    indices_selecionados.append(index)
+            selected_index = st.selectbox("Selecionar linha", opcoes)
+            if selected_index is not None:
+                indices_selecionados.append(selected_index)
         
         return indices_selecionados
 
-    indices_selecionados = obter_indices_selecionados(dfeditar)
 
     indices_selecionados = obter_indices_selecionados(dfeditar)
     
