@@ -127,13 +127,14 @@ with tab2:
     st.title("🔴 Excluir Saída",anchor=False)
 #Indice da linha a ser removida
     dfdelete = df
-    filtro_ano = st.selectbox("Ano",dfdelete["Ano"].unique())
-    filtro_mes = st.selectbox("Mês",meses)
-    filtro_fornecedor = st.selectbox('Fornecedor',dfdelete["Fornecedor"].unique())
-    
-    dfdellinha = dfdelete.query('Ano == @filtro_ano & Mês == @filtro_mes & Fornecedor == @filtro_fornecedor')
-    opcoesdelete = dfdellinha.index.tolist()
     with col1:
+        filtro_ano = st.selectbox("Ano",dfdelete["Ano"].unique())
+        filtro_mes = st.selectbox("Mês",meses)
+        filtro_fornecedor = st.selectbox('Fornecedor',dfdelete["Fornecedor"].unique())
+        
+        dfdellinha = dfdelete.query('Ano == @filtro_ano & Mês == @filtro_mes & Fornecedor == @filtro_fornecedor')
+        opcoesdelete = dfdellinha.index.tolist()
+        
         linha1 = st.selectbox("Selecionar linha", opcoesdelete)
     
 
