@@ -131,10 +131,12 @@ with tab2:
     filtro_mes = st.selectbox("Mês",meses)
     filtro_fornecedor = st.selectbox('Fornecedor',dfdelete["Fornecedor"].unique())
     
-    opcoesdelete = dfdelete.index.tolist()  # Lista de índices do DataFrame
+    dfdellinha = dfdelete.query('Ano == @filtro_ano & Mês == @filtro_mes')
+    opcoesdelete = dfdellinha.index.tolist()
+    
     linha1 = st.selectbox("Selecionar linha", opcoesdelete)
     
-    # linha1 = st.number_input("Excluir Linha",format="%.0f")
+    
 
     dfdelete = dfdelete.query('Ano == @filtro_ano & Mês == @filtro_mes & Fornecedor == @filtro_fornecedor')
 
