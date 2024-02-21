@@ -171,7 +171,7 @@ with tab3:
         
         with col1:
             for index, row in dfeditar.iterrows():
-                if st.checkbox(f'{index}', value=True, key=index):
+                if st.selectbox("Linha",dfeditar.index()):
                     indices_selecionados.append(index)
         
         return indices_selecionados
