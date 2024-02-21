@@ -195,7 +195,7 @@ with tab3:
             ws1.update_cell(int(linha3), coluna, editar_status)
             st.success("Edição salva!")
 
-    dfeditar["Valor"] = dfeditar["Valor"].apply(lambda x: f'R$ {x:,.2f}')
+    dftab["Valor"] = dftab["Valor"].apply(lambda x: f'R$ {x:,.2f}')
     with col2:
         st.table(dftab)
        
