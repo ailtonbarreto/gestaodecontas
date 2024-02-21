@@ -149,7 +149,7 @@ with tab2:
         
             st.success("Saída Excluída Com Sucesso!")
     
-            st.table(dfdelete)
+        st.table(dfdelete)
     
 #------------------------------------------------------------------------------------------ 
 # Editar uma saída  
