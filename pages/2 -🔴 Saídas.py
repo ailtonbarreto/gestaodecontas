@@ -183,7 +183,7 @@ with tab3:
     
     dfeditar = dfeditar.query('index ==@indices_selecionados ')
     
-    filtro_index = dfeditar.index[1]
+    filtro_index = dfeditar.index[0]
 
     linha3 = filtro_index+2
 
