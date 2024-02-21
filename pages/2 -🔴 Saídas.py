@@ -160,7 +160,7 @@ with tab3:
      editar_status = st.selectbox('Novo Status',["A PAGAR","PAGO"])
     
 
-     dftab = df.query('Ano == @filtro_y & Mês == @filtro_m & Fornecedor == @filtro_f')
+     dftab = df.reset_index(drop=False)
      dfeditar = df.query('Ano == @filtro_y & Mês == @filtro_m & Fornecedor == @filtro_f')
      
 with tab3:
