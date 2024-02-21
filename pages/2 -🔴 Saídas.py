@@ -162,7 +162,7 @@ with tab3:
 
 
      dfeditar = df.query('Ano == @filtro_y & Mês == @filtro_m & Fornecedor == @filtro_f')
-
+     dftab = dfeditar   
 with tab3:
     col1, col2 = st.columns([1, 10])
 
@@ -180,7 +180,7 @@ with tab3:
     
     dfeditar = dfeditar.query('index ==@indices_selecionados ')
     
-    dftab = dfeditar.reset_index(False)
+    
     
     filtro_index = dfeditar.index[0]
 
