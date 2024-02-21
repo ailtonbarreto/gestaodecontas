@@ -137,7 +137,7 @@ with tab2:
     linha1 = st.selectbox("Selecionar linha", opcoesdelete)
     
 
-    dfdelete = dfdelete.query('index ==@linha1 Ano == @filtro_ano & Mês == @filtro_mes & Fornecedor == @filtro_fornecedor')
+    dfdelete = dfdelete.query('index ==@linha1 & Ano == @filtro_ano & Mês == @filtro_mes & Fornecedor == @filtro_fornecedor')
 
     if st.button("EXCLUIR SAÍDA"):
         
