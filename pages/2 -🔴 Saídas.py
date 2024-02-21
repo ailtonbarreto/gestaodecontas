@@ -162,7 +162,7 @@ with tab3:
 
      
      dfeditar = df.query('Ano == @filtro_y & Mês == @filtro_m & Fornecedor == @filtro_f')
-     dftab = dfeditar.reset_index(drop=False)
+     
      
 with tab3:
     col1, col2 = st.columns([1, 10])
@@ -195,9 +195,9 @@ with tab3:
             ws1.update_cell(int(linha3), coluna, editar_status)
             st.success("Edição salva!")
 
-    dftab["Valor"] = dftab["Valor"].apply(lambda x: f'R$ {x:,.2f}')
+    dfeditar["Valor"] = dfeditar["Valor"].apply(lambda x: f'R$ {x:,.2f}')
     with col2:
-        st.table(dftab)
+        st.table(dfeditar)
        
 #------------------------------------------------------------------------------------------
 #Saídas em aberto
