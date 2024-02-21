@@ -151,7 +151,7 @@ with tab3:
      st.title("🔴 Editar Status",anchor=False)
 
      dfeditar = df
-    
+
      #Dados da linha editada
      filtro_y = st.selectbox('Ano da Movimentação',dfeditar["Ano"].unique())
      filtro_m = st.selectbox('Mês da Movimentação',dfeditar["Mês"].unique())
@@ -160,9 +160,9 @@ with tab3:
      editar_status = st.selectbox('Novo Status',["A PAGAR","PAGO"])
     
 
-
-     dfeditar = df.query('Ano == @filtro_y & Mês == @filtro_m & Fornecedor == @filtro_f')
      dftab = df.query('Ano == @filtro_y & Mês == @filtro_m & Fornecedor == @filtro_f')
+     dfeditar = df.query('Ano == @filtro_y & Mês == @filtro_m & Fornecedor == @filtro_f')
+     
 with tab3:
     col1, col2 = st.columns([1, 10])
 
@@ -179,8 +179,6 @@ with tab3:
     indices_selecionados = obter_indices_selecionados(dfeditar)
     
     dfeditar = dfeditar.query('index ==@indices_selecionados ')
-    
-    
     
     filtro_index = dfeditar.index[0]
 
