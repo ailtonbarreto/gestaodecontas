@@ -137,7 +137,7 @@ with tab2:
     linha1 = st.selectbox("Selecionar linha", opcoesdelete)
     
 
-    dfdelete = dfdelete.query('Ano == @filtro_ano & Mês == @filtro_mes & Fornecedor == @filtro_fornecedor')
+    dfdelete = dfdelete.query('index ==@linha1 Ano == @filtro_ano & Mês == @filtro_mes & Fornecedor == @filtro_fornecedor')
 
     if st.button("EXCLUIR SAÍDA"):
         
@@ -164,8 +164,6 @@ with tab3:
      filtro_f = st.selectbox('Buscar Fornecedor',dffor["Fornecedor"].unique())
      editar_status = st.selectbox('Novo Status',["A PAGAR","PAGO"])
     
-
-     
      dfeditar = dfeditar.query('Ano == @filtro_y & Mês == @filtro_m & Fornecedor == @filtro_f')
      
      
