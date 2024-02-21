@@ -171,11 +171,11 @@ with tab3:
         
         with col1:
             for index, row in dfeditar.iterrows():
-                if st.selectbox("Linha",dfeditar.index):
+                if st.checkbox(f"Selecionar linha {index}"):
                     indices_selecionados.append(index)
         
         return indices_selecionados
-    
+
     indices_selecionados = obter_indices_selecionados(dfeditar)
     
     dfeditar = dfeditar.query('index ==@indices_selecionados ')
