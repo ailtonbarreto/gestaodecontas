@@ -130,7 +130,11 @@ with tab2:
     filtro_ano = st.selectbox("Ano",dfdelete["Ano"].unique())
     filtro_mes = st.selectbox("Mês",meses)
     filtro_fornecedor = st.selectbox('Fornecedor',dfdelete["Fornecedor"].unique())
-    linha1 = st.number_input("Excluir Linha",format="%.0f")
+    
+    opcoesdelete = dfdelete.index.tolist()  # Lista de índices do DataFrame
+    linha1 = st.selectbox("Selecionar linha", opcoesdelete)
+    
+    # linha1 = st.number_input("Excluir Linha",format="%.0f")
 
     dfdelete = dfdelete.query('Ano == @filtro_ano & Mês == @filtro_mes & Fornecedor == @filtro_fornecedor')
 
@@ -157,7 +161,6 @@ with tab3:
      filtro_m = st.selectbox('Mês da Movimentação',meses)
      dffor = dfeditar.query('Ano == @filtro_y & Mês == @filtro_m')
      filtro_f = st.selectbox('Buscar Fornecedor',dffor["Fornecedor"].unique())
-     
      editar_status = st.selectbox('Novo Status',["A PAGAR","PAGO"])
     
 
