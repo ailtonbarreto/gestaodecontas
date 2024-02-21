@@ -195,7 +195,7 @@ with tab3:
     dfeditar["Valor"] = dfeditar["Valor"].apply(lambda x: f'R$ {x:,.2f}')
     with col2:
         st.table(dfeditar)
-        st.rerun()
+       
 #------------------------------------------------------------------------------------------
 #Saídas em aberto
  
