@@ -140,16 +140,16 @@ with tab2:
     
 
     dfdelete = dfdelete.query('index ==@linha1 & Ano == @filtro_ano & Mês == @filtro_mes & Fornecedor == @filtro_fornecedor')
-
-    if st.button("EXCLUIR SAÍDA"):
-        
-        wsremover: Worksheet = sh.get_worksheet(1)
-    
-        wsremover.delete_rows(int(linha1) + 2)
-    
-        st.success("Saída Excluída Com Sucesso!")
     with col2:
-        st.table(dfdelete)
+        if st.button("EXCLUIR SAÍDA"):
+            
+            wsremover: Worksheet = sh.get_worksheet(1)
+        
+            wsremover.delete_rows(int(linha1) + 2)
+        
+            st.success("Saída Excluída Com Sucesso!")
+    
+            st.table(dfdelete)
     
 #------------------------------------------------------------------------------------------ 
 # Editar uma saída  
