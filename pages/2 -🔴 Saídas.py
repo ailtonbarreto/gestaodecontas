@@ -134,8 +134,8 @@ with tab2:
         
     dfdellinha = dfdelete.query('Ano == @filtro_ano & Mês == @filtro_mes & Fornecedor == @filtro_fornecedor')
     opcoesdelete = dfdellinha.index.tolist()
-        
-    linha1 = st.selectbox("Selecionar linha", opcoesdelete)
+    with col1:   
+        linha1 = st.selectbox("Selecionar linha", opcoesdelete)
     
 
     dfdelete = dfdelete.query('index ==@linha1 & Ano == @filtro_ano & Mês == @filtro_mes & Fornecedor == @filtro_fornecedor')
