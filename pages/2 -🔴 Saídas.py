@@ -167,11 +167,11 @@ with tab3:
     col1, col2 = st.columns([1, 10])
 
     def obter_indices_selecionados(dfeditar):
-        indices_selecionados = [0]
+        indices_selecionados = []
         
         with col1:
             for index, row in dfeditar.iterrows():
-                if st.checkbox(f'{index}', value=False, key=index):
+                if st.checkbox(f'{index}', value=True, key=index):
                     indices_selecionados.append(index)
         
         return indices_selecionados
