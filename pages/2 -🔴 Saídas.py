@@ -224,6 +224,7 @@ with tab3:
                 st.success("Edição salva!")
 
     dfeditar["Valor"] = dfeditar["Valor"].apply(lambda x: f'R$ {x:,.2f}')
+    dfeditar = dfeditar.drop(["Ano","Mês"])
     with col2:
         st.table(dfeditar)
                 
