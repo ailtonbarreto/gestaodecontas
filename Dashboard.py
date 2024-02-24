@@ -5,6 +5,7 @@ import streamlit as st
 import pandas as pd
 import plotly.express as px
 import gspread as sg
+import datetime as dt
 
 
 #----------------------------------------------------------------------------------------
@@ -68,6 +69,30 @@ df = pd.concat([dfsaida,dfentrada]).reset_index(drop=True)
 df["Ano"] = pd.to_datetime(df['Data']).dt.year
 df["Mês"] = pd.to_datetime(df['Data']).dt.month
 df["Data"] = df["Data"].dt.strftime('%d/%m/%Y')
+
+#----------------------------------------------------------------------------------------
+#funcão para definir situacao das contas
+
+def definir_situacao(status, data):
+    if status == 'PAGO':
+        return 'OK'
+    elif status == 'EM ABERTO' and pd.to_datetime(data).date() > dt.date.today():
+        return 'EM DIA'
+    elif status == 'EM ABERTO' and pd.to_datetime(data).date() == dt.date.today():
+        return 'VENCE HOJE'
+    else:
+        return 'ATRASADO'
+
+df['SITUACAO'] = df.apply(lambda row: definir_situacao(row['STATUS'], row['DATA']), axis=1)
+df.sort_values(by="Data",ascending=True)
+
+
+
+
+
+
+
+
 
 #----------------------------------------------------------------------------------------
 #funcão para classificar meses
