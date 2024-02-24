@@ -170,7 +170,7 @@ with tab2:
             wsremover.delete_rows(int(linha1) + 2)
         
             st.success("Saída Excluída Com Sucesso!")
-    
+        dfdelete = dfdelete.drop(columns=["Ano","Mês"])
         st.table(dfdelete)
     
 #------------------------------------------------------------------------------------------ 
