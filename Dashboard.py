@@ -87,13 +87,6 @@ df['Situacao'] = df.apply(lambda row: definir_situacao(row['Status'], row['Data'
 df.sort_values(by="Data",ascending=True)
 
 
-
-
-
-
-
-
-
 #----------------------------------------------------------------------------------------
 #funcão para classificar meses
 
