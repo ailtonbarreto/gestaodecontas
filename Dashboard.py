@@ -1,5 +1,5 @@
 #----------------------------------------------------------------------------------------
-#Dashboard Gestão de contas
+#Dashboard Gestao de contas
 
 import streamlit as st
 import pandas as pd
@@ -9,7 +9,7 @@ import datetime as dt
 
 
 #----------------------------------------------------------------------------------------
-#exibição de dados
+#exibicao de dados
 
 st.set_page_config(layout="wide",initial_sidebar_state='collapsed',page_icon='📊')
 st.sidebar.link_button("Ver Planilha","https://docs.google.com/spreadsheets/d/1HcISrCFCKWOtF6O_RonxH_RVdg2jFBly2KQryc_cZcY/edit?usp=sharing")
@@ -71,7 +71,7 @@ df["Mês"] = pd.to_datetime(df['Data']).dt.month
 df["Data"] = df["Data"].dt.strftime('%d/%m/%Y')
 
 #----------------------------------------------------------------------------------------
-#funcão para definir situacao das contas
+#funcao para definir situacao das contas
 
 def definir_situacao(status, data):
     if status == 'PAGO':
@@ -88,9 +88,9 @@ df.sort_values(by="Data",ascending=True)
 
 
 #----------------------------------------------------------------------------------------
-#funcão para classificar meses
+#funcao para classificar meses
 
-def determinar_mês(valor):
+def determinar_mes(valor):
     meses = {
         1: "Jan",
         2: "Fev",
@@ -113,7 +113,7 @@ meses = ['Jan','Fev','Mar','Abr','Mai','Jun','Jul','Ago','Set','Out','Nov','Dez'
 
 
 #----------------------------------------------------------------------------------------
-#dicionário para classificar meses
+#dicionario para classificar meses
 
 classificar_meses ={
     'Jan': 1,
@@ -130,7 +130,7 @@ classificar_meses ={
     'Dez': 12
         }
 
-df["Mês"] = df["Mês"].apply(determinar_mês)
+df["Mês"] = df["Mês"].apply(determinar_mes)
 df = df.drop(columns=["Data Emissão"])
 df['Ordem_Mês'] = df['Mês'].map(classificar_meses)
 df = df.sort_values(by='Ordem_Mês',ascending = True).drop(columns=['Ordem_Mês'])
@@ -170,7 +170,7 @@ df_filtrado3 = df_filtrado3.sort_values(by='Ordem_Mês',ascending = True).drop(c
 df_filtrado4 = df.query('Ano == @filtro_ano & Mês == @filtro_mes & Tipo == "ENTRADA"')
 
 #----------------------------------------------------------------------------------------
-#Gráficos
+#Graficos
 
 grafico_Rosca = px.pie(df_filtrado1,names="Tipo",color='Tipo',category_orders={'Tipo':['SAÍDA','ENTRADA']},
         values="Valor",color_discrete_sequence=["#941b0c","#06d6a0"],title='Entradas VS Saídas')
@@ -228,7 +228,7 @@ else:
 df_filtrado1["Valor"] = df_filtrado1["Valor"].apply(lambda x: f'R$ {x:,.2f}')
 
 #----------------------------------------------------------------------------------------
-#Layout gráficos
+#Layout graficos
 
 with col2:
     st.metric("Entrada",f'🟢 R$ {round(df_filtrado4["Valor"].sum(),2):,.2f}')
@@ -246,7 +246,7 @@ with col9:
 with col10:
     st.plotly_chart(grafico_colunas,use_container_width=True)
 #------------------------------------------------------------------------------------------
-#Estilizacao
+#CSS
 
 framegraficos = """
     <style>
