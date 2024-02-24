@@ -61,6 +61,7 @@ def definir_situacao(status, data):
         return 'ATRASADO'
 
 df['Situacao'] = df.apply(lambda row: definir_situacao(row['Status'], row['Data Emissão']), axis=1)
+df["Data"] = df["Data"].dt.strftime('%d/%m/%Y')
 df.sort_values(by="Data",ascending=True)
 
 
