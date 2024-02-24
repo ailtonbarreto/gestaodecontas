@@ -83,7 +83,7 @@ def definir_situacao(status, data):
     else:
         return 'ATRASADO'
 
-df['SITUACAO'] = df.apply(lambda row: definir_situacao(row['STATUS'], row['Data']), axis=1)
+df['Situacao'] = df.apply(lambda row: definir_situacao(row['Status'], row['Data']), axis=1)
 df.sort_values(by="Data",ascending=True)
 
 
