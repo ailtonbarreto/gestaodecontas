@@ -151,6 +151,7 @@ with col10:
     st.divider()
     st.title("Histórico de Movimentações 📅",anchor=False)
     filtro_ano_movi = st.selectbox("Selecione um Ano", df["Ano"].unique())  
+    
 #----------------------------------------------------------------------------------------
 #Dataframes filtrados
 
