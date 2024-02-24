@@ -197,7 +197,7 @@ dfgrafico = pd.DataFrame(planilha[1:], columns=planilha[0])
 dfgrafico['Data'] = pd.to_datetime(dfgrafico["Data Emissão"])
 dfgrafico['Ano'] = dfgrafico['Data'].dt.year
 dfgrafico['Mês'] = dfgrafico['Data'].dt.month
-dfgrafico["Mês"] = dfgrafico["Mês"].apply(determinar_mês)
+dfgrafico["Mês"] = dfgrafico["Mês"].apply(determinar_mes)
 dfgrafico = dfgrafico.drop(columns=["Data Emissão","Data"])
 dfgrafico['Valor'] = dfgrafico['Valor'].astype(str)
 dfgrafico['Valor'] = dfgrafico['Valor'].str.replace('.', '').str.replace(',', '.').astype(float)
