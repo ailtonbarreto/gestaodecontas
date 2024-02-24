@@ -5,6 +5,7 @@ import streamlit as st
 import pandas as pd
 import gspread as sg
 from gspread import Worksheet
+import datetime as dt
 
 
 #----------------------------------------------------------------------------------------
@@ -35,6 +36,23 @@ df.sort_values("Data", inplace=True)
 df["Ano"] = df["Ano"].astype(int)
 df["Mês"] = df["Mês"].astype(int)
 df['Valor'] = df['Valor'].str.replace('.', '').str.replace(',', '.').astype(float)
+
+#----------------------------------------------------------------------------------------
+#funcão para definir situacao das contas
+
+def definir_situacao(status, data):
+    if status == 'PAGO':
+        return 'OK'
+    elif status == 'EM ABERTO' and pd.to_datetime(data).date() > dt.date.today():
+        return 'EM DIA'
+    elif status == 'EM ABERTO' and pd.to_datetime(data).date() == dt.date.today():
+        return 'VENCE HOJE'
+    else:
+        return 'ATRASADO'
+
+df['Situacao'] = df.apply(lambda row: definir_situacao(row['Status'], row['Data Vencimento']), axis=1)
+df.sort_values(by="Data",ascending=True)
+
 
 #----------------------------------------------------------------------------------------
 
