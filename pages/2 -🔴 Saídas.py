@@ -236,7 +236,7 @@ with tab4:
     entrada_ano = st.selectbox('Escolha um ano',df["Ano"].unique())
     filtro_entrada = st.selectbox("Escolha um mês",df["Mês"].unique())
     aberto = df.query('Mês == @filtro_entrada & Ano == @entrada_ano & Status == "A PAGAR"')
-    aberto = aberto.drop(columns=["Data","Ano","Mês","Tipo"])
+    aberto = aberto.drop(columns=["Ano","Mês","Tipo"])
     st.table(aberto)
 
 #------------------------------------------------------------------------------------------
