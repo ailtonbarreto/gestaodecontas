@@ -178,7 +178,7 @@ grafico_Rosca.update_traces(showlegend=False)
 
 
 grafico_colunas = px.bar(df_filtrado3,x="Mês",y="Valor",color="Tipo",
-        barmode="group",title=f'Entradas e Saídas de {filtro_ano}',category_orders={'Tipo':['SAÍDA','ENTRADA']},
+        barmode="group",title=f'Entradas e Saídas de {filtro_ano_movi}',category_orders={'Tipo':['SAÍDA','ENTRADA']},
         color_discrete_sequence=["#941b0c","#06d6a0"])
 grafico_colunas.update_yaxes(showgrid=False)
 grafico_colunas.update_traces(showlegend=False)
