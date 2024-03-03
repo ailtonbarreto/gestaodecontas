@@ -74,7 +74,7 @@ df["Data"] = df["Data"].dt.strftime('%d/%m/%Y')
 #funcao para definir situacao das contas
 
 def definir_situacao(status, data):
-    if status == 'PAGO':
+    if status == 'PAGO' or 'RECEBIDO':
         return 'OK'
     elif status == 'EM ABERTO' and pd.to_datetime(data).date() > dt.date.today():
         return 'EM DIA'
