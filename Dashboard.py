@@ -78,7 +78,6 @@ def definir_situacao(status, data):
         return 'OK'
     elif status == 'A PAGAR' and pd.to_datetime(data).date() > dt.date.today():
         return 'EM DIA'
-    
     elif status == 'A PAGAR' and pd.to_datetime(data).date() == dt.date.today():
         return 'VENCE HOJE'
     else:
