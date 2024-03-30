@@ -53,9 +53,9 @@ meses = ['Jan','Fev','Mar','Abr','Mai','Jun','Jul','Ago','Set','Out','Nov','Dez'
 def definir_situacao(status, data):
     if status == 'PAGO':
         return 'OK'
-    elif status == 'EM ABERTO' and pd.to_datetime(data).date() < dt.date.today():
+    elif status == 'A PAGAR' and pd.to_datetime(data).date() > dt.date.today():
         return 'EM DIA'
-    elif status == 'EM ABERTO' and pd.to_datetime(data).date() == dt.date.today():
+    elif status == 'A PAGAR' and pd.to_datetime(data).date() == dt.date.today():
         return 'VENCE HOJE'
     else:
         return 'ATRASADO'
