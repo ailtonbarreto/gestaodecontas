@@ -71,11 +71,12 @@ df = pd.concat([dfsaida,dfentrada]).reset_index(drop=True)
 #funcao para definir situacao das contas
 
 def definir_situacao(status, data):
-    if status == 'PAGO' or "RECEBIDO":
+    
+    if status in ['PAGO', 'RECEBIDO']:
         return 'OK'
-    elif status == 'A PAGAR' or status == 'A RECEBER' and pd.to_datetime(data).date() > dt.date.today():
+    elif status in ['A PAGAR', 'A RECEBER'] and pd.to_datetime(data).date() > dt.date.today():
         return 'EM DIA'
-    elif status == 'A PAGAR' or status == 'A RECEBER' and pd.to_datetime(data).date() == dt.date.today():
+    elif status in ['A PAGAR', 'A RECEBER'] and pd.to_datetime(data).date() == dt.date.today():
         return 'VENCE HOJE'
     else:
         return 'ATRASADO'
