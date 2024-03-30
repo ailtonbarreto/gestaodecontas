@@ -84,6 +84,8 @@ def definir_situacao(status, data):
 df['Situacao'] = df.apply(lambda row: definir_situacao(row['Status'], row['Data']), axis=1)
 df.sort_values(by="Data",ascending=True)
 
+
+
 df["Ano"] = pd.to_datetime(df['Data']).dt.year
 df["Mês"] = pd.to_datetime(df['Data']).dt.month
 df["Data"] = df["Data"].dt.strftime('%d/%m/%Y')
