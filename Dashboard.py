@@ -73,19 +73,19 @@ df["Data"] = df["Data"].dt.strftime('%d/%m/%Y')
 #----------------------------------------------------------------------------------------
 #funcao para definir situacao das contas
 
-def definir_situacao(status, data):
-    if status == 'PAGO' or "RECEBIDO":
-        return 'OK'
-    elif status == 'A PAGAR' and pd.to_datetime(data).date() < dt.date.today():
-        return 'EM DIA'
-    elif status == 'A PAGAR' and pd.to_datetime(data).date() == dt.date.today():
-        return 'VENCE HOJE'
-    else:
-        return 'ATRASADO'
+# def definir_situacao(status, data):
+#     if status == 'PAGO' or "RECEBIDO":
+#         return 'OK'
+#     elif status == 'A PAGAR' and pd.to_datetime(data).date() > dt.date.today():
+#         return 'EM DIA'
+#     elif status == 'A PAGAR' and pd.to_datetime(data).date() == dt.date.today():
+#         return 'VENCE HOJE'
+#     else:
+#         return 'ATRASADO'
 
 
-df['Situacao'] = df.apply(lambda row: definir_situacao(row['Status'], row['Data']), axis=1)
-df.sort_values(by="Data",ascending=True)
+# df['Situacao'] = df.apply(lambda row: definir_situacao(row['Status'], row['Data']), axis=1)
+# df.sort_values(by="Data",ascending=True)
 
 
 #----------------------------------------------------------------------------------------
