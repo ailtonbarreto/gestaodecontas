@@ -73,7 +73,7 @@ df = pd.concat([dfsaida,dfentrada]).reset_index(drop=True)
 def definir_situacao(status, data):
     if status == 'PAGO' or "RECEBIDO":
         return 'OK'
-    elif status == 'A PAGAR' and pd.to_datetime(data).date() > dt.date.today():
+    elif status == 'A PAGAR' or status == 'A RECEBER' and pd.to_datetime(data).date() > dt.date.today():
         return 'EM DIA'
     elif status == 'A PAGAR' and pd.to_datetime(data).date() == dt.date.today():
         return 'VENCE HOJE'
