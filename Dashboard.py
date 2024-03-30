@@ -66,26 +66,27 @@ dfentrada['Valor'] = dfentrada['Valor'].str.replace('.', '').str.replace(',', '.
 #dataframes concatenados para analise de entradas e saídas
 
 df = pd.concat([dfsaida,dfentrada]).reset_index(drop=True)
-df["Ano"] = pd.to_datetime(df['Data']).dt.year
-df["Mês"] = pd.to_datetime(df['Data']).dt.month
-df["Data"] = df["Data"].dt.strftime('%d/%m/%Y')
 
 #----------------------------------------------------------------------------------------
 #funcao para definir situacao das contas
 
-# def definir_situacao(status, data):
-#     if status == 'PAGO' or "RECEBIDO":
-#         return 'OK'
-#     elif status == 'A PAGAR' and pd.to_datetime(data).date() > dt.date.today():
-#         return 'EM DIA'
-#     elif status == 'A PAGAR' and pd.to_datetime(data).date() == dt.date.today():
-#         return 'VENCE HOJE'
-#     else:
-#         return 'ATRASADO'
+def definir_situacao(status, data):
+    if status == 'PAGO' or "RECEBIDO":
+        return 'OK'
+    elif status == 'A PAGAR' and pd.to_datetime(data).date() > dt.date.today():
+        return 'EM DIA'
+    elif status == 'A PAGAR' and pd.to_datetime(data).date() == dt.date.today():
+        return 'VENCE HOJE'
+    else:
+        return 'ATRASADO'
 
 
-# df['Situacao'] = df.apply(lambda row: definir_situacao(row['Status'], row['Data']), axis=1)
-# df.sort_values(by="Data",ascending=True)
+df['Situacao'] = df.apply(lambda row: definir_situacao(row['Status'], row['Data']), axis=1)
+df.sort_values(by="Data",ascending=True)
+
+df["Ano"] = pd.to_datetime(df['Data']).dt.year
+df["Mês"] = pd.to_datetime(df['Data']).dt.month
+df["Data"] = df["Data"].dt.strftime('%d/%m/%Y')
 
 
 #----------------------------------------------------------------------------------------
