@@ -29,7 +29,7 @@ ws = sh.get_worksheet(0)
 planilha = ws.get_all_values()
 df = pd.DataFrame(planilha[1:], columns=planilha[0])
 
-df['Data'] = pd.to_datetime(df["Data Vencimento"])
+df['Data'] = pd.to_datetime(df["Data Vencimento"]).dt.strftime('%d/%m/%Y')
 df["Ano"] = df["Data"].dt.year
 df["Mês"] = df["Data"].dt.month
 df.sort_values("Data", inplace=True)
@@ -181,7 +181,7 @@ with tab4:
     aberto = df.query('Mês == @filtro_entrada & Ano == @entrada_ano & Status == "A RECEBER"')
     
     aberto = aberto.drop(columns=["Data","Ano","Mês","Tipo"])
-    aberto['Data Vencimento'] = aberto['Data Vencimento'].dt.strftime('%d/%m/%Y')
+    # aberto['Data Vencimento'] = aberto['Data Vencimento'].dt.strftime('%d/%m/%Y')
     st.table(aberto)
 
 #------------------------------------------------------------------------------------------
