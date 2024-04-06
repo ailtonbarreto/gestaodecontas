@@ -180,7 +180,7 @@ with tab4:
     entrada_ano = st.selectbox('Escolha um ano',df["Ano"].unique())
     aberto = df.query('Mês == @filtro_entrada & Ano == @entrada_ano & Status == "A RECEBER"')
     aberto['Data Vencimento'] = aberto['Data Vencimento'].dt.strftime('%d/%m/%Y')
-    aberto = aberto.drop(columns=["Data","Ano","Mês","Tipo"])
+    # aberto = aberto.drop(columns=["Data","Ano","Mês","Tipo"])
     st.table(aberto)
 
 #------------------------------------------------------------------------------------------
