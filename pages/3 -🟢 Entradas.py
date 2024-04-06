@@ -169,7 +169,7 @@ with tab3:
         st.success("Edição salva!")
 
     dfeditarentrada["Valor"] = dfeditarentrada["Valor"].apply(lambda x: f'R$ {x:,.2f}')
-    dfeditarentrada = dfeditarentrada.drop("Data")
+    dfeditarentrada = dfeditarentrada.drop(columns="Data")
     
     st.table(dfeditarentrada)
     
