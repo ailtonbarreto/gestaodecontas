@@ -41,14 +41,16 @@ df['Valor'] = df['Valor'].str.replace('.', '').str.replace(',', '.').astype(floa
 #funcão para definir situacao das contas
 
 def definir_situacao(status, data):
-    if status == 'PAGO':
+    
+    if status in ['PAGO', 'RECEBIDO']:
         return 'OK'
-    elif status == 'EM ABERTO' and pd.to_datetime(data).date() > dt.date.today():
+    elif status in ['A PAGAR', 'A RECEBER'] and pd.to_datetime(data).date() > dt.date.today():
         return 'EM DIA'
-    elif status == 'EM ABERTO' and pd.to_datetime(data).date() == dt.date.today():
+    elif status in ['A PAGAR', 'A RECEBER'] and pd.to_datetime(data).date() == dt.date.today():
         return 'VENCE HOJE'
     else:
         return 'ATRASADO'
+
 
 df['Situacao'] = df.apply(lambda row: definir_situacao(row['Status'], row['Data Vencimento']), axis=1)
 df.sort_values(by="Data",ascending=True)
