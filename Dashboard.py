@@ -318,7 +318,7 @@ sumirfundo = """
     <style>
     [class="st-emotion-cache-17xod8c e1f1d6gn3"]
     {
-    backface-visibility: hidden;
+    background: none;
     }
     </style>
 """
