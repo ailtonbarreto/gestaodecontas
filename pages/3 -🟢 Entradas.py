@@ -124,14 +124,14 @@ with tab2:
     filtro_mes = st.selectbox("Mês",dfexcluir["Mês"].unique())
 
     filtro_cliente = st.selectbox('Cliente',dfselect["Cliente"].unique())
-    linha = st.number_input("Excluir linha",format="%.0f")
 
     dfexcluir = dfexcluir.query('Ano == @filtro_ano & Mês == @filtro_mes & Cliente == @filtro_cliente')
-
+    opcoesdelete = dfexcluir.index.tolist()
+     
     if st.button("EXCLUIR ENTRADA"):
         ws1: Worksheet = sh.get_worksheet(0)
        
-        ws1.delete_rows(int(linha) + 2)
+        ws1.delete_rows(int(opcoesdelete) + 2)
     
         st.success("Entrada Excluída Com Sucesso!")
 

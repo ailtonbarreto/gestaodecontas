@@ -142,10 +142,9 @@ with tab1:
         st.success("Movimentação salva!")
     
 # #------------------------------------------------------------------------------------------
-#Remover linha
+#Exluir Saida
     
 with tab2:
-    
     st.title("🔴 Excluir Saída",anchor=False)
     
 #Indice da linha a ser removida
