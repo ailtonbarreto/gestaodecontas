@@ -312,6 +312,19 @@ alinhartitulo = """
 st.markdown(alinhartitulo,unsafe_allow_html=True)
 
 
+
+
+sumirfundo = """
+    <style>
+    [class="st-emotion-cache-17xod8c e1f1d6gn3"]
+    {
+    backface-visibility: hidden;
+    }
+    </style>
+"""
+st.markdown(sumirfundo,unsafe_allow_html=True)
+
+
 hide_st_style = """
             <style>
             #MainMenu {visibility: hidden;}
@@ -320,3 +333,7 @@ hide_st_style = """
             </style>
             """
 st.markdown(hide_st_style, unsafe_allow_html=True)
+
+
+
+
