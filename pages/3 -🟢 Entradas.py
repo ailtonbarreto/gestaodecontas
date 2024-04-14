@@ -143,7 +143,7 @@ with tab2:
             st.success("Entrada Excluída Com Sucesso!")
 
         
-    st.table(dfexcluir)
+        st.table(dfexcluir)
     
 
 #----------------------------------------------------------------------------------------
