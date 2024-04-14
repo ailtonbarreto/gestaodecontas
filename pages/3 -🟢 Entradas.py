@@ -131,7 +131,9 @@ with tab2:
     col1, col2 = st.columns([1, 10])
     
     with col1:
-        linha1 = st.selectbox("Selecionar linha", opcoes)
+        linha1 = st.selectbox("Selecionar linha", opcoesdelete)
+    
+    
     
     with col2:
         if st.button("EXCLUIR ENTRADA"):
@@ -143,7 +145,7 @@ with tab2:
             st.success("Entrada Excluída Com Sucesso!")
 
         
-        st.table(dfexcluir)
+        st.table(opcoes)
     
 
 #----------------------------------------------------------------------------------------
