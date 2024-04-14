@@ -190,6 +190,7 @@ with tab3:
 #Entradas em aberto
 with tab4:
     st.title("🟢 Recebimentos em Aberto",anchor=False)
+    df = df.sort_values(by="Ano",ascending=False)
     filtro_entrada = st.selectbox("Escolha um mês",df["Mês"].unique())
     entrada_ano = st.selectbox('Escolha um ano',df["Ano"].unique())
     aberto = df.query('Mês == @filtro_entrada & Ano == @entrada_ano & Status == "A RECEBER"')
