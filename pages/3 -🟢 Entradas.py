@@ -127,7 +127,7 @@ with tab2:
 
     opcoes = dfexcluir.query('Ano == @filtro_ano & Mês == @filtro_mes & Cliente == @filtro_cliente')
     
-    opcoesdelete = dfexcluir.index.tolist()
+    opcoesdelete = opcoes.index.tolist()
     col1, col2 = st.columns([1, 10])
     
     with col1:
