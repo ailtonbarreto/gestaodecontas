@@ -126,7 +126,7 @@ with tab2:
     filtro_cliente = st.selectbox('Cliente',dfselect["Cliente"].unique())
 
     opcoes = dfexcluir.query('Ano == @filtro_ano & Mês == @filtro_mes & Cliente == @filtro_cliente')
-    opcoes = opcoes.drop(columns="Data Vencimento")
+    opcoes = opcoes.drop(columns=["Data Vencimento","Data"])
     
     opcoesdelete = opcoes.index.tolist()
     col1, col2 = st.columns([1, 10])
