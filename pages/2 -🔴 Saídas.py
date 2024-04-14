@@ -154,7 +154,9 @@ with tab2:
     filtro_fornecedor = st.selectbox('Fornecedor',dfdelete["Fornecedor"].unique())
         
     dfdellinha = dfdelete.query('Ano == @filtro_ano & Mês == @filtro_mes & Fornecedor == @filtro_fornecedor')
+    
     opcoesdelete = dfdellinha.index.tolist()
+    
     col1, col2 = st.columns([1, 10])
     with col1:   
         linha1 = st.selectbox("Selecionar linha", opcoesdelete)
