@@ -172,6 +172,7 @@ with tab2:
         
             st.success("Saída Excluída Com Sucesso!")
         dfdelete = dfdelete.drop(columns=["Ano","Mês"])
+        dfdelete["Valor"] = dfdelete["Valor"].apply(lambda x: f'R$ {x:,.2f}')
         st.table(dfdelete)
     
 #------------------------------------------------------------------------------------------ 
