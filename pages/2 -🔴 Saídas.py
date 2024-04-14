@@ -236,9 +236,8 @@ with tab4:
     st.title("🔴 Pagamentos em Aberto",anchor=False)
     aberto = df
     entrada_ano = st.selectbox('Escolha um ano',aberto["Ano"].unique())
-    filtro_entrada = st.selectbox("Escolha um mês",aberto["Mês"].unique())
+    filtro_entrada = st.selectbox("Escolha um mês",meses)
     aberto = df.query('Mês == @filtro_entrada & Ano == @entrada_ano & Status == "A PAGAR"')
-    aberto = aberto.sort_values(by="Mês",ascending=True)
     aberto = aberto.drop(columns=["Ano","Mês","Tipo"])
     st.table(aberto)
 
