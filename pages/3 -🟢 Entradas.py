@@ -57,6 +57,12 @@ df.sort_values(by="Data",ascending=True)
 
 
 #----------------------------------------------------------------------------------------
+#Meses
+
+meses = ['Jan','Fev','Mar','Abr','Mai','Jun','Jul','Ago','Set','Out','Nov','Dez']
+
+#----------------------------------------------------------------------------------------
+
 
 def determinar_mês(valor):
     meses = {
@@ -192,7 +198,7 @@ with tab4:
     st.title("🟢 Recebimentos em Aberto",anchor=False)
     df = df.sort_values(by="Ano",ascending=False)
     entrada_ano = st.selectbox('Escolha um ano',df["Ano"].unique())
-    filtro_entrada = st.selectbox("Escolha um mês",df["Mês"].unique())
+    filtro_entrada = st.selectbox("Escolha um mês",meses)
     aberto = df.query('Mês == @filtro_entrada & Ano == @entrada_ano & Status == "A RECEBER"')
     aberto["Valor"] = aberto["Valor"].apply(lambda x: f'R$ {x:,.2f}')
     aberto = aberto.drop(columns=["Data","Ano","Mês","Tipo"])
