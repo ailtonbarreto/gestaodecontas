@@ -152,7 +152,7 @@ with tab2:
         
             st.success("Entrada Excluída Com Sucesso!")
 
-        
+        opcoes["Valor"] = opcoes["Valor"].apply(lambda x: f'R$ {x:,.2f}')  
         st.table(opcoes)
     
 
