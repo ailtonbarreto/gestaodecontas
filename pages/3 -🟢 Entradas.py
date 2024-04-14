@@ -195,6 +195,7 @@ with tab4:
     aberto = df.query('Mês == @filtro_entrada & Ano == @entrada_ano & Status == "A RECEBER"')
     aberto["Valor"] = aberto["Valor"].apply(lambda x: f'R$ {x:,.2f}')
     aberto = aberto.drop(columns=["Data","Ano","Mês","Tipo"])
+    aberto["Data Vencimento"] = aberto["Data Vencimento"].dt.strftime('%d/%m/%Y')
     st.table(aberto)
 
 #------------------------------------------------------------------------------------------
