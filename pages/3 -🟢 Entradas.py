@@ -207,7 +207,7 @@ with tab3:
 
     dfeditarentrada["Valor"] = dfeditarentrada["Valor"].apply(lambda x: f'R$ {x:,.2f}')
     dfeditarentrada = dfeditarentrada.drop(columns=["Ano","Mês","Data"])
-    dfeditarentrada = pd.to_datetime(dfeditarentrada["Data Vencimento"]).dt.strftime("%d/%m/%Y")
+    dfeditarentrada["Data Vencimento"] = pd.to_datetime(dfeditarentrada["Data Vencimento"]).dt.strftime("%d/%m/%Y")
     with col2:
         st.table(dfeditarentrada)
 #------------------------------------------------------------------------------------------   
