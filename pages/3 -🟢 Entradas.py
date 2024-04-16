@@ -174,25 +174,42 @@ with tab3:
     
     dfeditarentrada = df.query('Ano == @filtro_y & Mês == @filtro_m & Cliente == @filtro_c')
 
-    linhaeditada = filtro_index + 2
+with tab3:
+    col1, col2 = st.columns([1, 10])
 
-    coluna = 6
-
-
-
-    if st.button("SALVAR EDIÇÃO"):
-        ws2: Worksheet = sh.get_worksheet(0)
+    def obter_indices_selecionados(dfeditar):
+        indices_selecionados = []
         
-        ws2.update_cell(int(linhaeditada), coluna, editar_status)
-       
+        with col1:
+            opcoes = dfeditar.index.tolist()  # Lista de índices do DataFrame
+            selected_index = st.selectbox("Selecionar", opcoes)
+            if selected_index is not None:
+                indices_selecionados.append(selected_index)
+        
+        return indices_selecionados
+
+
+    indices_selecionados = obter_indices_selecionados(dfeditarentrada)
     
-        st.success("Edição salva!")
+    dfeditarentrada = dfeditarentrada.query('index ==@indices_selecionados ')
+    
+    filtro_index = dfeditarentrada.index[0]
+
+    linha3 = filtro_index+2
+
+    coluna = 5
+    
+    with tab3:
+        with col2:
+            if st.button("SALVAR EDIÇÃO"):
+                ws1: Worksheet = sh.get_worksheet(0)
+                ws1.update_cell(int(linha3), coluna, editar_status)
+                st.success("Edição salva!")
 
     dfeditarentrada["Valor"] = dfeditarentrada["Valor"].apply(lambda x: f'R$ {x:,.2f}')
-    dfeditarentrada = dfeditarentrada.drop(columns="Data")
-    
-    st.table(dfeditarentrada)
-    
+    dfeditarentrada = dfeditarentrada.drop(columns=["Ano","Mês"])
+    with col2:
+        st.table(dfeditarentrada)
 #------------------------------------------------------------------------------------------   
 #Entradas em aberto
 with tab4:
