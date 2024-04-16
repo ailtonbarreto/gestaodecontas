@@ -196,7 +196,7 @@ with tab3:
 
     linha3 = filtro_index+2
 
-    coluna = 5
+    coluna = 6
     
     with tab3:
         with col2:
