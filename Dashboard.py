@@ -210,7 +210,7 @@ dfgrafico = dfgrafico.groupby(["CATEGORIA", "Ano","Mês","Status"])["Valor"].sum
 dfgrafico = dfgrafico.query('Ano == @filtro_ano & Mês == @filtro_mes')
 dfgrafico = dfgrafico.sort_values(by="Valor",ascending=True)
 
-grafico_barras = px.bar(dfgrafico,x="Valor",y="CATEGORIA",text="Valor",
+grafico_barras = px.bar(dfgrafico,x="Valor",y="CATEGORIA",text=f'R$ {dfgrafico["Valor"]}',
         orientation="h",category_orders={'Status':['PAGO','A PAGAR']},
         title=f"Despesas de {filtro_mes} de {filtro_ano}",color="Status",barmode="stack",
         color_discrete_sequence=["#0aefff","#ee9b00"])
