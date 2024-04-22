@@ -218,6 +218,7 @@ grafico_barras.update_yaxes(showgrid=False,visible=True,title="")
 grafico_barras.update_xaxes(showgrid=False,visible=True,title="")
 grafico_barras.layout.xaxis.fixedrange = True
 grafico_barras.layout.yaxis.fixedrange = True
+grafico_barras.update_traces(textfont=dict(size=15))
 
 #----------------------------------------------------------------------------------------
 #definir icone
