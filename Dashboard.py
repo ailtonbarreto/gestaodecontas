@@ -216,9 +216,9 @@ grafico_barras = px.bar(dfgrafico,x="Valor",y="CATEGORIA",text=dfgrafico["Valor"
         color_discrete_sequence=["#0aefff","#ee9b00"])
 grafico_barras.update_yaxes(showgrid=False,visible=True,title="")
 grafico_barras.update_xaxes(showgrid=False,visible=True,title="")
-# grafico_barras.layout.xaxis.fixedrange = True
-# grafico_barras.layout.yaxis.fixedrange = True
-grafico_barras.update_traces(textfont=dict(size=30))
+grafico_barras.layout.xaxis.fixedrange = True
+grafico_barras.layout.yaxis.fixedrange = True
+grafico_barras.update_traces(textfont=dict(size=50))
 
 #----------------------------------------------------------------------------------------
 #definir icone
