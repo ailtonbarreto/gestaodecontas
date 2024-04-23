@@ -331,7 +331,7 @@ recuo_grafico = """
     <style>
     [class="nsewdrag drag cursor-pointer"]
     {
-    padding-right: 50px;
+    padding-right: 0px;
     }
     </style>
 """
