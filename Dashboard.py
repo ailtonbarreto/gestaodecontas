@@ -326,6 +326,19 @@ sumirfundo = """
 st.markdown(sumirfundo,unsafe_allow_html=True)
 
 
+
+recuo_grafico = """
+    <style>
+    [class="nsewdrag drag cursor-pointer"]
+    {
+    padding-right: 10px;
+    }
+    </style>
+"""
+st.markdown(recuo_grafico,unsafe_allow_html=True)
+
+
+
 hide_st_style = """
             <style>
             #MainMenu {visibility: hidden;}
