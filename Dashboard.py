@@ -329,7 +329,7 @@ st.markdown(sumirfundo,unsafe_allow_html=True)
 
 recuo_grafico = """
     <style>
-    [class="nsewdrag drag cursor-pointer"]
+    [class="draglayer cursor-crosshair"]
     {
     padding-right: 10px;
     }
