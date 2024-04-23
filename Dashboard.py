@@ -179,7 +179,7 @@ df_filtrado4 = df.query('Ano == @filtro_ano & Mês == @filtro_mes & Tipo == "ENT
 
 grafico_Rosca = px.pie(df_filtrado1,names="Tipo",color='Tipo',category_orders={'Tipo':['SAÍDA','ENTRADA']},
         values="Valor",color_discrete_sequence=["#941b0c","#06d6a0"],title='Entradas VS Saídas')
-grafico_Rosca.update_traces(showlegend=False)
+grafico_Rosca.update_traces(showlegend=False,textfont=dict(size=15,color='#ffffff'))
 
 
 grafico_colunas = px.bar(df_filtrado3,x="Mês",y="Valor",color="Tipo",
