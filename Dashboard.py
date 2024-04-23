@@ -329,7 +329,7 @@ st.markdown(sumirfundo,unsafe_allow_html=True)
 
 recuo_grafico = """
     <style>
-    [class="main-svg"]
+    [class="nsewdrag drag cursor-pointer"]
     {
     padding-right: 50px;
     }
