@@ -218,6 +218,7 @@ grafico_barras.update_yaxes(showgrid=False,visible=True,title="")
 grafico_barras.update_xaxes(showgrid=False,visible=False,title="")
 grafico_barras.layout.xaxis.fixedrange = True
 grafico_barras.layout.yaxis.fixedrange = True
+grafico_barras.updated_layout(showlegend=False)
 grafico_barras.update_traces(textfont=dict(size=15,color='#ffffff'),textposition="outside")
 
 
