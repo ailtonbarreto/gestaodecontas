@@ -331,7 +331,7 @@ recuo_grafico = """
     <style>
     [class="main-svg"]
     {
-    padding-right: 10px;
+    padding-right: 50px;
     }
     </style>
 """
