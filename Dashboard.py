@@ -239,7 +239,7 @@ df_filtrado1["Valor"] = df_filtrado1["Valor"].apply(lambda x: f'R$ {x:,.2f}')
 #Layout graficos
 
 with col2:
-    st.metric("Entrada",f'🟢 R$ {round(df_filtrado4["Valor"].sum(),2):,.2f}')
+    st.metric("Entrada",f'🟢 R$ {round(df_filtrado4["Valor"].sum(),2):,.2f}',size=15,color='red')
 with col3:
     st.metric("Saídas",f'🔴 R$ {round(df_filtrado2["Valor"].sum(),2):,.2f}')
 with col4:
