@@ -329,7 +329,7 @@ st.markdown(sumirfundo,unsafe_allow_html=True)
 
 recuo_grafico = """
     <style>
-    [class="draglayer cursor-crosshair"]
+    [class="main-svg"]
     {
     padding-right: 10px;
     }
