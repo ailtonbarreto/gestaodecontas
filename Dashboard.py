@@ -219,7 +219,7 @@ grafico_barras.update_xaxes(showgrid=False,visible=False,title="")
 grafico_barras.layout.xaxis.fixedrange = True
 grafico_barras.layout.yaxis.fixedrange = True
 grafico_barras.update_layout(showlegend=False)
-grafico_barras.update_traces(textfont=dict(size=15,color='#ffffff'),textposition="outside")
+grafico_barras.update_traces(textfont=dict(size=15,color='#ffffff'),textposition="auto")
 
 
 #----------------------------------------------------------------------------------------
@@ -325,17 +325,6 @@ sumirfundo = """
 """
 st.markdown(sumirfundo,unsafe_allow_html=True)
 
-
-
-recuo_grafico = """
-    <style>
-    [class="nsewdrag drag cursor-pointer"]
-    {
-    padding-right: 0px;
-    }
-    </style>
-"""
-st.markdown(recuo_grafico,unsafe_allow_html=True)
 
 
 
