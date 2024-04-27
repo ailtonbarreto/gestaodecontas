@@ -262,7 +262,7 @@ framegraficos = """
     {
     border-radius: 15px;
     background-color: #2F3035;
-    padding: 40px;
+    padding: 10px;
     opacity: 80%;
     color: white;
     }
