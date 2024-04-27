@@ -265,7 +265,7 @@ framegraficos = """
     padding: 20px;
     opacity: 80%;
     color: white;
-    padding-right: 12px;
+    padding-right: 120px;
     }
     </style>
 """
