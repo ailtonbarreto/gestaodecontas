@@ -111,6 +111,40 @@ df = df.drop(columns=["Data Emissão"])
 df['Ordem_Mês'] = df['Mês'].map(classificar_meses)
 df = df.sort_values(by='Ordem_Mês',ascending = True).drop(columns=['Ordem_Mês'])
 df = df.sort_values("Ano",ascending=False)
+
+#----------------------------------------------------------------------------------------
+#fixar mes atual nos filtros
+
+today = dt.date.today()
+
+
+mes = today.month
+
+if mes == 1:
+    mes_atual = "Jan"
+elif mes == 2:
+    mes_atual = "Fev"
+elif mes == 3:
+    mes_atual = "Mar"
+elif mes == 4:
+    mes_atual = "Abr"
+elif mes == 5:
+    mes_atual = "Mai"
+elif mes == 6:
+    mes_atual = "Jun"
+elif mes ==7:    
+    mes_atual = "Jul"
+elif mes == 8:    
+    mes_atual = "Ago"
+elif mes == 9:    
+   mes_atual =  "Set"
+elif mes == 10:    
+   mes_atual =  "Out"
+elif mes == 11:    
+    mes_atual = "Nov"
+else:
+    "Dez"
+
 #----------------------------------------------------------------------------------------
 # Adicionar Saída
 
@@ -150,7 +184,7 @@ with tab2:
 #Indice da linha a ser removida
     dfdelete = df
     filtro_ano = st.selectbox("Ano",dfdelete["Ano"].unique())
-    filtro_mes = st.selectbox("Mês",meses)
+    filtro_mes = st.selectbox("Mês",meses,index=meses.index(mes_atual))
     filtro_fornecedor = st.selectbox('Fornecedor',dfdelete["Fornecedor"].unique())
         
     dfdellinha = dfdelete.query('Ano == @filtro_ano & Mês == @filtro_mes & Fornecedor == @filtro_fornecedor')
