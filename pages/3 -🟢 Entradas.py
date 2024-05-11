@@ -137,7 +137,7 @@ with tab1:
 
     entrada_datavencimento = st.date_input("Data Vencimento","today",format= "DD/MM/YYYY")
    
-    entrada_valor = st.number_input("Valor",value=None,format="0.00")
+    entrada_valor = st.number_input("Valor",value=None,format=":,.2f")
 
     entrada_status = st.selectbox("Status",["A RECEBER","RECEBIDO"])
 
