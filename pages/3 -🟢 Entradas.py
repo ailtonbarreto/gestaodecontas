@@ -242,7 +242,7 @@ with tab3:
     dfeditarentrada = dfeditarentrada.drop(columns=["Ano","Mês","Data"])
     dfeditarentrada["Data Vencimento"] = pd.to_datetime(dfeditarentrada["Data Vencimento"]).dt.strftime("%d/%m/%Y")
     with col2:
-        st.table(dfeditarentrada)
+        st.dataframe(dfeditarentrada,use_container_width=True)
 #------------------------------------------------------------------------------------------   
 #Entradas em aberto
 with tab4:
