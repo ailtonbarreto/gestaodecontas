@@ -142,6 +142,40 @@ df = df.sort_values(by='Ordem_Mês',ascending = True).drop(columns=['Ordem_Mês'
 df = df.sort_values("Ano",ascending=False)
 
 #----------------------------------------------------------------------------------------
+#fixar mes atual no filtro
+
+today = dt.date.today()
+
+
+mes = today.month
+
+if mes == 1:
+    mes_atual = "Jan"
+elif mes == 2:
+    mes_atual = "Fev"
+elif mes == 3:
+    mes_atual = "Mar"
+elif mes == 4:
+    mes_atual = "Abr"
+elif mes == 5:
+    mes_atual = "Mai"
+elif mes == 6:
+    mes_atual = "Jun"
+elif mes ==7:    
+    mes_atual = "Jul"
+elif mes == 8:    
+    mes_atual = "Ago"
+elif mes == 9:    
+   mes_atual =  "Set"
+elif mes == 10:    
+   mes_atual =  "Out"
+elif mes == 11:    
+    mes_atual = "Nov"
+else:
+    "Dez"
+
+
+#----------------------------------------------------------------------------------------
 #Filtros/Layout
 
 with col1:
@@ -151,7 +185,7 @@ with col5:
     filtro_ano = st.selectbox("Ano", df["Ano"].unique())  
     
 with col6:
-     filtro_mes = st.selectbox("Mês", meses) 
+     filtro_mes = st.selectbox("Mês", meses,index=meses.index(mes_atual)) 
 with col10:
     st.title("Histórico de Movimentações 📅",anchor=False)
     filtro_ano_movi = st.selectbox("Selecione um Ano", df["Ano"].unique())  
