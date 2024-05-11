@@ -196,11 +196,11 @@ with tab2:
 with tab3:
     st.title("🟢 Editar Entrada",anchor=False)
 
-    dfeditarentrada = df
+    dfeditarentrada = df.sort_values("Ano",ascending=False)
     
     #Dados da linha editada
     filtro_y = st.selectbox('Ano da Movimentação',dfeditarentrada["Ano"].unique())
-    filtro_m = st.selectbox('Mês da Movimentação',dfeditarentrada["Mês"].unique())
+    filtro_m = st.selectbox('Mês da Movimentação',meses,index=meses.index(mes_atual))
     filtro_c = st.selectbox('Buscar Cliente',dfeditarentrada["Cliente"].unique())
     editar_status = st.selectbox('Novo Status',["A RECEBER","RECEBIDO"])
     
