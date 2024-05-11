@@ -242,7 +242,7 @@ with tab3:
     dfeditarentrada = dfeditarentrada.drop(columns=["Ano","Mês","Data"])
     dfeditarentrada["Data Vencimento"] = pd.to_datetime(dfeditarentrada["Data Vencimento"]).dt.strftime("%d/%m/%Y")
     with col2:
-        if st.error:
+        if IndexError:
             st.write("Sem Dados")
         else:
             st.dataframe(dfeditarentrada,use_container_width=True)
