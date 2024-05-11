@@ -271,7 +271,7 @@ with tab4:
     st.title("🔴 Pagamentos em Aberto",anchor=False)
     aberto = df
     entrada_ano = st.selectbox('Escolha um ano',aberto["Ano"].unique())
-    filtro_entrada = st.selectbox("Escolha um mês",meses)
+    filtro_entrada = st.selectbox("Escolha um mês",meses,index=meses.index(mes_atual))
     aberto = df.query('Mês == @filtro_entrada & Ano == @entrada_ano & Status == "A PAGAR"')
     aberto = aberto.drop(columns=["Ano","Mês","Tipo"])
     aberto["Valor"] = aberto["Valor"].apply(lambda x: f'R$ {x:,.2f}')
