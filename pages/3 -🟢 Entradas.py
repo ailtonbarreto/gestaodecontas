@@ -158,7 +158,7 @@ with tab1:
 # Excluir Entrada
 with tab2:
     st.title("🟢 Excluir Entrada",anchor=False)
-    dfexcluir = df
+    dfexcluir = df.sort_values("Ano",ascending=False)
     filtro_ano = st.selectbox("Ano",dfexcluir["Ano"].unique())
     filtro_mes = st.selectbox("Mês",meses,index=meses.index(mes_atual))
 
