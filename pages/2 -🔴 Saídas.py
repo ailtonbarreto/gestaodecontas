@@ -219,7 +219,7 @@ with tab3:
 
      #Dados da linha editada
      filtro_y = st.selectbox('Ano da Movimentação',dfeditar["Ano"].unique())
-     filtro_m = st.selectbox('Mês da Movimentação',meses)
+     filtro_m = st.selectbox('Mês da Movimentação',meses,index=meses.index(mes_atual))
      dffor = dfeditar.query('Ano == @filtro_y & Mês == @filtro_m')
      filtro_f = st.selectbox('Buscar Fornecedor',dffor["Fornecedor"].unique())
      editar_status = st.selectbox('Novo Status',["A PAGAR","PAGO"])
