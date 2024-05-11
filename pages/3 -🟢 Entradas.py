@@ -86,6 +86,39 @@ df["Mês"] = df["Mês"].apply(determinar_mês)
 df = df.drop(columns=["Data Emissão"])
 
 #----------------------------------------------------------------------------------------
+#fixar mes atual nos filtros
+
+today = dt.date.today()
+
+
+mes = today.month
+
+if mes == 1:
+    mes_atual = "Jan"
+elif mes == 2:
+    mes_atual = "Fev"
+elif mes == 3:
+    mes_atual = "Mar"
+elif mes == 4:
+    mes_atual = "Abr"
+elif mes == 5:
+    mes_atual = "Mai"
+elif mes == 6:
+    mes_atual = "Jun"
+elif mes ==7:    
+    mes_atual = "Jul"
+elif mes == 8:    
+    mes_atual = "Ago"
+elif mes == 9:    
+   mes_atual =  "Set"
+elif mes == 10:    
+   mes_atual =  "Out"
+elif mes == 11:    
+    mes_atual = "Nov"
+else:
+    "Dez"
+
+#----------------------------------------------------------------------------------------
 #Adicionar Entrada
 
 with tab1:
@@ -127,7 +160,7 @@ with tab2:
     st.title("🟢 Excluir Entrada",anchor=False)
     dfexcluir = df
     filtro_ano = st.selectbox("Ano",dfexcluir["Ano"].unique())
-    filtro_mes = st.selectbox("Mês",dfexcluir["Mês"].unique())
+    filtro_mes = st.selectbox("Mês",meses,index=meses.index(mes_atual))
 
     filtro_cliente = st.selectbox('Cliente',dfselect["Cliente"].unique())
 
