@@ -178,6 +178,7 @@ with tab2:
     
     
     with col2:
+        st.table(opcoes)
         if st.button("EXCLUIR ENTRADA"):
             
             ws1: Worksheet = sh.get_worksheet(0)
