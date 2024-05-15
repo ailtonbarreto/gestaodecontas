@@ -251,7 +251,7 @@ with tab4:
     st.title("🟢 Recebimentos em Aberto",anchor=False)
     df = df.sort_values(by="Ano",ascending=False)
     entrada_ano = st.selectbox('Escolha um ano',df["Ano"].unique())
-    filtro_entrada = st.selectbox("Escolha um mês",meses)
+    filtro_entrada = st.selectbox("Escolha um mês",meses,index=meses.index(mes_atual))
     aberto = df.query('Mês == @filtro_entrada & Ano == @entrada_ano & Status == "A RECEBER"')
     aberto["Valor"] = aberto["Valor"].apply(lambda x: f'R$ {x:,.2f}')
     aberto = aberto.drop(columns=["Data","Ano","Mês","Tipo"])
