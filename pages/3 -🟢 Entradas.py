@@ -228,12 +228,8 @@ with tab3:
 
     indices_selecionados = obter_indices_selecionados(dfeditarentrada)
     
-    
 
-    if not dfeditarentrada.empty:
-        dfeditarentrada = pd.DataFrame()
-    else:
-        dfeditarentrada = dfeditarentrada.query('index ==@indices_selecionados ')
+    editarentrada = dfeditarentrada.query('index ==@indices_selecionados ')
     
     
     filtro_index = dfeditarentrada.index[0]
