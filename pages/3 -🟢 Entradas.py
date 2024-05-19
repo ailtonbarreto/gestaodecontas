@@ -230,25 +230,25 @@ with tab3:
     
     dfeditarentrada = dfeditarentrada.query('index ==@indices_selecionados ')
     
-    filtro_index = dfeditarentrada.index[0]
+    # filtro_index = dfeditarentrada.index[0]
     
-    
-    linha3 = filtro_index+2
+    # linha3 = filtro_index+2
 
-    coluna = 6
+    # coluna = 6
     
-    with tab3:
-        with col2:
-            if st.button("SALVAR EDIÇÃO"):
-                ws1: Worksheet = sh.get_worksheet(0)
-                ws1.update_cell(int(linha3), coluna, editar_status)
-                st.success("Edição salva!")
+    # with tab3:
+    #     with col2:
+    #         if st.button("SALVAR EDIÇÃO"):
+    #             ws1: Worksheet = sh.get_worksheet(0)
+    #             ws1.update_cell(int(linha3), coluna, editar_status)
+    #             st.success("Edição salva!")
 
-    dfeditarentrada["Valor"] = dfeditarentrada["Valor"].apply(lambda x: f'R$ {x:,.2f}')
-    dfeditarentrada = dfeditarentrada.drop(columns=["Ano","Mês","Data"])
-    dfeditarentrada["Data Vencimento"] = pd.to_datetime(dfeditarentrada["Data Vencimento"]).dt.strftime("%d/%m/%Y")
-    with col2:
-        st.table(dfeditarentrada)
+    # dfeditarentrada["Valor"] = dfeditarentrada["Valor"].apply(lambda x: f'R$ {x:,.2f}')
+    # dfeditarentrada = dfeditarentrada.drop(columns=["Ano","Mês","Data"])
+    # dfeditarentrada["Data Vencimento"] = pd.to_datetime(dfeditarentrada["Data Vencimento"]).dt.strftime("%d/%m/%Y")
+    # with col2:
+    #     st.table(dfeditarentrada)
+st.table(dfeditarentrada)
 #------------------------------------------------------------------------------------------   
 #Entradas em aberto
 with tab4:
