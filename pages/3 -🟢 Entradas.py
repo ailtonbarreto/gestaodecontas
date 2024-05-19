@@ -231,7 +231,7 @@ with tab3:
     dfeditarentrada = dfeditarentrada.query('index ==@indices_selecionados ')
     
     
-    filtro_index = dfeditarentrada.index[0]
+   
     
 
     if not dfeditarentrada.empty:
@@ -240,6 +240,8 @@ with tab3:
     else:
         print("O DataFrame está vazio. Nenhum índice pode ser acessado.")
 
+    filtro_index = dfeditarentrada.index[0]
+    
     linha3 = filtro_index+2
 
     coluna = 6
