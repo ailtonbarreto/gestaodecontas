@@ -232,7 +232,6 @@ with tab3:
 
     if not dfeditarentrada.empty:
         filtro_index = pd.DataFrame()
-        linha3 = pd.DataFrame()
     else:
         dfeditarentrada
     
