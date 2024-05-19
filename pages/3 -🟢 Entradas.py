@@ -230,7 +230,7 @@ with tab3:
     
     dfeditarentrada = dfeditarentrada.query('index ==@indices_selecionados ')
     
-    filtro_index = dfeditarentrada.index[0]
+    filtro_index = dfeditarentrada.first_valid_index()
    
     
 
