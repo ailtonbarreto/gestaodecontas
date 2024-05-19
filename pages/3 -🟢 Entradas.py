@@ -230,7 +230,7 @@ with tab3:
     
     dfeditarentrada = dfeditarentrada.query('index ==@indices_selecionados ')
     
-    dfeditarentrada = pd.DataFrame()  # DataFrame vazio para ilustrar o caso de erro
+  
 
 # Verificar se o DataFrame está vazio antes de acessar o índice
 if not dfeditarentrada.empty:
