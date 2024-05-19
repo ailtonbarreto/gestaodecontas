@@ -229,25 +229,31 @@ with tab3:
     indices_selecionados = obter_indices_selecionados(dfeditarentrada)
     
     dfeditarentrada = dfeditarentrada.query('index ==@indices_selecionados ')
-    
-    # filtro_index = dfeditarentrada.index[0]
-    
-    # linha3 = filtro_index+2
 
-    # coluna = 6
+    if not dfeditarentrada.empty:
+        dfeditarentrada = pd.DataFrame()
+    else:
+        dfeditarentrada
     
-    # with tab3:
-    #     with col2:
-    #         if st.button("SALVAR EDIÇÃO"):
-    #             ws1: Worksheet = sh.get_worksheet(0)
-    #             ws1.update_cell(int(linha3), coluna, editar_status)
-    #             st.success("Edição salva!")
+    
+    filtro_index = dfeditarentrada.index[0]
+    
+    linha3 = filtro_index+2
 
-    # dfeditarentrada["Valor"] = dfeditarentrada["Valor"].apply(lambda x: f'R$ {x:,.2f}')
-    # dfeditarentrada = dfeditarentrada.drop(columns=["Ano","Mês","Data"])
-    # dfeditarentrada["Data Vencimento"] = pd.to_datetime(dfeditarentrada["Data Vencimento"]).dt.strftime("%d/%m/%Y")
-    # with col2:
-    #     st.table(dfeditarentrada)
+    coluna = 6
+    
+    with tab3:
+        with col2:
+            if st.button("SALVAR EDIÇÃO"):
+                ws1: Worksheet = sh.get_worksheet(0)
+                ws1.update_cell(int(linha3), coluna, editar_status)
+                st.success("Edição salva!")
+
+    dfeditarentrada["Valor"] = dfeditarentrada["Valor"].apply(lambda x: f'R$ {x:,.2f}')
+    dfeditarentrada = dfeditarentrada.drop(columns=["Ano","Mês","Data"])
+    dfeditarentrada["Data Vencimento"] = pd.to_datetime(dfeditarentrada["Data Vencimento"]).dt.strftime("%d/%m/%Y")
+    with col2:
+        st.table(dfeditarentrada)
 st.table(dfeditarentrada.index[0])
 #------------------------------------------------------------------------------------------   
 #Entradas em aberto
