@@ -37,6 +37,9 @@ df["Ano"] = df["Ano"].astype(int)
 df["Mês"] = df["Mês"].astype(int)
 df['Valor'] = df['Valor'].str.replace('.', '').str.replace(',', '.').astype(float)
 
+
+
+
 #----------------------------------------------------------------------------------------
 #funcão para definir situacao das contas
 
@@ -226,6 +229,17 @@ with tab3:
     indices_selecionados = obter_indices_selecionados(dfeditarentrada)
     
     dfeditarentrada = dfeditarentrada.query('index ==@indices_selecionados ')
+    
+    dfeditarentrada = pd.DataFrame()  # DataFrame vazio para ilustrar o caso de erro
+
+# Verificar se o DataFrame está vazio antes de acessar o índice
+if not dfeditarentrada.empty:
+    filtro_index = dfeditarentrada.index[0]
+    st.write(f"O índice do DataFrame é: {filtro_index}")
+else:
+    st.write("O DataFrame está vazio. Nenhum índice pode ser acessado.")
+    
+    
     
     filtro_index = dfeditarentrada.index[0]
 
