@@ -231,7 +231,7 @@ with tab3:
     
 
     if not dfeditarentrada.empty:
-        filtro_index = pd.DataFrame()
+        dfeditarentrada = pd.DataFrame()
     else:
         dfeditarentrada = dfeditarentrada.query('index ==@indices_selecionados ')
     
