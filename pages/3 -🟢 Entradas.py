@@ -230,18 +230,15 @@ with tab3:
     
     dfeditarentrada = dfeditarentrada.query('index ==@indices_selecionados ')
     
-  
+    
+    filtro_index = dfeditarentrada.index[0]
+    
 
-# Verificar se o DataFrame está vazio antes de acessar o índice
-if not dfeditarentrada.empty:
-    filtro_index = dfeditarentrada.index[0]
-    st.write(f"O índice do DataFrame é: {filtro_index}")
-else:
-    st.write("O DataFrame está vazio. Nenhum índice pode ser acessado.")
-    
-    
-    
-    filtro_index = dfeditarentrada.index[0]
+    if not dfeditarentrada.empty:
+        filtro_index = dfeditarentrada.index[0]
+        print(f"O índice do DataFrame é: {filtro_index}")
+    else:
+        print("O DataFrame está vazio. Nenhum índice pode ser acessado.")
 
     linha3 = filtro_index+2
 
