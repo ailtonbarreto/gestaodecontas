@@ -205,7 +205,7 @@ with tab3:
     
     #Dados da linha editada
     filtro_y = st.selectbox('Ano da Movimentação',dfeditarentrada["Ano"].unique())
-    filtro_m = st.selectbox('Mês da Movimentação',meses,index=meses.index(mes_atual))
+    filtro_m = st.selectbox('Mês da Movimentação',meses)
     filtro_c = st.selectbox('Buscar Cliente',dfeditarentrada["Cliente"].unique())
     editar_status = st.selectbox('Novo Status',["A RECEBER","RECEBIDO"])
     
@@ -218,7 +218,7 @@ with tab3:
         indices_selecionados = []
         
         with col1:
-            opcoes = dfeditar.index.tolist()  # Lista de índices do DataFrame
+            opcoes = dfeditar.index.tolist()
             selected_index = st.selectbox("Selecionar", opcoes)
             if selected_index is not None:
                 indices_selecionados.append(selected_index)
@@ -250,7 +250,6 @@ with tab3:
     dfeditarentrada["Data Vencimento"] = pd.to_datetime(dfeditarentrada["Data Vencimento"]).dt.strftime("%d/%m/%Y")
     with col2:
         st.table(dfeditarentrada)
-st.table(dfeditarentrada)
 #------------------------------------------------------------------------------------------   
 #Entradas em aberto
 with tab4:
