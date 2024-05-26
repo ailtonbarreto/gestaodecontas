@@ -157,7 +157,7 @@ with tab1:
     
     entrada_categoria = planilhacadastro.query(f'Fornecedor == "{entrada_fornecedor}"')['Categoria'].iloc[0]
 
-    entrada_valor = st.text_input("Valor",value="0,00")
+    entrada_valor = st.text_input("Valor",value=None,placeholder="Digite o Valor")
 
     entrada_status = st.selectbox("Status",["PAGO","A PAGAR"])
 
