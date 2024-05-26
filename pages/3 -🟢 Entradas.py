@@ -134,13 +134,13 @@ with tab1:
     
     entrada_cliente = st.selectbox("Clientes",dfselect['Cliente'].unique())
 
-    entrada_notafiscal = st.text_input("Nota Fiscal")
+    entrada_notafiscal = st.text_input("Nota Fiscal",placeholder="Digite o número da Nota Fiscal")
 
     entrada_dataemissao = st.date_input("Data Emissão","today",format= "DD/MM/YYYY")
 
     entrada_datavencimento = st.date_input("Data Vencimento","today",format= "DD/MM/YYYY")
    
-    entrada_valor = st.number_input("Valor", value=None, format="%.2f")
+    entrada_valor = st.number_input("Valor", value=None, format="%.2f",placeholder="Digite o Valor")
 
 
     entrada_status = st.selectbox("Status",["A RECEBER","RECEBIDO"])
