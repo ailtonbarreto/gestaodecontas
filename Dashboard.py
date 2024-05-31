@@ -260,9 +260,9 @@ grafico_barras.update_traces(textfont=dict(size=15,color='#ffffff'),textposition
 #definir icone
  
 if df_filtrado4["Valor"].sum()-df_filtrado2["Valor"].sum() >= 0:
-        icon = "😉"
+        icon = "🔼"
 else:
-    icon = "😕"
+    icon = "🔽"
     
 #----------------------------------------------------------------------------------------
 #formatar moeda
