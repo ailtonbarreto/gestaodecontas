@@ -294,7 +294,8 @@ with col9:
     # filtro_mov = st.selectbox("Tipo",["ENTRADA","SAÍDA"])
     # df_movi = df_filtrado1.query('Tipo == @filtro_mov')
     # st.dataframe(df_movi,use_container_width=True,hide_index=True)
-    components.iframe('https://app.powerbi.com/view?r=eyJrIjoiZGE3ZWYzM2UtMmMxZi00Y2E0LWJhMGYtMzc0OWRmMGNiZDhiIiwidCI6IjE4Njc3OGFjLWJjNjMtNGE0My1iMmVlLThiMTk0MWVjYTRhOSJ9', height=300)
+    link = "https://www.youtube.com/watch?v=IoA6gfad3eo"
+    components.iframe(link, height=300)
 with col10:
     st.plotly_chart(grafico_colunas,use_container_width=True)
 #------------------------------------------------------------------------------------------
