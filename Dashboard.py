@@ -294,7 +294,7 @@ with col9:
     # filtro_mov = st.selectbox("Tipo",["ENTRADA","SAÍDA"])
     # df_movi = df_filtrado1.query('Tipo == @filtro_mov')
     # st.dataframe(df_movi,use_container_width=True,hide_index=True)
-    components.iframe('https://chatgpt.com/', height=300)
+    components.iframe('<iframe title="VENDAS GERAL - 2024" width="600" height="373.5" src="https://app.powerbi.com/view?r=eyJrIjoiZGE3ZWYzM2UtMmMxZi00Y2E0LWJhMGYtMzc0OWRmMGNiZDhiIiwidCI6IjE4Njc3OGFjLWJjNjMtNGE0My1iMmVlLThiMTk0MWVjYTRhOSJ9" frameborder="0" allowFullScreen="true"></iframe>', height=300)
 with col10:
     st.plotly_chart(grafico_colunas,use_container_width=True)
 #------------------------------------------------------------------------------------------
