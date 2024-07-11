@@ -294,7 +294,7 @@ with col9:
     # filtro_mov = st.selectbox("Tipo",["ENTRADA","SAÍDA"])
     # df_movi = df_filtrado1.query('Tipo == @filtro_mov')
     # st.dataframe(df_movi,use_container_width=True,hide_index=True)
-    components.iframe("https://youtu.be/A_z4qopCxN4", height=300)
+    components.iframe("https://www.youtube.com/watch?v=cGzhHnjCd3Y", height=300)
 with col10:
     st.plotly_chart(grafico_colunas,use_container_width=True)
 #------------------------------------------------------------------------------------------
