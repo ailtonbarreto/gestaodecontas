@@ -20,7 +20,8 @@ with open("style.css") as f:
 #----------------------------------------------------------------------------------------
 #Layout em duas colunas
 
-col1,col2,col3,col4,col5,col6 = st.columns([3,2,2,2,1,1])
+st.title("📊 Gestão à Vista",anchor=False)
+col2,col3,col4,col5,col6 = st.columns([2,2,2,1,1])
 col7,col8 = st.columns(2)
 col9, = st.columns(1)
 col10, = st.columns(1)
@@ -178,8 +179,8 @@ else:
 #----------------------------------------------------------------------------------------
 #Filtros/Layout
 
-with col1:
-    st.title("📊 Gestão à Vista",anchor=False)
+
+    
    
 with col5:
     filtro_ano = st.selectbox("Ano", df["Ano"].unique())  
