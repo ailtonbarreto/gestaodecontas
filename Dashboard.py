@@ -6,7 +6,7 @@ import pandas as pd
 import plotly.express as px
 import gspread as sg
 import datetime as dt
-import streamlit.components.v1 as components
+
 
 
 #----------------------------------------------------------------------------------------
@@ -290,12 +290,11 @@ with col7:
 with col8:
     st.plotly_chart(grafico_barras,use_container_width=True)
 with col9:
-    # st.subheader(f"Movimentações de {filtro_mes} de {filtro_ano}",anchor=False) 
-    # filtro_mov = st.selectbox("Tipo",["ENTRADA","SAÍDA"])
-    # df_movi = df_filtrado1.query('Tipo == @filtro_mov')
-    # st.dataframe(df_movi,use_container_width=True,hide_index=True)
-    link = 'https://www.google.com.br/?hl=pt-BR'
-    components.iframe(link, height=700)
+    st.subheader(f"Movimentações de {filtro_mes} de {filtro_ano}",anchor=False) 
+    filtro_mov = st.selectbox("Tipo",["ENTRADA","SAÍDA"])
+    df_movi = df_filtrado1.query('Tipo == @filtro_mov')
+    st.dataframe(df_movi,use_container_width=True,hide_index=True)
+
 with col10:
     st.plotly_chart(grafico_colunas,use_container_width=True)
 #------------------------------------------------------------------------------------------
