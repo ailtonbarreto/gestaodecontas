@@ -243,7 +243,7 @@ dfgrafico['Valor'] = dfgrafico['Valor'].astype(str)
 dfgrafico['Valor'] = dfgrafico['Valor'].str.replace('.', '').str.replace(',', '.').astype(float)
 dfgrafico = dfgrafico.groupby(["CATEGORIA", "Ano","Mês","Status"])["Valor"].sum().reset_index()
 dfgrafico = dfgrafico.query('Ano == @filtro_ano & Mês == @filtro_mes')
-dfgrafico = dfgrafico.sort_values(by="Valor",ascending=True)
+dfgrafico = dfgrafico.sort_values(by="Valor",ascending=False)
 
 grafico_barras = px.bar(dfgrafico,x="Valor",y="CATEGORIA",text=dfgrafico["Valor"].apply(lambda x: f'R$ {x:,.2f}'),
         orientation="h",category_orders={'Status':['PAGO','A PAGAR']},
