@@ -295,7 +295,7 @@ with col9:
     # df_movi = df_filtrado1.query('Tipo == @filtro_mov')
     # st.dataframe(df_movi,use_container_width=True,hide_index=True)
     link = '<iframe width="853" height="480" src="https://www.youtube.com/embed/IoA6gfad3eo" title="Os Hackers MAIS PERIGOSOS Já Capturados ATÉ HOJE" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>'
-    components.iframe(link, height=300)
+    components.iframe(link, height=700)
 with col10:
     st.plotly_chart(grafico_colunas,use_container_width=True)
 #------------------------------------------------------------------------------------------
