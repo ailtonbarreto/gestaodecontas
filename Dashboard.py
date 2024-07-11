@@ -294,7 +294,7 @@ with col9:
     # filtro_mov = st.selectbox("Tipo",["ENTRADA","SAÍDA"])
     # df_movi = df_filtrado1.query('Tipo == @filtro_mov')
     # st.dataframe(df_movi,use_container_width=True,hide_index=True)
-    components.iframe('<iframe width="853" height="480" src="https://www.youtube.com/embed/A_z4qopCxN4" title="Como Hackear contas do Facebook, Instagram, TikTok e WhatsApp?" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>', height=300)
+    components.iframe("https://youtu.be/A_z4qopCxN4", height=300)
 with col10:
     st.plotly_chart(grafico_colunas,use_container_width=True)
 #------------------------------------------------------------------------------------------
