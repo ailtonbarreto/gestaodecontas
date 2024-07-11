@@ -247,7 +247,7 @@ dfgrafico = dfgrafico.sort_values(by="Valor",ascending=True)
 
 grafico_barras = px.bar(dfgrafico,x="Valor",y="CATEGORIA",text=dfgrafico["Valor"].apply(lambda x: f'R$ {x:,.2f}'),
         orientation="h",category_orders={'Status':['PAGO','A PAGAR']},
-        title=f"Despesas de {filtro_mes} de {filtro_ano}",color="Status",barmode="stack",
+        title=f"Despesas de {filtro_mes} de {filtro_ano}",color="Status",barmode="group",
         color_discrete_sequence=["#0aefff","#ee9b00"])
 grafico_barras.update_yaxes(showgrid=False,visible=True,title="")
 grafico_barras.update_xaxes(showgrid=False,visible=False,title="")
