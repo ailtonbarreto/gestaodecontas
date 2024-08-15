@@ -53,7 +53,7 @@ dfsaida.sort_values("Data", inplace=True)
 dfsaida["Ano"] = dfsaida["Ano"].astype(int)
 dfsaida["Mês"] = dfsaida["Mês"].astype(int)
 dfsaida['Valor'] = dfsaida['Valor'].str.replace('.', '').str.replace(',', '.').astype(float)
-dfsaida = pd.DataFrame(dfsaida).drop(columns=["CATEGORIA"])
+# dfsaida = pd.DataFrame(dfsaida).drop(columns=["CATEGORIA"])
 
 #----------------------------------------------------------------------------------------
 #Dados entradas
