@@ -33,7 +33,8 @@ col10, = st.columns(1)
 #Dados saidas
 
 # gc = sg.service_account("gestao.json")
-url = 'https://docs.google.com/spreadsheets/d/1HcISrCFCKWOtF6O_RonxH_RVdg2jFBly2KQryc_cZcY/edit?usp=sharing'
+# url = 'https://docs.google.com/spreadsheets/d/1HcISrCFCKWOtF6O_RonxH_RVdg2jFBly2KQryc_cZcY/edit?usp=sharing'
+url = "https://docs.google.com/spreadsheets/d/1HcISrCFCKWOtF6O_RonxH_RVdg2jFBly2KQryc_cZcY/pub?output=csv"
 # sh = gc.open_by_url(url)
 # ws = sh.get_worksheet(1)
 # planilha = ws.get_all_values()
