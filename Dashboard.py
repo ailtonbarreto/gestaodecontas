@@ -34,17 +34,17 @@ col10, = st.columns(1)
 
 # gc = sg.service_account("gestao.json")
 # url = 'https://docs.google.com/spreadsheets/d/1HcISrCFCKWOtF6O_RonxH_RVdg2jFBly2KQryc_cZcY/edit?usp=sharing'
-url = "https://docs.google.com/spreadsheets/d/1HcISrCFCKWOtF6O_RonxH_RVdg2jFBly2KQryc_cZcY/pub?output=csv"
+urlsaida = "https://docs.google.com/spreadsheets/d/1HcISrCFCKWOtF6O_RonxH_RVdg2jFBly2KQryc_cZcY/pub?output=csv"
 # sh = gc.open_by_url(url)
 # ws = sh.get_worksheet(1)
 # planilha = ws.get_all_values()
 # dfsaida = pd.DataFrame(planilha[1:], columns=planilha[0])
 
-def get_data(url):
-    planilha = pd.read_csv(url)
+def get_data(urlsaida):
+    planilha = pd.read_csv(urlsaida)
     return url
 
-dfsaida = get_data(url)
+dfsaida = get_data(urlsaida)
 
 dfsaida['Data'] = pd.to_datetime(dfsaida["Data Emissão"])
 dfsaida["Ano"] = dfsaida["Data"].dt.year
