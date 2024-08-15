@@ -46,7 +46,7 @@ def get_data(urlsaida):
 
 dfsaida = get_data(urlsaida)
 
-dfsaida['Data'] = dfsaida["Data Emissão"]
+dfsaida['Data'] = pd.to_datetime(dfsaida["Data Emissão"])
 dfsaida["Ano"] = dfsaida["Data"].dt.year
 dfsaida["Mês"] = dfsaida["Data"].dt.month
 dfsaida.sort_values("Data", inplace=True)
