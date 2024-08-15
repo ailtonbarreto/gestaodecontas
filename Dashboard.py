@@ -294,7 +294,8 @@ with col4:
 with col7:
     st.plotly_chart(grafico_Rosca,use_container_width=True) 
 with col8:
-    st.plotly_chart(grafico_barras,use_container_width=True)
+    # st.plotly_chart(grafico_barras,use_container_width=True)
+    st.write("EM MANUTENÇÃO")
 with col9:
     st.subheader(f"Movimentações de {filtro_mes} de {filtro_ano}",anchor=False) 
     filtro_mov = st.selectbox("Tipo",["ENTRADA","SAÍDA"])
