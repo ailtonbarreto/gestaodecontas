@@ -42,7 +42,7 @@ urlsaida = "https://docs.google.com/spreadsheets/d/1HcISrCFCKWOtF6O_RonxH_RVdg2j
 
 def get_data(urlsaida):
     planilha = pd.read_csv(urlsaida)
-    return url
+    return urlsaida
 
 dfsaida = get_data(urlsaida)
 
