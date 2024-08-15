@@ -42,11 +42,11 @@ urlsaida = "https://docs.google.com/spreadsheets/d/1HcISrCFCKWOtF6O_RonxH_RVdg2j
 
 def get_data(urlsaida):
     planilha = pd.read_csv(urlsaida)
-    return urlsaida
+    return planilha
 
 dfsaida = get_data(urlsaida)
 
-# dfsaida['Data'] = pd.to_datetime(dfsaida["Data Emissão"])
+dfsaida['Data'] = pd.to_datetime(dfsaida["Data Emissão"])
 dfsaida["Ano"] = dfsaida["Data"].dt.year
 dfsaida["Mês"] = dfsaida["Data"].dt.month
 dfsaida.sort_values("Data", inplace=True)
