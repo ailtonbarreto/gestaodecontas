@@ -32,12 +32,18 @@ col10, = st.columns(1)
 #----------------------------------------------------------------------------------------
 #Dados saidas
 
-gc = sg.service_account("gestao.json")
+# gc = sg.service_account("gestao.json")
 url = 'https://docs.google.com/spreadsheets/d/1HcISrCFCKWOtF6O_RonxH_RVdg2jFBly2KQryc_cZcY/edit?usp=sharing'
-sh = gc.open_by_url(url)
-ws = sh.get_worksheet(1)
-planilha = ws.get_all_values()
-dfsaida = pd.DataFrame(planilha[1:], columns=planilha[0])
+# sh = gc.open_by_url(url)
+# ws = sh.get_worksheet(1)
+# planilha = ws.get_all_values()
+# dfsaida = pd.DataFrame(planilha[1:], columns=planilha[0])
+
+def get_data(url):
+    planilha = pd.read_csv(url)
+    return url
+
+dfsaida = get_data(url)
 
 dfsaida['Data'] = pd.to_datetime(dfsaida["Data Emissão"])
 dfsaida["Ano"] = dfsaida["Data"].dt.year
