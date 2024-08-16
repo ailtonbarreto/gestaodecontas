@@ -34,7 +34,7 @@ col10, = st.columns(1)
 
 urlsaida = "https://docs.google.com/spreadsheets/d/1HcISrCFCKWOtF6O_RonxH_RVdg2jFBly2KQryc_cZcY/pub?gid=167245010&single=true&output=csv"
 urlentrada = "https://docs.google.com/spreadsheets/d/1HcISrCFCKWOtF6O_RonxH_RVdg2jFBly2KQryc_cZcY/pub?gid=1081596630&single=true&output=csv"
-
+urlsaida2 = "https://docs.google.com/spreadsheets/d/1HcISrCFCKWOtF6O_RonxH_RVdg2jFBly2KQryc_cZcY/pub?gid=167245010&single=true&output=csv"
 
 @st.cache_data
 def get_datasaida(urlsaida):
@@ -46,6 +46,12 @@ def get_datasaida(urlsaida):
 def get_dataentrada(urlentrada):
     planilha1 = pd.read_csv(urlentrada)
     return planilha1
+
+@st.cache_data
+def get_saida2(urlsaida2):
+    planilha2 = dfgrafico = pd.read_csv(urlsaida2)
+    return planilha2
+
 
 
 dfsaida = get_datasaida(urlsaida)
@@ -235,34 +241,31 @@ grafico_colunas.layout.xaxis.fixedrange = True
 grafico_colunas.layout.yaxis.fixedrange = True
 #----------------------------------------------------------------------------------------
 
-# gc = sg.service_account("gestao.json")
-# url = 'https://docs.google.com/spreadsheets/d/1HcISrCFCKWOtF6O_RonxH_RVdg2jFBly2KQryc_cZcY/edit?usp=sharing'
-# sheet = gc.open_by_url(url)
-# dfgrafico = sh.get_worksheet(1)
-# dfgrafico = ws.get_all_values()
-# dfgrafico = pd.DataFrame(planilha[1:], columns=planilha[0])
 
-# dfgrafico['Data'] = pd.to_datetime(dfgrafico["Data Emissão"])
-# dfgrafico['Ano'] = dfgrafico['Data'].dt.year
-# dfgrafico['Mês'] = dfgrafico['Data'].dt.month
-# dfgrafico["Mês"] = dfgrafico["Mês"].apply(determinar_mes)
-# dfgrafico = dfgrafico.drop(columns=["Data Emissão","Data"])
-# dfgrafico['Valor'] = dfgrafico['Valor'].astype(str)
-# dfgrafico['Valor'] = dfgrafico['Valor'].str.replace('.', '').str.replace(',', '.').astype(float)
-# dfgrafico = dfgrafico.groupby(["CATEGORIA", "Ano","Mês","Status"])["Valor"].sum().reset_index()
-# dfgrafico = dfgrafico.query('Ano == @filtro_ano & Mês == @filtro_mes')
-# dfgrafico = dfgrafico.sort_values(by="Valor",ascending=True)
 
-# grafico_barras = px.bar(dfgrafico,x="Valor",y="CATEGORIA",text=dfgrafico["Valor"].apply(lambda x: f'R$ {x:,.2f}'),
-#         orientation="h",category_orders={'Status':['PAGO','A PAGAR']},
-#         title=f"Despesas de {filtro_mes} de {filtro_ano}",color="Status",barmode="stack",
-#         color_discrete_sequence=["#0aefff","#ee9b00"])
-# grafico_barras.update_yaxes(showgrid=False,visible=True,title="")
-# grafico_barras.update_xaxes(showgrid=False,visible=False,title="")
-# grafico_barras.layout.xaxis.fixedrange = True
-# grafico_barras.layout.yaxis.fixedrange = True
-# grafico_barras.update_layout(showlegend=False)
-# grafico_barras.update_traces(textfont=dict(size=15,color='#ffffff'),textposition="outside")
+
+
+dfgrafico['Data'] = pd.to_datetime(dfgrafico["Data Emissão"])
+dfgrafico['Ano'] = dfgrafico['Data'].dt.year
+dfgrafico['Mês'] = dfgrafico['Data'].dt.month
+dfgrafico["Mês"] = dfgrafico["Mês"].apply(determinar_mes)
+dfgrafico = dfgrafico.drop(columns=["Data Emissão","Data"])
+dfgrafico['Valor'] = dfgrafico['Valor'].astype(str)
+dfgrafico['Valor'] = dfgrafico['Valor'].str.replace('.', '').str.replace(',', '.').astype(float)
+dfgrafico = dfgrafico.groupby(["CATEGORIA", "Ano","Mês","Status"])["Valor"].sum().reset_index()
+dfgrafico = dfgrafico.query('Ano == @filtro_ano & Mês == @filtro_mes')
+dfgrafico = dfgrafico.sort_values(by="Valor",ascending=True)
+
+grafico_barras = px.bar(dfgrafico,x="Valor",y="CATEGORIA",text=dfgrafico["Valor"].apply(lambda x: f'R$ {x:,.2f}'),
+        orientation="h",category_orders={'Status':['PAGO','A PAGAR']},
+        title=f"Despesas de {filtro_mes} de {filtro_ano}",color="Status",barmode="stack",
+        color_discrete_sequence=["#0aefff","#ee9b00"])
+grafico_barras.update_yaxes(showgrid=False,visible=True,title="")
+grafico_barras.update_xaxes(showgrid=False,visible=False,title="")
+grafico_barras.layout.xaxis.fixedrange = True
+grafico_barras.layout.yaxis.fixedrange = True
+grafico_barras.update_layout(showlegend=False)
+grafico_barras.update_traces(textfont=dict(size=15,color='#ffffff'),textposition="outside")
 
 
 #----------------------------------------------------------------------------------------
