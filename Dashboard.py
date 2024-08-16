@@ -53,6 +53,7 @@ def get_saida2(urlsaida2):
     return dfgrafico
 
 
+dfgrafico = get_saida2(urlsaida2)
 
 dfsaida = get_datasaida(urlsaida)
 dfsaida['Data'] = pd.to_datetime(dfsaida["Data Emissão"])
