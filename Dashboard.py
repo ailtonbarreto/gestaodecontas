@@ -246,7 +246,7 @@ grafico_colunas.layout.yaxis.fixedrange = True
 
 
 
-dfgrafico['Data'] = pd.to_datetime(dfgrafico["Data Emissão"]).abs
+dfgrafico['Data'] = pd.to_datetime(dfgrafico["Data Emissão"])
 dfgrafico['Ano'] = dfgrafico['Data'].dt.year
 dfgrafico['Mês'] = dfgrafico['Data'].dt.month
 dfgrafico["Mês"] = dfgrafico["Mês"].apply(determinar_mes)
