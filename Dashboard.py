@@ -49,7 +49,7 @@ def get_dataentrada():
 
 @st.cache_data
 def get_saida2():
-    dfgrafico = pd.read_csv(urlsaida2)
+    dfgrafico = dfgrafico = pd.read_csv(urlsaida2)
     return dfgrafico
 
 
