@@ -37,18 +37,18 @@ urlentrada = "https://docs.google.com/spreadsheets/d/1HcISrCFCKWOtF6O_RonxH_RVdg
 urlsaida2 = "https://docs.google.com/spreadsheets/d/1HcISrCFCKWOtF6O_RonxH_RVdg2jFBly2KQryc_cZcY/pub?gid=167245010&single=true&output=csv"
 
 @st.cache_data
-def get_datasaida():
+def get_datasaida(urlsaida):
     planilha = pd.read_csv(urlsaida)
     return planilha
 
 
 @st.cache_data
-def get_dataentrada():
+def get_dataentrada(urlentrada):
     planilha1 = pd.read_csv(urlentrada)
     return planilha1
 
 @st.cache_data
-def get_saida2():
+def get_saida2(urlsaida2):
     dfgrafico = dfgrafico = pd.read_csv(urlsaida2)
     return dfgrafico
 
