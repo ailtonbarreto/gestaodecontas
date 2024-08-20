@@ -4,6 +4,7 @@
 import streamlit as st
 import pandas as pd
 import plotly.express as px
+import gspread as sg
 import datetime as dt
 
 
