@@ -52,9 +52,9 @@ def get_saida2(urlsaida2):
     return dfgrafico
 
 
-
-if st.button("Recarregar Dados"):
-    st.cache_data.clear()
+with st.sidebar:
+    if st.button("Recarregar Dados"):
+        st.cache_data.clear()
 
 
 dfgrafico = get_saida2(urlsaida2)
