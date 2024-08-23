@@ -12,7 +12,7 @@ import datetime as dt
 #exibicao de dados
 
 st.set_page_config(layout="wide",initial_sidebar_state='collapsed',page_icon='📊',page_title="Gestão À Vista")
-st.sidebar.link_button("Ver Planilha","https://docs.google.com/spreadsheets/d/1HcISrCFCKWOtF6O_RonxH_RVdg2jFBly2KQryc_cZcY/edit?usp=sharing")
+# st.sidebar.link_button("Ver Planilha","https://docs.google.com/spreadsheets/d/1HcISrCFCKWOtF6O_RonxH_RVdg2jFBly2KQryc_cZcY/edit?usp=sharing")
 
 with open("style.css") as f:
     st.markdown(f"<style>{f.read()}</style>",unsafe_allow_html = True)
