@@ -8,7 +8,7 @@ from gspread import Worksheet
 
 
 st.set_page_config(layout="wide",page_title="Cadastrar Cliente",initial_sidebar_state='collapsed',page_icon='📊')
-st.sidebar.link_button("Ver Planilha","https://docs.google.com/spreadsheets/d/1HcISrCFCKWOtF6O_RonxH_RVdg2jFBly2KQryc_cZcY/edit?usp=sharing")
+# st.sidebar.link_button("Ver Planilha","https://docs.google.com/spreadsheets/d/1HcISrCFCKWOtF6O_RonxH_RVdg2jFBly2KQryc_cZcY/edit?usp=sharing")
 
 with open("style.css") as f:
     st.markdown(f"<style>{f.read()}</style>",unsafe_allow_html = True)
@@ -22,6 +22,11 @@ sh = gc.open_by_url(url)
 ws = sh.get_worksheet(3)
 planilha = ws.get_all_values()
 dffornecedor = pd.DataFrame(planilha[1:], columns=planilha[0])
+
+with st.sidebar:
+    if st.button("Recarregar Dados"):
+        st.cache_data.clear()
+
 
 #----------------------------------------------------------------------------------------------------------------------------
 #Cadastrar Fornecedor

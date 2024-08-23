@@ -38,6 +38,10 @@ df["Ano"] = df["Ano"].astype(int)
 df["Mês"] = df["Mês"].astype(int)
 df['Valor'] = df['Valor'].str.replace('.', '').str.replace(',', '.').astype(float)
 
+with st.sidebar:
+    if st.button("Recarregar Dados"):
+        st.cache_data.clear()
+
 
 #----------------------------------------------------------------------------------------
 #cadastro de fornecedores
