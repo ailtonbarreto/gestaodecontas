@@ -54,7 +54,7 @@ def get_saida2(urlsaida2):
 
 with st.sidebar:
     if st.button("Recarregar Dados"):
-        st.cache_data.clear()
+        st.cache_resource.clear()
 
 
 dfgrafico = get_saida2(urlsaida2)
