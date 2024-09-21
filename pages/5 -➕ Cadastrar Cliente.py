@@ -23,10 +23,6 @@ ws = sh.get_worksheet(3)
 planilha = ws.get_all_values()
 dffornecedor = pd.DataFrame(planilha[1:], columns=planilha[0])
 
-with st.sidebar:
-    if st.button("Recarregar Dados"):
-        st.cache_data.clear()
-
 
 #----------------------------------------------------------------------------------------------------------------------------
 #Cadastrar Fornecedor

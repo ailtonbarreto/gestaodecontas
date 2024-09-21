@@ -38,9 +38,7 @@ df["Ano"] = df["Ano"].astype(int)
 df["Mês"] = df["Mês"].astype(int)
 df['Valor'] = df['Valor'].str.replace('.', '').str.replace(',', '.').astype(float)
 
-with st.sidebar:
-    if st.button("Recarregar Dados"):
-        st.cache_data.clear()
+
 
 
 #----------------------------------------------------------------------------------------
@@ -248,7 +246,7 @@ with tab3:
 
     indices_selecionados = obter_indices_selecionados(dfeditar)
     
-    dfeditar = dfeditar.query('index ==@indices_selecionados ')
+    dfeditar = dfeditar.query('index == @indices_selecionados')
     
     filtro_index = dfeditar.index[0]
 
@@ -272,14 +270,18 @@ with tab3:
 #Saídas em aberto
  
 with tab4:
+    
     st.title("🔴 Pagamentos em Aberto",anchor=False)
+    
     aberto = df
     entrada_ano = st.selectbox('Escolha um ano',aberto["Ano"].unique())
     filtro_entrada = st.selectbox("Escolha um mês",meses,index=meses.index(mes_atual))
     aberto = df.query('Mês == @filtro_entrada & Ano == @entrada_ano & Status == "A PAGAR"')
     aberto = aberto.drop(columns=["Ano","Mês","Tipo"])
     aberto["Valor"] = aberto["Valor"].apply(lambda x: f'R$ {x:,.2f}')
-    st.table(aberto)
+    col1, = st.columns(1)
+    with col1:
+        st.table(aberto)
 
 #------------------------------------------------------------------------------------------
 #Esconder streamlit menus

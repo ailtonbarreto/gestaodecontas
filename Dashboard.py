@@ -309,6 +309,10 @@ with col9:
 
 with col10:
     st.plotly_chart(grafico_colunas,use_container_width=True)
+    
+
+if st.button("Recarregar Dados"):
+    st.cache_data.clear()
 #------------------------------------------------------------------------------------------
 #CSS
 

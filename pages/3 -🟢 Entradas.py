@@ -22,24 +22,25 @@ tab1, tab2, tab3, tab4 = st.tabs(['Adicionar Entrada','Excluir Entrada','Editar 
 #----------------------------------------------------------------------------------------
 #Dados Entradas
 
-gc = sg.service_account("gestao.json")
-url = 'https://docs.google.com/spreadsheets/d/1HcISrCFCKWOtF6O_RonxH_RVdg2jFBly2KQryc_cZcY/edit?usp=sharing'
-sh = gc.open_by_url(url)
-ws = sh.get_worksheet(0)
-planilha = ws.get_all_values()
-df = pd.DataFrame(planilha[1:], columns=planilha[0])
+def load_entradas():
+    gc = sg.service_account("gestao.json")
+    url = 'https://docs.google.com/spreadsheets/d/1HcISrCFCKWOtF6O_RonxH_RVdg2jFBly2KQryc_cZcY/edit?usp=sharing'
+    sh = gc.open_by_url(url)
+    ws = sh.get_worksheet(0)
+    planilha = ws.get_all_values()
+    df = pd.DataFrame(planilha[1:], columns=planilha[0])
 
-df['Data'] = pd.to_datetime(df["Data Vencimento"])
-df["Ano"] = df["Data"].dt.year
-df["Mês"] = df["Data"].dt.month
-df.sort_values("Data", inplace=True)
-df["Ano"] = df["Ano"].astype(int)
-df["Mês"] = df["Mês"].astype(int)
-df['Valor'] = df['Valor'].str.replace('.', '').str.replace(',', '.').astype(float)
+    df['Data'] = pd.to_datetime(df["Data Vencimento"])
+    df["Ano"] = df["Data"].dt.year
+    df["Mês"] = df["Data"].dt.month
+    df.sort_values("Data", inplace=True)
+    df["Ano"] = df["Ano"].astype(int)
+    df["Mês"] = df["Mês"].astype(int)
+    df['Valor'] = df['Valor'].str.replace('.', '').str.replace(',', '.').astype(float)
+    return df
 
-with st.sidebar:
-    if st.button("Recarregar Dados"):
-        st.cache_data.clear()
+df = load_entradas()
+
 
 
 
@@ -217,11 +218,11 @@ with tab3:
 with tab3:
     col1, col2 = st.columns([1, 10])
 
-    def obter_indices_selecionados(dfeditar):
+    def obter_indices_selecionados(dfeditarentrada):
         indices_selecionados = []
         
         with col1:
-            opcoes = dfeditar.index.tolist()
+            opcoes = dfeditarentrada.index.tolist()
             selected_index = st.selectbox("Selecionar", opcoes)
             if selected_index is not None:
                 indices_selecionados.append(selected_index)
@@ -231,9 +232,7 @@ with tab3:
 
     indices_selecionados = obter_indices_selecionados(dfeditarentrada)
     
-
-    editarentrada = dfeditarentrada.query('index ==@indices_selecionados ')
-    
+    dfeditarentrada = dfeditarentrada.query('index == @indices_selecionados')
     
     filtro_index = dfeditarentrada.index[0]
     
