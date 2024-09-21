@@ -52,9 +52,6 @@ def get_saida2(urlsaida2):
     return dfgrafico
 
 
-with st.sidebar:
-    if st.button("Recarregar Dados"):
-        st.cache_data.clear()
 
 
 dfgrafico = get_saida2(urlsaida2)
@@ -310,7 +307,6 @@ with col9:
 with col10:
     st.plotly_chart(grafico_colunas,use_container_width=True)
     
-
 if st.button("Recarregar Dados"):
     st.cache_data.clear()
 #------------------------------------------------------------------------------------------
