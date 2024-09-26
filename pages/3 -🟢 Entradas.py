@@ -22,8 +22,9 @@ tab1, tab2, tab3, tab4 = st.tabs(['Adicionar Entrada','Excluir Entrada','Editar 
 #----------------------------------------------------------------------------------------
 #Dados Entradas
 
+gc = sg.service_account("gestao.json")
+
 def load_entradas():
-    gc = sg.service_account("gestao.json")
     url = 'https://docs.google.com/spreadsheets/d/1HcISrCFCKWOtF6O_RonxH_RVdg2jFBly2KQryc_cZcY/edit?usp=sharing'
     sh = gc.open_by_url(url)
     ws = sh.get_worksheet(0)
@@ -131,7 +132,7 @@ else:
 with tab1:
 
     st.title("🟢 Adicionar Entrada",anchor=False)
-    planilhaclientes = gc.open_by_url(url)
+    planilhaclientes = gc.open_by_url("https://docs.google.com/spreadsheets/d/1HcISrCFCKWOtF6O_RonxH_RVdg2jFBly2KQryc_cZcY/edit?usp=sharing")
     dfselect = planilhaclientes.get_worksheet(3)
     dfselect = dfselect.get_all_values()
     dfselect = pd.DataFrame(dfselect[1:], columns=dfselect[0])
@@ -146,6 +147,9 @@ with tab1:
    
     entrada_valor = st.number_input("Valor", value=None, format="%.2f",placeholder="Digite o Valor")
 
+
+    sh = gc.open_by_url("https://docs.google.com/spreadsheets/d/1HcISrCFCKWOtF6O_RonxH_RVdg2jFBly2KQryc_cZcY/edit?usp=sharing")
+    ws = sh.get_worksheet(0)
 
     entrada_status = st.selectbox("Status",["A RECEBER","RECEBIDO"])
 
