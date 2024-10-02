@@ -288,7 +288,7 @@ with tab4:
 
 framegraficos = """
     <style>
-    [data-testid="column"]
+    [data-testid="stColumn"]
     {
     border-radius: 15px;
     background-color: #2F3035;

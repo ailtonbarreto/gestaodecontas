@@ -61,7 +61,7 @@ st.markdown(hide_st_style, unsafe_allow_html=True)
 
 framegraficos = """
     <style>
-    [data-testid="column"]
+    [data-testid="stColumn"]
     {
     border-radius: 15px;
     background-color: #2F3035;
